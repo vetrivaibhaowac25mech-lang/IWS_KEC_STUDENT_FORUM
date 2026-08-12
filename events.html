@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | IWS</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HEADER
+           SAME AS HOME PAGE
+        ========================================= */
+
+        header {
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE EVENTS BUTTON
+        ========================================= */
+
+        .events {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .events:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .banner {
+
+            min-height: 310px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: relative;
+        }
+
+        .banner-content {
+
+            max-width: 850px;
+
+            padding: 30px;
+        }
+
+        .banner h4 {
+
+            color: #ff6b00;
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .banner h1 {
+
+            font-size: 52px;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+            letter-spacing: 1px;
+        }
+
+        .banner h1 span {
+
+            color: #ff6b00;
+        }
+
+        .banner p {
+
+            font-size: 16px;
+
+            color: #eeeeee;
+
+            letter-spacing: 1px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           EVENTS INTRODUCTION
+        ========================================= */
+
+        .events-section {
+
+            padding: 85px 8%;
+
+            background: #ffffff;
+
+            text-align: center;
+        }
+
+        .section-title {
+
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           MAIN MESSAGE
+        ========================================= */
+
+        .event-message {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 55px 40px;
+
+            background: #f5f5f5;
+
+            border-top: 5px solid #ff6b00;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+
+            border-radius: 5px;
+        }
+
+
+        /* =========================================
+           EVENT ICON
+        ========================================= */
+
+        .event-icon {
+
+            width: 90px;
+
+            height: 90px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #fff3eb;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 50%;
+
+            font-size: 40px;
+        }
+
+
+        /* =========================================
+           EVENT MESSAGE CONTENT
+        ========================================= */
+
+        .event-message h3 {
+
+            font-size: 30px;
+
+            color: #222222;
+
+            margin-bottom: 18px;
+        }
+
+        .event-message h3 span {
+
+            color: #ff6b00;
+        }
+
+        .event-message p {
+
+            max-width: 720px;
+
+            margin: auto;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           COMING SOON BOX
+        ========================================= */
+
+        .coming-soon {
+
+            margin: 40px auto 0;
+
+            max-width: 650px;
+
+            padding: 20px 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #eeeeee;
+
+            border-left: 5px solid #ff6b00;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .coming-soon h4 {
+
+            color: #ff6b00;
+
+            font-size: 18px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 8px;
+        }
+
+        .coming-soon p {
+
+            font-size: 14px;
+
+            color: #666666;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           EVENT TYPES
+        ========================================= */
+
+        .event-types {
+
+            padding: 80px 8%;
+
+            background: #f5f5f5;
+        }
+
+        .event-types-grid {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .event-type-card {
+
+            background: #ffffff;
+
+            padding: 32px 25px;
+
+            text-align: center;
+
+            border-radius: 7px;
+
+            border: 1px solid #eeeeee;
+
+            box-shadow:
+                0 7px 22px rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .event-type-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .event-type-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 18px;
+        }
+
+        .event-type-card h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+            color: #222222;
+        }
+
+        .event-type-card p {
+
+            font-size: 14px;
+
+            color: #666666;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           STAY CONNECTED
+        ========================================= */
+
+        .connect-section {
+
+            padding: 75px 8%;
+
+            text-align: center;
+
+            background: #ffffff;
+        }
+
+        .connect-section h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+            color: #222222;
+        }
+
+        .connect-section h2 span {
+
+            color: #ff6b00;
+        }
+
+        .connect-section p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+            .event-types-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================
+           SMALL LAPTOP / TABLET
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                position: relative;
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+            .banner {
+
+                min-height: 280px;
+            }
+
+            .banner h1 {
+
+                font-size: 45px;
+            }
+
+            .event-message {
+
+                padding: 45px 30px;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+            .events {
+
+                padding: 8px 11px !important;
+            }
+
+            .banner {
+
+                min-height: 250px;
+            }
+
+            .banner h4 {
+
+                font-size: 11px;
+
+                letter-spacing: 2px;
+            }
+
+            .banner h1 {
+
+                font-size: 34px;
+            }
+
+            .banner p {
+
+                font-size: 13px;
+            }
+
+            .events-section {
+
+                padding: 60px 20px;
+            }
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+            .event-message {
+
+                padding: 40px 20px;
+            }
+
+            .event-message h3 {
+
+                font-size: 25px;
+            }
+
+            .event-message p {
+
+                font-size: 14px;
+            }
+
+            .event-icon {
+
+                width: 75px;
+
+                height: 75px;
+
+                font-size: 32px;
+            }
+
+            .event-types {
+
+                padding: 60px 20px;
+            }
+
+            .event-types-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .connect-section {
+
+                padding: 60px 20px;
+            }
+
+            .connect-section h2 {
+
+                font-size: 25px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+            .banner h1 {
+
+                font-size: 29px;
+            }
+
+            .banner p {
+
+                font-size: 12px;
+            }
+
+            .event-message h3 {
+
+                font-size: 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+
+
+        <!-- IWS LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="iws_image1.jpeg"
+                alt="IWS LOGO"
+            >
+
+            <div class="logo-text">
+
+                <h2>IWS</h2>
+
+                <p>
+                    INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="about.html">
+                        ABOUT US
+                    </a>
+                </li>
+
+                <li>
+                    <a href="faculty.html">
+                        FACULTY COORDINATORS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="members.html">
+                        MEMBERS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="why-iws.html">
+                        WHY IWS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="events.html" class="events">
+                        EVENTS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTACT US
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE BANNER
+    ========================================= -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h4>
+                LEARN • PARTICIPATE • EXPERIENCE
+            </h4>
+
+            <h1>
+                IWS <span>EVENTS</span>
+            </h1>
+
+            <p>
+                DISCOVER, PARTICIPATE AND BE A PART OF
+                OUR UPCOMING TECHNICAL ACTIVITIES.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EVENTS SECTION
+    ========================================= -->
+
+    <section class="events-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                UPCOMING EVENTS
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <!-- =========================================
+             MAIN EVENT MESSAGE
+        ========================================= -->
+
+        <div class="event-message">
+
+
+            <div class="event-icon">
+                📅
+            </div>
+
+
+            <h3>
+                UPCOMING EVENTS <span>COMING SOON</span>
+            </h3>
+
+
+            <p>
+
+                WE ARE CURRENTLY PLANNING OUR UPCOMING
+                EVENTS, TECHNICAL ACTIVITIES AND STUDENT
+                ENGAGEMENT PROGRAMMES.
+
+                <br><br>
+
+                DETAILS ABOUT THE UPCOMING EVENTS WILL BE
+                ANNOUNCED HERE. STAY CONNECTED WITH IWS -
+                KEC STUDENT FORUM FOR THE LATEST UPDATES.
+
+            </p>
+
+
+            <!-- COMING SOON -->
+
+            <div class="coming-soon">
+
+                <h4>
+                    🔔 STAY TUNED
+                </h4>
+
+                <p>
+
+                    EVENT DATES, VENUE, REGISTRATION DETAILS
+                    AND OTHER INFORMATION WILL BE UPDATED
+                    ON THIS PAGE WHEN THE EVENTS ARE
+                    ANNOUNCED.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EVENT TYPES
+    ========================================= -->
+
+    <section class="event-types">
+
+
+        <div class="section-title">
+
+            <h2>
+                WHAT TO EXPECT
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="event-types-grid">
+
+
+            <!-- CARD 01 -->
+
+            <div class="event-type-card">
+
+                <div class="event-type-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    TECHNICAL EVENTS
+                </h3>
+
+                <p>
+
+                    PRACTICAL AND TECHNICAL ACTIVITIES
+                    DESIGNED TO DEVELOP KNOWLEDGE AND
+                    INTEREST IN WELDING TECHNOLOGY.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 02 -->
+
+            <div class="event-type-card">
+
+                <div class="event-type-icon">
+                    💡
+                </div>
+
+                <h3>
+                    WORKSHOPS
+                </h3>
+
+                <p>
+
+                    HANDS-ON LEARNING OPPORTUNITIES
+                    THAT HELP STUDENTS EXPLORE WELDING
+                    AND RELATED TECHNOLOGIES.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 03 -->
+
+            <div class="event-type-card">
+
+                <div class="event-type-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    COMPETITIONS
+                </h3>
+
+                <p>
+
+                    CHALLENGE YOUR SKILLS, SHOW YOUR
+                    CREATIVITY AND EXPERIENCE THE SPIRIT
+                    OF TECHNICAL COMPETITION.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         STAY CONNECTED
+    ========================================= -->
+
+    <section class="connect-section">
+
+        <h2>
+            SOMETHING <span>EXCITING</span> IS COMING.
+        </h2>
+
+        <p>
+
+            KEEP VISITING THE IWS - KEC STUDENT FORUM
+            WEBSITE TO KNOW ABOUT OUR UPCOMING EVENTS.
+            YOUR NEXT LEARNING EXPERIENCE COULD BE
+            JUST AROUND THE CORNER.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+            IWS | INDIAN WELDING SOCIETY
+        </h3>
+
+        <p>
+            KEC STUDENT FORUM
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

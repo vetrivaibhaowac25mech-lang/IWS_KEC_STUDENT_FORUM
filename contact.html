@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | IWS</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HEADER
+           SAME AS HOME PAGE
+        ========================================= */
+
+        header {
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE CONTACT BUTTON
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .banner {
+
+            min-height: 310px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: relative;
+        }
+
+        .banner-content {
+
+            max-width: 800px;
+
+            padding: 30px;
+        }
+
+        .banner h4 {
+
+            color: #ff6b00;
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .banner h1 {
+
+            font-size: 52px;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+            letter-spacing: 1px;
+        }
+
+        .banner h1 span {
+
+            color: #ff6b00;
+        }
+
+        .banner p {
+
+            font-size: 16px;
+
+            color: #eeeeee;
+
+            letter-spacing: 1px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+
+        .contact-section {
+
+            padding: 80px 8%;
+
+            background: #ffffff;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+        .intro {
+
+            max-width: 850px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .intro p {
+
+            color: #555555;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           CONTACT GRID
+        ========================================= */
+
+        .contact-grid {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* =========================================
+           CONTACT CARD
+        ========================================= */
+
+        .contact-card {
+
+            background: #ffffff;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.14);
+        }
+
+
+        /* =========================================
+           CONTACT ICON
+        ========================================= */
+
+        .contact-icon {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #fff3eb;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 50%;
+
+            font-size: 30px;
+        }
+
+
+        /* =========================================
+           CARD CONTENT
+        ========================================= */
+
+        .contact-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+
+            color: #222222;
+        }
+
+        .designation {
+
+            color: #ff6b00;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+            text-transform: uppercase;
+        }
+
+        .contact-card p {
+
+            color: #666666;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================================
+           PHONE BUTTON
+        ========================================= */
+
+        .phone {
+
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 10px 18px;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            background: #ff6b00;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .phone:hover {
+
+            background: #000000;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           SECRETARY CARD
+        ========================================= */
+
+        .secretary-card {
+
+            border-top: 5px solid #ff6b00;
+
+            background: #fafafa;
+        }
+
+
+        /* =========================================
+           FACULTY SECTION
+        ========================================= */
+
+        .faculty-section {
+
+            padding: 80px 8%;
+
+            background: #f5f5f5;
+        }
+
+        .faculty-content {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .faculty-box {
+
+            background: #ffffff;
+
+            padding: 30px;
+
+            border-left: 5px solid #ff6b00;
+
+            box-shadow:
+                0 7px 22px rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .faculty-box:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .faculty-box h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+
+            color: #222222;
+        }
+
+        .faculty-box .role {
+
+            color: #ff6b00;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .faculty-box p {
+
+            color: #555555;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           MESSAGE SECTION
+        ========================================= */
+
+        .message-section {
+
+            padding: 75px 8%;
+
+            background: #ffffff;
+
+            text-align: center;
+        }
+
+        .message-section h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .message-section h2 span {
+
+            color: #ff6b00;
+        }
+
+        .message-section p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #555555;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+            .contact-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================
+           SMALL LAPTOP / TABLET
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                position: relative;
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+            .banner {
+
+                min-height: 280px;
+            }
+
+            .banner h1 {
+
+                font-size: 45px;
+            }
+
+            .faculty-content {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+            .contact {
+
+                padding: 8px 11px !important;
+            }
+
+            .banner {
+
+                min-height: 250px;
+            }
+
+            .banner h4 {
+
+                font-size: 11px;
+
+                letter-spacing: 2px;
+            }
+
+            .banner h1 {
+
+                font-size: 34px;
+            }
+
+            .banner p {
+
+                font-size: 13px;
+            }
+
+            .contact-section {
+
+                padding: 60px 20px;
+            }
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+            .intro p {
+
+                font-size: 14px;
+            }
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .faculty-section {
+
+                padding: 60px 20px;
+            }
+
+            .message-section {
+
+                padding: 60px 20px;
+            }
+
+            .message-section h2 {
+
+                font-size: 25px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+            .banner h1 {
+
+                font-size: 29px;
+            }
+
+            .banner p {
+
+                font-size: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+
+        <!-- IWS LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="iws_image1.jpeg"
+                alt="IWS LOGO"
+            >
+
+            <div class="logo-text">
+
+                <h2>IWS</h2>
+
+                <p>
+                    INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="about.html">
+                        ABOUT US
+                    </a>
+                </li>
+
+                <li>
+                    <a href="faculty.html">
+                        FACULTY COORDINATORS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="members.html">
+                        MEMBERS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="why-iws.html">
+                        WHY IWS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="events.html">
+                        EVENTS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="contact">
+                        CONTACT US
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE BANNER
+    ========================================= -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h4>
+                CONNECT • COMMUNICATE • COLLABORATE
+            </h4>
+
+            <h1>
+                CONTACT <span>IWS</span>
+            </h1>
+
+            <p>
+                GET IN TOUCH WITH THE IWS - KEC STUDENT FORUM
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT OUR TEAM
+    ========================================= -->
+
+    <section class="contact-section">
+
+        <div class="section-title">
+
+            <h2>
+                CONTACT OUR TEAM
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="intro">
+
+            <p>
+                HAVE QUESTIONS ABOUT IWS, EVENTS, ACTIVITIES
+                OR STUDENT PARTICIPATION? CONTACT OUR TEAM
+                MEMBERS OR FACULTY COORDINATORS USING THE
+                DETAILS BELOW.
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             3 TEAM MEMBERS
+        ========================================= -->
+
+        <div class="contact-grid">
+
+
+            <!-- TEAM MEMBER 01 -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    👤
+                </div>
+
+                <h3>
+                    SARAVANAKARTHIK S R
+                </h3>
+
+                <div class="designation">
+                    IWS SECRETARY
+                </div>
+
+                <p>
+                    INDIAN WELDING SOCIETY
+                </p>
+
+                <p>
+                    KEC STUDENT FORUM
+                </p>
+
+                <!-- ENTER TEAM NUMBER 01 -->
+
+                <a
+                    href="tel:+91XXXXXXXXXX"
+                    class="phone"
+                >
+                    📞 +91 6381639687
+                </a>
+
+            </div>
+
+
+            <!-- TEAM MEMBER 02 -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    👤
+                </div>
+
+                <h3>
+                    SADAAGOPAAN T R
+                </h3>
+
+                <div class="designation">
+                    ADDITIONAL SECRETARY
+                </div>
+
+                <p>
+                    INDIAN WELDING SOCIETY
+                </p>
+
+                <p>
+                    KEC STUDENT FORUM
+                </p>
+
+                <!-- ENTER TEAM NUMBER 02 -->
+
+                <a
+                    href="tel:+91XXXXXXXXXX"
+                    class="phone"
+                >
+                    📞 +91 7871717126
+                </a>
+
+            </div>
+
+
+            <!-- TEAM MEMBER 03 -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    👤
+                </div>
+
+                <h3>
+                    HARRISH T M
+                </h3>
+
+                <div class="designation">
+                    TREASURER
+                </div>
+
+                <p>
+                    INDIAN WELDING SOCIETY
+                </p>
+
+                <p>
+                    KEC STUDENT FORUM
+                </p>
+
+                <!-- ENTER TEAM NUMBER 03 -->
+
+                <a
+                    href="tel:+91XXXXXXXXXX"
+                    class="phone"
+                >
+                    📞 +91 9361493037
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FACULTY COORDINATORS
+    ========================================= -->
+
+    <section class="faculty-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                FACULTY COORDINATORS
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="faculty-content">
+
+
+            <!-- FACULTY 01 -->
+
+            <div class="faculty-box">
+
+                <h3>
+                    K. V. SATHEESHKUMAR
+                </h3>
+
+                <div class="role">
+                    IWS FACULTY COORDINATOR
+                </div>
+
+                <p>
+                    DEPARTMENT OF MECHANICAL ENGINEERING
+                    <br>
+                    KONGU ENGINEERING COLLEGE
+                </p>
+
+                <br>
+
+                <p>
+                    PHONE:
+                    <a
+                        href="tel:+919578367576"
+                        style="color:#ff6b00; text-decoration:none; font-weight:700;"
+                    >
+                        +91 9578367576
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- FACULTY 02 -->
+
+            <div class="faculty-box">
+
+                <h3>
+                    DR. M. BHUVANESHKUMAR
+                </h3>
+
+                <div class="role">
+                    IWS FACULTY COORDINATOR
+                </div>
+
+                <p>
+                    DEPARTMENT OF MECHANICAL ENGINEERING
+                    <br>
+                    KONGU ENGINEERING COLLEGE
+                </p>
+
+                <br>
+
+                <p>
+                    PHONE:
+                    <a
+                        href="tel:+919894711713"
+                        style="color:#ff6b00; text-decoration:none; font-weight:700;"
+                    >
+                        +91 9894711713
+                    </a>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT MESSAGE
+    ========================================= -->
+
+    <section class="message-section">
+
+        <h2>
+            HAVE AN IDEA?
+            <span>LET'S CONNECT.</span>
+        </h2>
+
+        <p>
+            WHETHER YOU ARE INTERESTED IN JOINING IWS,
+            PARTICIPATING IN EVENTS, LEARNING ABOUT WELDING
+            TECHNOLOGY OR COLLABORATING WITH THE STUDENT
+            FORUM, FEEL FREE TO REACH OUT TO OUR TEAM.
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+            IWS | INDIAN WELDING SOCIETY
+        </h3>
+
+        <p>
+            KEC STUDENT FORUM
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

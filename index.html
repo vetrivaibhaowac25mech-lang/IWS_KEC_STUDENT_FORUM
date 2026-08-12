@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IWS | INDIAN WELDING SOCIETY</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HOME SECTION
+        ========================================= */
+
+        .home {
+
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.62),
+                    rgba(0, 0, 0, 0.62)
+                ),
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           CONTACT US BUTTON
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HERO CONTENT
+        ========================================= */
+
+        .hero {
+
+            position: absolute;
+
+            top: 54%;
+            left: 8%;
+
+            transform: translateY(-50%);
+
+            max-width: 700px;
+
+            color: #ffffff;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           HERO SMALL TITLE
+        ========================================= */
+
+        .hero h4 {
+
+            display: inline-block;
+
+            color: #ff6b00;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+
+            position: relative;
+        }
+
+        .hero h4::after {
+
+            content: "";
+
+            display: block;
+
+            width: 55px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================================
+           HERO MAIN TITLE
+        ========================================= */
+
+        .hero h1 {
+
+            font-size: 58px;
+
+            line-height: 1.04;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 22px;
+
+            color: #ffffff;
+
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero h1 span {
+
+            color: #ff6b00;
+        }
+
+
+        /* =========================================
+           HERO DESCRIPTION
+        ========================================= */
+
+        .hero p {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #f2f2f2;
+
+            max-width: 590px;
+
+            margin-bottom: 32px;
+
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =========================================
+           EXPLORE BUTTON
+        ========================================= */
+
+        .explore {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            padding: 14px 28px;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            transition:
+                background 0.3s ease,
+                border 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .explore:hover {
+
+            background: #ffffff;
+
+            color: #000000;
+
+            border-color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+        ========================================= */
+
+        .section {
+
+            padding: 85px 8%;
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           SECTION TITLE
+        ========================================= */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           COLLEGE SECTION
+        ========================================= */
+
+        .college-section {
+
+            background: #f5f5f5;
+        }
+
+        .college-content {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .college-content h3 {
+
+            font-size: 27px;
+
+            margin-bottom: 18px;
+
+            color: #222222;
+        }
+
+        .college-content p {
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           IWS SECTION
+        ========================================= */
+
+        .iws-content {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 65px;
+        }
+
+        .iws-text {
+
+            flex: 1;
+        }
+
+        .iws-text h3 {
+
+            font-size: 28px;
+
+            line-height: 1.3;
+
+            margin-bottom: 20px;
+
+            color: #222222;
+        }
+
+        .iws-text p {
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #555555;
+
+            margin-bottom: 16px;
+        }
+
+
+        /* =========================================
+           IWS INFORMATION BOX
+        ========================================= */
+
+        .iws-box {
+
+            width: 290px;
+
+            padding: 32px;
+
+            background: #f5f5f5;
+
+            border-left: 5px solid #ff6b00;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+            flex-shrink: 0;
+        }
+
+        .iws-box h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+
+            color: #222222;
+        }
+
+        .iws-box p {
+
+            color: #555555;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           FOOTER
+           ORIGINAL FOOTER PRESERVED
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+            .hero {
+
+                left: 6%;
+
+                max-width: 650px;
+            }
+
+            .hero h1 {
+
+                font-size: 50px;
+            }
+        }
+
+
+        /* =========================================
+           TABLET / SMALL LAPTOP
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                position: absolute;
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+            .hero {
+
+                left: 25px;
+
+                right: 25px;
+
+                max-width: none;
+
+                top: 57%;
+            }
+
+            .hero h1 {
+
+                font-size: 45px;
+            }
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+            .iws-content {
+
+                flex-direction: column;
+
+                gap: 35px;
+            }
+
+            .iws-box {
+
+                width: 100%;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+            .contact {
+
+                padding: 8px 11px !important;
+            }
+
+            .hero {
+
+                left: 20px;
+
+                right: 20px;
+
+                top: 58%;
+            }
+
+            .hero h4 {
+
+                font-size: 12px;
+
+                letter-spacing: 2.5px;
+
+                margin-bottom: 13px;
+            }
+
+            .hero h1 {
+
+                font-size: 34px;
+
+                line-height: 1.08;
+
+                letter-spacing: 0;
+            }
+
+            .hero p {
+
+                font-size: 14px;
+
+                line-height: 1.6;
+
+                margin-bottom: 24px;
+            }
+
+            .explore {
+
+                padding: 11px 20px;
+
+                font-size: 13px;
+            }
+
+            .section {
+
+                padding: 60px 25px;
+            }
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+            .college-content h3 {
+
+                font-size: 23px;
+            }
+
+            .college-content p {
+
+                font-size: 15px;
+            }
+
+            .iws-text h3 {
+
+                font-size: 24px;
+            }
+
+            .iws-text p {
+
+                font-size: 15px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+            .hero h1 {
+
+                font-size: 29px;
+            }
+
+            .hero p {
+
+                font-size: 13px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HOME PAGE
+    ========================================= -->
+
+    <section class="home">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================= -->
+
+        <header>
+
+
+            <!-- IWS LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="iws_image1.jpeg"
+                    alt="IWS LOGO"
+                >
+
+                <div class="logo-text">
+
+                    <h2>IWS</h2>
+
+                    <p>
+                        INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- =========================================
+                 NAVIGATION
+            ========================================= -->
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            ABOUT US
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faculty.html">
+                            FACULTY COORDINATORS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="members.html">
+                            MEMBERS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="why-iws.html">
+                            WHY IWS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            EVENTS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="contact">
+                            CONTACT US
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+
+        <!-- =========================================
+             HERO CONTENT
+        ========================================= -->
+
+        <div class="hero">
+
+            <h4>
+                JOIN • LEARN • INNOVATE
+            </h4>
+
+            <h1>
+
+                INDIAN
+
+                <br>
+
+                <span>WELDING</span>
+
+                <br>
+
+                SOCIETY - KEC STUDENT FORUM
+
+            </h1>
+
+            <p>
+
+                A PLATFORM FOR STUDENTS TO LEARN,
+                INNOVATE AND EXPLORE THE WORLD OF
+                WELDING TECHNOLOGY.
+
+            </p>
+
+            <a
+                href="#about"
+                class="explore"
+            >
+                EXPLORE IWS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABOUT INSTITUTION
+    ========================================= -->
+
+    <section
+        class="section college-section"
+        id="about"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                ABOUT THE INSTITUTION
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="college-content">
+
+            <h3>
+                KONGU ENGINEERING COLLEGE
+            </h3>
+
+            <p>
+
+                KONGU ENGINEERING COLLEGE IS THE INSTITUTION
+                ASSOCIATED WITH THE IWS SOCIETY. THIS WEBSITE
+                PROVIDES INFORMATION ABOUT THE INDIAN WELDING
+                SOCIETY, ITS ACTIVITIES, MEMBERS, FACULTY
+                COORDINATORS AND EVENTS.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABOUT IWS
+    ========================================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                ABOUT IWS
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="iws-content">
+
+
+            <div class="iws-text">
+
+                <h3>
+                    INDIAN WELDING SOCIETY -
+                    KEC STUDENT FORUM
+                </h3>
+
+                <p>
+
+                    IWS PROVIDES A PLATFORM FOR STUDENTS
+                    INTERESTED IN WELDING AND RELATED
+                    TECHNOLOGIES TO LEARN, EXPLORE AND
+                    DEVELOP THEIR TECHNICAL INTERESTS.
+
+                </p>
+
+                <p>
+
+                    THE SOCIETY PROVIDES OPPORTUNITIES TO
+                    PARTICIPATE IN TECHNICAL ACTIVITIES AND
+                    EVENTS RELATED TO WELDING.
+
+                </p>
+
+            </div>
+
+
+            <div class="iws-box">
+
+                <h3>
+                    IWS
+                </h3>
+
+                <p>
+
+                    LEARN, EXPLORE AND PARTICIPATE IN
+                    ACTIVITIES RELATED TO WELDING
+                    TECHNOLOGY.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+            IWS | INDIAN WELDING SOCIETY
+        </h3>
+
+        <p>
+            KEC STUDENT FORUM
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

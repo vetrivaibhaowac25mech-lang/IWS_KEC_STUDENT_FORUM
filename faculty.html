@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FACULTY COORDINATORS | IWS</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HEADER
+           SAME AS HOME PAGE
+        ========================================= */
+
+        header {
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+           SAME BORDER STYLE AS HOME PAGE
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE PAGE
+        ========================================= */
+
+        nav ul li a.active {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            box-shadow:
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           CONTACT US
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow:
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
+        }
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .banner {
+
+            min-height: 300px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.60),
+                    rgba(0, 0, 0, 0.60)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .banner h1 {
+
+            font-size: 50px;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 3px 12px
+                rgba(0, 0, 0, 0.45);
+        }
+
+        .banner p {
+
+            color: #eeeeee;
+
+            font-size: 16px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           FACULTY SECTION
+        ========================================= */
+
+        .faculty-section {
+
+            padding: 80px 8% 90px;
+
+            text-align: center;
+
+            background: #ffffff;
+        }
+
+        .faculty-section h2 {
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+
+        /* =========================================
+           ORANGE LINE
+        ========================================= */
+
+        .orange-line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: 0 auto 48px;
+        }
+
+
+        /* =========================================
+           FACULTY CONTAINER
+        ========================================= */
+
+        .faculty-container {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 35px;
+        }
+
+
+        /* =========================================
+           FACULTY CARD
+        ========================================= */
+
+        .faculty-card {
+
+            background: #ffffff;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            border: 1px solid #eeeeee;
+
+            border-top: 4px solid #ff6b00;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.10);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(0, 0, 0, 0.16);
+        }
+
+
+        /* =========================================
+           FACULTY IMAGE
+        ========================================= */
+
+        .faculty-image {
+
+            width: 100%;
+
+            height: 400px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f5f5f5;
+
+            overflow: hidden;
+
+            padding: 10px;
+        }
+
+        .faculty-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            display: block;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+        .faculty-card:hover
+        .faculty-image img {
+
+            transform: scale(1.02);
+        }
+
+
+        /* =========================================
+           FACULTY DETAILS
+        ========================================= */
+
+        .faculty-info {
+
+            padding: 28px 25px 30px;
+
+            text-align: center;
+        }
+
+        .faculty-info h3 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 8px;
+        }
+
+        .faculty-role {
+
+            color: #ff6b00;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .faculty-info p {
+
+            color: #666666;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================================
+           FOOTER
+           SAME AS HOME PAGE
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 0;
+        }
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+        }
+
+
+        /* =========================================
+           TABLET / SMALL LAPTOP
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+            .faculty-container {
+
+                grid-template-columns: 1fr;
+
+                max-width: 550px;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+            .contact {
+
+                padding: 8px 11px !important;
+            }
+
+            .banner {
+
+                min-height: 250px;
+            }
+
+            .banner h1 {
+
+                font-size: 36px;
+            }
+
+            .banner p {
+
+                font-size: 13px;
+            }
+
+            .faculty-section {
+
+                padding: 60px 25px 70px;
+            }
+
+            .faculty-section h2 {
+
+                font-size: 28px;
+            }
+
+            .orange-line {
+
+                margin-bottom: 35px;
+            }
+
+            .faculty-image {
+
+                height: 350px;
+
+                padding: 8px;
+            }
+
+            .faculty-info {
+
+                padding: 25px 20px;
+            }
+
+            .faculty-info h3 {
+
+                font-size: 20px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+            .banner h1 {
+
+                font-size: 30px;
+            }
+
+            .faculty-section h2 {
+
+                font-size: 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+
+
+        <!-- IWS LOGO -->
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <img
+                src="iws_image1.jpeg"
+                alt="IWS LOGO"
+            >
+
+            <div class="logo-text">
+
+                <h2>IWS</h2>
+
+                <p>
+                    INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <ul>
+
+
+                <!-- HOME -->
+
+                <li>
+
+                    <a href="index.html">
+
+                        HOME
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li>
+
+                    <a href="about.html">
+
+                        ABOUT US
+
+                    </a>
+
+                </li>
+
+
+                <!-- FACULTY -->
+
+                <li>
+
+                    <a
+                        href="faculty.html"
+                        class="active"
+                    >
+
+                        FACULTY COORDINATORS
+
+                    </a>
+
+                </li>
+
+
+                <!-- MEMBERS -->
+
+                <li>
+
+                    <a href="members.html">
+
+                        MEMBERS
+
+                    </a>
+
+                </li>
+
+
+                <!-- WHY IWS -->
+
+                <li>
+
+                    <a href="why-iws.html">
+
+                        WHY IWS
+
+                    </a>
+
+                </li>
+
+
+                <!-- EVENTS -->
+
+                <li>
+
+                    <a href="events.html">
+
+                        EVENTS
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT US -->
+
+                <li>
+
+                    <a
+                        href="contact.html"
+                        class="contact"
+                    >
+
+                        CONTACT US
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE BANNER
+    ========================================= -->
+
+    <section class="banner">
+
+        <div>
+
+            <h1>
+
+                FACULTY COORDINATORS
+
+            </h1>
+
+            <p>
+
+                INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FACULTY COORDINATORS
+    ========================================= -->
+
+    <section class="faculty-section">
+
+
+        <h2>
+
+            OUR FACULTY COORDINATORS
+
+        </h2>
+
+
+        <div class="orange-line"></div>
+
+
+        <div class="faculty-container">
+
+
+            <!-- =========================================
+                 FACULTY COORDINATOR 01
+            ========================================= -->
+
+            <div class="faculty-card">
+
+
+                <div class="faculty-image">
+
+                    <img
+                        src="kvsatheeshkumar.502528732c1b2c73953f.webp"
+                        alt="K. V. SATHEESHKUMAR"
+                    >
+
+                </div>
+
+
+                <div class="faculty-info">
+
+                    <h3>
+
+                        K. V. SATHEESHKUMAR
+
+                    </h3>
+
+                    <div class="faculty-role">
+
+                        FACULTY COORDINATOR
+
+                    </div>
+
+                    <p>
+
+                        DEPARTMENT:
+                        MECHANICAL ENGINEERING
+
+                    </p>
+
+                    <p>
+
+                        KONGU ENGINEERING COLLEGE
+
+                    </p>
+
+                    <p>
+
+                        FACULTY COORDINATOR,
+                        INDIAN WELDING SOCIETY
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 FACULTY COORDINATOR 02
+            ========================================= -->
+
+            <div class="faculty-card">
+
+
+                <div class="faculty-image">
+
+                    <img
+                        src="bhuvaneshkumar.76800ff55c500f66a0bb.webp"
+                        alt="DR. M. BHUVANESHKUMAR"
+                    >
+
+                </div>
+
+
+                <div class="faculty-info">
+
+                    <h3>
+
+                        DR. M. BHUVANESHKUMAR
+
+                    </h3>
+
+                    <div class="faculty-role">
+
+                        FACULTY COORDINATOR
+
+                    </div>
+
+                    <p>
+
+                        DEPARTMENT:
+                        MECHANICAL ENGINEERING
+
+                    </p>
+
+                    <p>
+
+                        KONGU ENGINEERING COLLEGE
+
+                    </p>
+
+                    <p>
+
+                        FACULTY COORDINATOR,
+                        INDIAN WELDING SOCIETY
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+
+            IWS | INDIAN WELDING SOCIETY
+
+        </h3>
+
+        <p>
+
+            KEC STUDENT FORUM
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

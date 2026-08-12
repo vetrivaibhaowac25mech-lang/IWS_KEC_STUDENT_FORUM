@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Why IWS | Indian Welding Society</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .page {
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+
+            position: relative;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE WHY IWS BUTTON
+        ========================================= */
+
+        nav ul li a.active {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ff6b00;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================================
+           CONTACT BUTTON
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .banner {
+
+            min-height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.64),
+                    rgba(0, 0, 0, 0.64)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: relative;
+        }
+
+
+        .banner-content {
+
+            max-width: 850px;
+
+            padding: 30px;
+        }
+
+
+        .banner h4 {
+
+            color: #ff6b00;
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+
+            font-weight: 700;
+        }
+
+
+        .banner h1 {
+
+            font-size: 55px;
+
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+
+            font-weight: 800;
+
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .banner h1 span {
+
+            color: #ff6b00;
+        }
+
+
+        .banner p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            color: #eeeeee;
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+        ========================================= */
+
+        .section {
+
+            padding: 85px 8%;
+
+            background: #ffffff;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           INTRO STORY
+        ========================================= */
+
+        .story {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .story h3 {
+
+            font-size: 29px;
+
+            line-height: 1.4;
+
+            margin-bottom: 22px;
+
+            color: #222222;
+        }
+
+
+        .story h3 span {
+
+            color: #ff6b00;
+        }
+
+
+        .story p {
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            color: #555555;
+
+            margin-bottom: 16px;
+        }
+
+
+        /* =========================================
+           SLOGAN
+        ========================================= */
+
+        .slogan-section {
+
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 70px 8%;
+        }
+
+
+        .slogan {
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+
+        .slogan h2 {
+
+            font-size: 38px;
+
+            line-height: 1.3;
+
+            color: #ffffff;
+
+            margin-bottom: 18px;
+        }
+
+
+        .slogan h2 span {
+
+            color: #ff6b00;
+        }
+
+
+        .slogan p {
+
+            font-size: 16px;
+
+            color: #cccccc;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           WHY CARDS
+        ========================================= */
+
+        .why-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+
+        .why-card {
+
+            background: #f5f5f5;
+
+            padding: 35px 28px;
+
+            border-top: 4px solid #ff6b00;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .why-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.14);
+        }
+
+
+        .number {
+
+            font-size: 34px;
+
+            font-weight: 800;
+
+            color: #ff6b00;
+
+            margin-bottom: 15px;
+        }
+
+
+        .why-card h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 14px;
+
+            color: #222222;
+        }
+
+
+        .why-card p {
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           JOURNEY SECTION
+        ========================================= */
+
+        .journey-section {
+
+            background: #f5f5f5;
+        }
+
+
+        .journey {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: stretch;
+
+            gap: 0;
+        }
+
+
+        .journey-item {
+
+            flex: 1;
+
+            background: #ffffff;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border-right: 1px solid #dddddd;
+
+            position: relative;
+        }
+
+
+        .journey-item:last-child {
+
+            border-right: none;
+        }
+
+
+        .journey-item::after {
+
+            content: "→";
+
+            position: absolute;
+
+            right: -14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 28px;
+
+            height: 28px;
+
+            line-height: 25px;
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-radius: 50%;
+
+            font-weight: bold;
+
+            z-index: 2;
+        }
+
+
+        .journey-item:last-child::after {
+
+            display: none;
+        }
+
+
+        .journey-item span {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            color: #ff6b00;
+
+            margin-bottom: 12px;
+        }
+
+
+        .journey-item h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+            color: #222222;
+        }
+
+
+        .journey-item p {
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #666666;
+        }
+
+
+        /* =========================================
+           STUDENT STORY
+        ========================================= */
+
+        .student-story {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+
+        .story-box {
+
+            flex: 1;
+
+            padding: 40px;
+
+            background: #111111;
+
+            color: #ffffff;
+
+            border-left: 6px solid #ff6b00;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .story-box h3 {
+
+            font-size: 26px;
+
+            margin-bottom: 18px;
+
+            line-height: 1.4;
+        }
+
+
+        .story-box h3 span {
+
+            color: #ff6b00;
+        }
+
+
+        .story-box p {
+
+            color: #cccccc;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        .story-text {
+
+            flex: 1;
+        }
+
+
+        .story-text h3 {
+
+            font-size: 27px;
+
+            margin-bottom: 18px;
+
+            color: #222222;
+        }
+
+
+        .story-text p {
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            color: #555555;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           FINAL MESSAGE
+        ========================================= */
+
+        .final-section {
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.78),
+                    rgba(0, 0, 0, 0.78)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            padding: 90px 8%;
+        }
+
+
+        .final-content {
+
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+
+        .final-content h2 {
+
+            font-size: 42px;
+
+            line-height: 1.3;
+
+            margin-bottom: 20px;
+        }
+
+
+        .final-content h2 span {
+
+            color: #ff6b00;
+        }
+
+
+        .final-content p {
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #dddddd;
+
+            margin-bottom: 30px;
+        }
+
+
+        .join-button {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            padding: 14px 30px;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .join-button:hover {
+
+            background: #ffffff;
+
+            color: #000000;
+
+            border-color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+            .why-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .banner h1 {
+
+                font-size: 48px;
+            }
+        }
+
+
+        /* =========================================
+           SMALL LAPTOP / TABLET
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                position: relative;
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+
+            .banner {
+
+                min-height: 300px;
+            }
+
+
+            .student-story {
+
+                flex-direction: column;
+
+                gap: 35px;
+            }
+
+
+            .story-box,
+            .story-text {
+
+                width: 100%;
+            }
+
+
+            .journey {
+
+                flex-direction: column;
+            }
+
+
+            .journey-item {
+
+                border-right: none;
+
+                border-bottom: 1px solid #dddddd;
+            }
+
+
+            .journey-item:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .journey-item::after {
+
+                content: "↓";
+
+                right: 50%;
+
+                top: auto;
+
+                bottom: -14px;
+
+                transform: translateX(50%);
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+
+            .contact {
+
+                padding: 8px 11px !important;
+            }
+
+
+            .banner {
+
+                min-height: 270px;
+            }
+
+
+            .banner-content {
+
+                padding: 25px 20px;
+            }
+
+
+            .banner h4 {
+
+                font-size: 11px;
+
+                letter-spacing: 2.5px;
+            }
+
+
+            .banner h1 {
+
+                font-size: 34px;
+            }
+
+
+            .banner p {
+
+                font-size: 14px;
+
+                line-height: 1.6;
+            }
+
+
+            .section {
+
+                padding: 60px 25px;
+            }
+
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+
+            .story h3 {
+
+                font-size: 23px;
+            }
+
+
+            .story p {
+
+                font-size: 14px;
+            }
+
+
+            .slogan-section {
+
+                padding: 60px 25px;
+            }
+
+
+            .slogan h2 {
+
+                font-size: 29px;
+            }
+
+
+            .slogan p {
+
+                font-size: 14px;
+            }
+
+
+            .why-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .why-card {
+
+                padding: 30px 24px;
+            }
+
+
+            .story-box {
+
+                padding: 30px 25px;
+            }
+
+
+            .story-box h3 {
+
+                font-size: 23px;
+            }
+
+
+            .story-text h3 {
+
+                font-size: 23px;
+            }
+
+
+            .final-section {
+
+                padding: 70px 25px;
+            }
+
+
+            .final-content h2 {
+
+                font-size: 30px;
+            }
+
+
+            .final-content p {
+
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+
+            .banner h1 {
+
+                font-size: 29px;
+            }
+
+
+            .slogan h2 {
+
+                font-size: 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================= -->
+
+        <header>
+
+
+            <!-- IWS LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="iws_image1.jpeg"
+                    alt="IWS LOGO"
+                >
+
+                <div class="logo-text">
+
+                    <h2>IWS</h2>
+
+                    <p>
+                        INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- =========================================
+                 NAVIGATION
+            ========================================= -->
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            ABOUT US
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faculty.html">
+                            FACULTY COORDINATORS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="members.html">
+                            MEMBERS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="why-iws.html"
+                            class="active"
+                        >
+                            WHY IWS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            EVENTS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="contact"
+                        >
+                            CONTACT US
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+
+        <!-- =========================================
+             PAGE BANNER
+        ========================================= -->
+
+        <section class="banner">
+
+            <div class="banner-content">
+
+                <h4>
+                    WHY CHOOSE IWS?
+                </h4>
+
+                <h1>
+                    WHY <span>IWS?</span>
+                </h1>
+
+                <p>
+                    WHERE CURIOSITY BECOMES SKILL,
+                    IDEAS BECOME INNOVATION,
+                    AND STUDENTS BECOME FUTURE ENGINEERS.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>
+                    MORE THAN A SOCIETY
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="story">
+
+                <h3>
+                    EVERY GREAT ENGINEER
+                    <span>STARTS WITH A SPARK.</span>
+                </h3>
+
+                <p>
+
+                    SOMETIMES THAT SPARK IS A QUESTION.
+                    SOMETIMES IT IS A FAILURE.
+                    SOMETIMES IT IS A SIMPLE CURIOSITY
+                    ABOUT HOW SOMETHING WORKS.
+
+                </p>
+
+                <p>
+
+                    IWS IS A PLATFORM WHERE THAT CURIOSITY
+                    CAN GROW INTO KNOWLEDGE, EXPERIENCE,
+                    CONFIDENCE AND INNOVATION.
+
+                </p>
+
+                <p>
+
+                    WE BRING STUDENTS TOGETHER TO LEARN,
+                    EXPLORE WELDING TECHNOLOGY AND
+                    EXPERIENCE THE REAL WORLD OF ENGINEERING.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SLOGAN
+        ========================================= -->
+
+        <section class="slogan-section">
+
+            <div class="slogan">
+
+                <h2>
+
+                    <span>LEARN.</span>
+                    CREATE.
+                    <span>WELD.</span>
+                    LEAD.
+
+                </h2>
+
+                <p>
+
+                    WELDING CONNECTS MATERIALS.
+                    IWS CONNECTS PEOPLE, IDEAS AND OPPORTUNITIES.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             WHY IWS CARDS
+        ========================================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>
+                    WHY SHOULD YOU JOIN IWS?
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <!-- CARD 01 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <h3>
+                        LEARN BEYOND THE CLASSROOM
+                    </h3>
+
+                    <p>
+
+                        CLASSROOMS GIVE YOU THE FOUNDATION.
+                        IWS GIVES YOU OPPORTUNITIES TO EXPLORE
+                        WELDING TECHNOLOGY THROUGH ACTIVITIES,
+                        DISCUSSIONS AND PRACTICAL EXPERIENCES.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 02 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        02
+                    </div>
+
+                    <h3>
+                        TURN IDEAS INTO ACTION
+                    </h3>
+
+                    <p>
+
+                        HAVE AN IDEA?
+
+                        IWS ENCOURAGES STUDENTS TO DISCUSS,
+                        DEVELOP AND EXPLORE THEIR IDEAS
+                        THROUGH TECHNICAL ACTIVITIES AND
+                        INNOVATIVE PROJECTS.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 03 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        03
+                    </div>
+
+                    <h3>
+                        BUILD REAL SKILLS
+                    </h3>
+
+                    <p>
+
+                        ENGINEERING IS NOT ONLY ABOUT MARKS.
+                        IT IS ABOUT PROBLEM SOLVING,
+                        TEAMWORK, COMMUNICATION AND
+                        THE CONFIDENCE TO BUILD SOMETHING.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 04 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        04
+                    </div>
+
+                    <h3>
+                        EXPERIENCE TEAMWORK
+                    </h3>
+
+                    <p>
+
+                        GREAT ENGINEERING IS NEVER BUILT
+                        ALONE. IWS BRINGS STUDENTS TOGETHER
+                        TO PLAN, CREATE, PARTICIPATE AND
+                        LEARN FROM EACH OTHER.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 05 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        05
+                    </div>
+
+                    <h3>
+                        DISCOVER OPPORTUNITIES
+                    </h3>
+
+                    <p>
+
+                        PARTICIPATION IN TECHNICAL EVENTS,
+                        ACTIVITIES AND SOCIETY PROGRAMMES
+                        CAN HELP STUDENTS DISCOVER NEW
+                        INTERESTS AND POSSIBILITIES.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 06 -->
+
+                <div class="why-card">
+
+                    <div class="number">
+                        06
+                    </div>
+
+                    <h3>
+                        GROW AS AN ENGINEER
+                    </h3>
+
+                    <p>
+
+                        EVERY EVENT, EVERY DISCUSSION AND
+                        EVERY EXPERIENCE CAN ADD SOMETHING
+                        NEW TO YOUR ENGINEERING JOURNEY.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             JOURNEY
+        ========================================= -->
+
+        <section class="section journey-section">
+
+            <div class="section-title">
+
+                <h2>
+                    YOUR IWS JOURNEY
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="journey">
+
+
+                <div class="journey-item">
+
+                    <span>STEP 01</span>
+
+                    <h3>
+                        DISCOVER
+                    </h3>
+
+                    <p>
+                        FIND YOUR INTEREST IN WELDING
+                        AND ENGINEERING TECHNOLOGY.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-item">
+
+                    <span>STEP 02</span>
+
+                    <h3>
+                        LEARN
+                    </h3>
+
+                    <p>
+                        EXPLORE KNOWLEDGE BEYOND
+                        THE REGULAR CLASSROOM.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-item">
+
+                    <span>STEP 03</span>
+
+                    <h3>
+                        PARTICIPATE
+                    </h3>
+
+                    <p>
+                        TAKE PART IN ACTIVITIES,
+                        EVENTS AND TECHNICAL EXPERIENCES.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-item">
+
+                    <span>STEP 04</span>
+
+                    <h3>
+                        CREATE
+                    </h3>
+
+                    <p>
+                        TURN KNOWLEDGE AND IDEAS
+                        INTO SOMETHING MEANINGFUL.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-item">
+
+                    <span>STEP 05</span>
+
+                    <h3>
+                        LEAD
+                    </h3>
+
+                    <p>
+                        DEVELOP THE CONFIDENCE TO
+                        LEAD FUTURE ENGINEERING TEAMS.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STUDENT STORY
+        ========================================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <h2>
+                    THE STORY BEHIND IWS
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="student-story">
+
+
+                <div class="story-box">
+
+                    <h3>
+
+                        FROM
+
+                        <span>
+                            "I DON'T KNOW"
+                        </span>
+
+                        TO
+
+                        <span>
+                            "LET ME TRY."
+                        </span>
+
+                    </h3>
+
+                    <p>
+
+                        ENGINEERING JOURNEY BEGINS WITH
+                        QUESTIONS. IWS CREATES A SPACE
+                        WHERE STUDENTS CAN ASK QUESTIONS,
+                        MAKE MISTAKES, TRY AGAIN AND
+                        CONTINUE LEARNING.
+
+                    </p>
+
+                </div>
+
+
+                <div class="story-text">
+
+                    <h3>
+                        EVERY EXPERIENCE MATTERS
+                    </h3>
+
+                    <p>
+
+                        A STUDENT MAY JOIN IWS WITH ONLY
+                        A BASIC INTEREST IN WELDING.
+
+                        OVER TIME, THAT INTEREST CAN DEVELOP
+                        INTO TECHNICAL KNOWLEDGE, TEAMWORK,
+                        LEADERSHIP AND A DEEPER UNDERSTANDING
+                        OF ENGINEERING.
+
+                    </p>
+
+                    <p>
+
+                        THE GOAL IS NOT SIMPLY TO PARTICIPATE.
+
+                        THE GOAL IS TO LEAVE EVERY EXPERIENCE
+                        WITH SOMETHING NEW TO LEARN.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FINAL MESSAGE
+        ========================================= -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <h2>
+
+                    DON'T JUST
+
+                    <span>
+                        WATCH
+                    </span>
+
+                    ENGINEERING.
+
+                    <br>
+
+                    BE PART OF IT.
+
+                </h2>
+
+
+                <p>
+
+                    JOIN THE IWS JOURNEY.
+
+                    LEARN SOMETHING NEW.
+                    MEET PEOPLE.
+                    BUILD IDEAS.
+                    TAKE PART.
+                    AND CREATE YOUR OWN ENGINEERING STORY.
+
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="join-button"
+                >
+
+                    CONNECT WITH IWS
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================= -->
+
+        <footer>
+
+            <h3>
+                IWS | INDIAN WELDING SOCIETY
+            </h3>
+
+            <p>
+                KEC STUDENT FORUM
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

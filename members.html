@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Members | IWS - KEC Student Forum</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HEADER
+           EXACTLY SAME AS HOME PAGE
+        ========================================= */
+
+        header {
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+           SAME AS HOME PAGE
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+           SAME AS HOME PAGE
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE MEMBERS BUTTON
+        ========================================= */
+
+        nav ul li a.active {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           CONTACT US BUTTON
+           SAME AS HOME PAGE
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .banner {
+
+            height: 320px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.62),
+                    rgba(0, 0, 0, 0.62)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            position: relative;
+        }
+
+
+        .banner-content {
+
+            margin-top: 10px;
+        }
+
+
+        .banner h4 {
+
+            color: #ff6b00;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .banner h1 {
+
+            font-size: 50px;
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .banner p {
+
+            color: #eeeeee;
+
+            font-size: 16px;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+           MEMBERS SECTION
+        ========================================= */
+
+        .members-section {
+
+            padding: 85px 8%;
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           SECTION TITLE
+        ========================================= */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 48px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           MEMBERS GRID
+        ========================================= */
+
+        .members-grid {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* =========================================
+           MEMBER CARD
+        ========================================= */
+
+        .member-card {
+
+            background: #ffffff;
+
+            border-radius: 6px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            border: 1px solid #eeeeee;
+        }
+
+
+        .member-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           MEMBER IMAGE
+        ========================================= */
+
+        .member-image {
+
+            width: 100%;
+
+            height: 300px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            background: #f5f5f5;
+        }
+
+
+        .member-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            display: block;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        .member-card:hover .member-image img {
+
+            transform: scale(1.03);
+        }
+
+
+        /* =========================================
+           MEMBER INFORMATION
+        ========================================= */
+
+        .member-info {
+
+            padding: 22px 18px 25px;
+
+            min-height: 150px;
+        }
+
+
+        .member-info h3 {
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin-bottom: 9px;
+
+            color: #222222;
+        }
+
+
+        .member-role {
+
+            color: #ff6b00;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 11px;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .member-info p {
+
+            color: #555555;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================================
+           FOOTER
+           SAME AS HOME PAGE
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+
+            .members-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+        }
+
+
+        /* =========================================
+           TABLET / SMALL LAPTOP
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+
+            .banner {
+
+                height: 300px;
+            }
+
+
+            .banner h1 {
+
+                font-size: 45px;
+            }
+
+
+            .members-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 25px;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+
+            .contact {
+
+                padding: 8px 11px !important;
+            }
+
+
+            .banner {
+
+                height: 260px;
+            }
+
+
+            .banner-content {
+
+                padding: 0 20px;
+            }
+
+
+            .banner h4 {
+
+                font-size: 11px;
+
+                letter-spacing: 2.5px;
+
+                margin-bottom: 12px;
+            }
+
+
+            .banner h1 {
+
+                font-size: 34px;
+
+                line-height: 1.08;
+
+                letter-spacing: 0;
+            }
+
+
+            .banner p {
+
+                font-size: 13px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .members-section {
+
+                padding: 60px 25px;
+            }
+
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+
+            .members-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+            }
+
+
+            .member-image {
+
+                height: 320px;
+            }
+
+
+            .member-info h3 {
+
+                font-size: 19px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+
+            .banner h1 {
+
+                font-size: 29px;
+            }
+
+
+            .banner p {
+
+                font-size: 12px;
+            }
+
+
+            .member-image {
+
+                height: 300px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+         SAME AS HOME PAGE
+    ========================================= -->
+
+    <header>
+
+
+        <!-- IWS LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="iws_image1.jpeg"
+                alt="IWS LOGO"
+            >
+
+            <div class="logo-text">
+
+                <h2>IWS</h2>
+
+                <p>
+                    INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        HOME
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="about.html">
+                        ABOUT US
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="faculty.html">
+                        FACULTY COORDINATORS
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="members.html"
+                        class="active"
+                    >
+                        MEMBERS
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="why-iws.html">
+                        WHY IWS
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="events.html">
+                        EVENTS
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="contact"
+                    >
+                        CONTACT US
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PAGE BANNER
+    ========================================= -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h4>
+                IWS • KEC STUDENT FORUM
+            </h4>
+
+            <h1>
+                OUR MEMBERS
+            </h1>
+
+            <p>
+                INDIAN WELDING SOCIETY
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MEMBERS SECTION
+    ========================================= -->
+
+    <section class="members-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                IWS MEMBERS
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             MEMBERS GRID
+        ========================================= -->
+
+        <div class="members-grid">
+
+
+            <!-- ================= MEMBER 01 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="1.jpg"
+                        alt="SARAVANAKARTHIK S R"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        SARAVANAKARTHIK S R
+                    </h3>
+
+                    <div class="member-role">
+                        SECRETARY
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 02 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="5.jpg"
+                        alt="HARRISH T M"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        HARRISH T M
+                    </h3>
+
+                    <div class="member-role">
+                        TREASURER
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 03 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="4 (2).jpeg"
+                        alt="DHIYANASREE K K"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        DHIYANASREE K K
+                    </h3>
+
+                    <div class="member-role">
+                        JOINT SECRETARY
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 04 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="8.png"
+                        alt="RANJITH KUMAR P"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        RANJITH KUMAR P
+                    </h3>
+
+                    <div class="member-role">
+                        JOINT TREASURER
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 05 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="9.png"
+                        alt="SADAAGOPAAN T R"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        SADAAGOPAAN T R
+                    </h3>
+
+                    <div class="member-role">
+                        ADDITIONAL SECRETARY
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 06 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="10 (2).png"
+                        alt="MONESHWARAN C"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        MONESHWARAN C
+                    </h3>
+
+                    <div class="member-role">
+                        DOCUMENTATION TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 07 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="11.jpg"
+                        alt="KOWSIKA K"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        KOWSIKA K
+                    </h3>
+
+                    <div class="member-role">
+                        DOCUMENTATION TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 08 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="12.jpg"
+                        alt="JESLIN JEBAVINCY S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        JESLIN JEBAVINCY S
+                    </h3>
+
+                    <div class="member-role">
+                        DOCUMENTATION TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 09 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="27.jpeg"
+                        alt="KISHORE S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        KISHORE S
+                    </h3>
+
+                    <div class="member-role">
+                        DOCUMENTATION TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 10 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="26.jpeg"
+                        alt="MUKHESH B N"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        MUKHESH B N
+                    </h3>
+
+                    <div class="member-role">
+                        DOCUMENTATION TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 11 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="7.jpg"
+                        alt="JOGINDER S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        JOGINDER S
+                    </h3>
+
+                    <div class="member-role">
+                        MEDIA TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 12 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="3.jpg"
+                        alt="KAVIN KUMARAN S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        KAVIN KUMARAN S
+                    </h3>
+
+                    <div class="member-role">
+                        MEDIA TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 13 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="13.png"
+                        alt="HARISH DHARMALINGAM"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        HARISH DHARMALINGAM
+                    </h3>
+
+                    <div class="member-role">
+                        MEDIA TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 14 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="14.jpg"
+                        alt="AJEEKA B"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        AJEEKA B
+                    </h3>
+
+                    <div class="member-role">
+                        MEDIA TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 15 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="15.jpg"
+                        alt="SIVA S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        SIVA S
+                    </h3>
+
+                    <div class="member-role">
+                        MEDIA TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 16 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="6.jpg"
+                        alt="HEMAVARSHINI S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        HEMAVARSHINI S
+                    </h3>
+
+                    <div class="member-role">
+                        CREATIVE CREW
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 17 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="member17.jpg"
+                        alt="MEMBER 17"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        MEMBER NAME 17
+                    </h3>
+
+                    <div class="member-role">
+                        EXECUTIVE MEMBER
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 18 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="16.jpg"
+                        alt="SUJITHA S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        SUJITHA S
+                    </h3>
+
+                    <div class="member-role">
+                        CREATIVE CREW
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 19 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="19.jpg"
+                        alt="SUJASRI B N"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        SUJASRI B N
+                    </h3>
+
+                    <div class="member-role">
+                        CREATIVE CREW
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 20 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="17.png"
+                        alt="MADHANAGOPAL S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        MADHANAGOPAL S
+                    </h3>
+
+                    <div class="member-role">
+                        CREATIVE CREW
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 21 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="21.jpg"
+                        alt="VENKATRAMANAN B"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        VENKATRAMANAN B
+                    </h3>
+
+                    <div class="member-role">
+                        EVENT MANAGEMENT TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 22 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="22.jpg"
+                        alt="JEEVA T"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        JEEVA T
+                    </h3>
+
+                    <div class="member-role">
+                        EVENT MANAGEMENT TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 3RD YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 23 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="19 - 1.jpeg"
+                        alt="VETRIVAIBHAOW A C"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        VETRIVAIBHAOW A C
+                    </h3>
+
+                    <div class="member-role">
+                        EVENT MANAGEMENT TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 24 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="24.jpg"
+                        alt="NIKHIL M"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        NIKHIL M
+                    </h3>
+
+                    <div class="member-role">
+                        EVENT MANAGEMENT TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MEMBER 25 ================= -->
+
+            <div class="member-card">
+
+                <div class="member-image">
+
+                    <img
+                        src="25.jpeg"
+                        alt="DARUN BALAJI S"
+                    >
+
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        DARUN BALAJI S
+                    </h3>
+
+                    <div class="member-role">
+                        EVENT MANAGEMENT TEAM
+                    </div>
+
+                    <p>
+                        DEPARTMENT: MECHANICAL ENGINEERING
+                    </p>
+
+                    <p>
+                        YEAR: 2ND YEAR
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+            IWS | INDIAN WELDING SOCIETY
+        </h3>
+
+        <p>
+            KEC STUDENT FORUM
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABOUT US | IWS</title>
+
+    <style>
+
+        /* =========================================
+           BASIC SETTINGS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+
+        /* =========================================
+           HEADER — SAME AS HOME PAGE
+        ========================================= */
+
+        header {
+
+            width: 100%;
+            min-height: 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+        /* =========================================
+           IWS LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            flex-shrink: 0;
+        }
+
+        .logo img {
+
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            margin-right: 12px;
+        }
+
+        .logo-text h2 {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
+            color: #000000;
+        }
+
+        .logo-text p {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: #000000;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           NAVIGATION — SAME AS HOME PAGE
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 8px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            white-space: nowrap;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =========================================
+           NAVIGATION HOVER
+        ========================================= */
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE PAGE
+        ========================================= */
+
+        nav ul li a.active {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ffffff;
+
+            box-shadow:
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           CONTACT US BUTTON
+        ========================================= */
+
+        .join {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ffffff !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow:
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
+        }
+
+        .join:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #ffffff !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE BANNER
+        ========================================= */
+
+        .page-banner {
+
+            min-height: 300px;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.60),
+                    rgba(0, 0, 0, 0.60)
+                ),
+
+                url("iws_image2 - Copy.avif");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #ffffff;
+        }
+
+
+        .page-banner h1 {
+
+            font-size: 48px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .page-banner p {
+
+            font-size: 16px;
+
+            color: #eeeeee;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+        ========================================= */
+
+        .section {
+
+            padding: 85px 8%;
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           SECTION TITLE
+        ========================================= */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 48px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            font-weight: 700;
+
+            color: #222222;
+
+            margin-bottom: 14px;
+        }
+
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: #ff6b00;
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           ABOUT CONTENT
+        ========================================= */
+
+        .about-content {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .about-content h3 {
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+            color: #222222;
+        }
+
+
+        .about-content p {
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #555555;
+
+            margin-bottom: 16px;
+        }
+
+
+        /* =========================================
+           IMAGE SLIDER SECTION
+        ========================================= */
+
+        .gallery-section {
+
+            background: #f5f5f5;
+        }
+
+
+        .slider-container {
+
+            max-width: 1000px;
+
+            height: 500px;
+
+            margin: auto;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.15);
+
+            background: #111111;
+        }
+
+
+        /* =========================================
+           SLIDE
+        ========================================= */
+
+        .slide {
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            top: 0;
+
+            left: 100%;
+
+            opacity: 0;
+
+            transition:
+                left 0.8s ease-in-out,
+                opacity 0.8s ease-in-out;
+        }
+
+
+        .slide.active {
+
+            left: 0;
+
+            opacity: 1;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           SLIDE IMAGE
+        ========================================= */
+
+        .slide img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =========================================
+           SLIDE CAPTION
+        ========================================= */
+
+        .slide-caption {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.88)
+                );
+
+            color: #ffffff;
+
+            z-index: 3;
+        }
+
+
+        .slide-caption h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .slide-caption p {
+
+            font-size: 14px;
+
+            color: #eeeeee;
+
+            line-height: 1.5;
+
+            max-width: 700px;
+        }
+
+
+        /* =========================================
+           SLIDER BUTTONS
+        ========================================= */
+
+        .prev,
+        .next {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 45px;
+
+            height: 45px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 0, 0, 0.65);
+
+            color: #ffffff;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            z-index: 10;
+        }
+
+
+        .prev {
+
+            left: 20px;
+        }
+
+
+        .next {
+
+            right: 20px;
+        }
+
+
+        .prev:hover,
+        .next:hover {
+
+            background: #ff6b00;
+
+            transform:
+                translateY(-50%)
+                scale(1.05);
+        }
+
+
+        /* =========================================
+           SLIDER DOTS
+        ========================================= */
+
+        .dots {
+
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+
+        .dot {
+
+            display: inline-block;
+
+            width: 11px;
+
+            height: 11px;
+
+            margin: 0 5px;
+
+            border-radius: 50%;
+
+            background: #cccccc;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .dot:hover {
+
+            background: #999999;
+        }
+
+
+        .dot.active {
+
+            background: #ff6b00;
+
+            transform: scale(1.15);
+        }
+
+
+        /* =========================================
+           EVENTS SECTION
+        ========================================= */
+
+        .events-section {
+
+            background: #ffffff;
+        }
+
+
+        .events-intro {
+
+            max-width: 850px;
+
+            margin: 0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .events-intro p {
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           EVENT GRID
+        ========================================= */
+
+        .event-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =========================================
+           EVENT CARD
+        ========================================= */
+
+        .event-card {
+
+            background: #f5f5f5;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            border-top: 4px solid #ff6b00;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .event-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.12);
+        }
+
+
+        .event-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+            color: #222222;
+        }
+
+
+        .event-card p {
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: #666666;
+        }
+
+
+        /* =========================================
+           MESSAGE SECTION
+        ========================================= */
+
+        .message-section {
+
+            background: #f5f5f5;
+        }
+
+
+        .message {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .message h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+
+            color: #222222;
+        }
+
+
+        .message p {
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            color: #555555;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        footer h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #bbbbbb;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
+
+            header {
+
+                padding: 10px 25px;
+            }
+
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+
+            nav ul li a {
+
+                padding: 9px 10px;
+
+                font-size: 13px;
+            }
+
+
+            .event-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================
+           TABLET / SMALL LAPTOP
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+
+                height: auto;
+
+                padding: 15px 25px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav ul {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 7px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 8px 11px;
+            }
+
+
+            .slider-container {
+
+                height: 400px;
+            }
+
+
+            .event-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 12px 15px;
+            }
+
+
+            .logo img {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+
+            .logo-text h2 {
+
+                font-size: 19px;
+            }
+
+
+            .logo-text p {
+
+                font-size: 8px;
+
+                letter-spacing: 1.5px;
+            }
+
+
+            nav ul {
+
+                gap: 5px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 11px;
+
+                padding: 7px 8px;
+            }
+
+
+            .join {
+
+                padding: 8px 11px !important;
+            }
+
+
+            .page-banner {
+
+                min-height: 250px;
+            }
+
+
+            .page-banner h1 {
+
+                font-size: 36px;
+            }
+
+
+            .page-banner p {
+
+                font-size: 13px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .section {
+
+                padding: 60px 25px;
+            }
+
+
+            .section-title {
+
+                margin-bottom: 35px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 28px;
+            }
+
+
+            .about-content h3 {
+
+                font-size: 23px;
+            }
+
+
+            .about-content p {
+
+                font-size: 15px;
+            }
+
+
+            .slider-container {
+
+                height: 280px;
+            }
+
+
+            .slide-caption {
+
+                padding: 15px;
+            }
+
+
+            .slide-caption h3 {
+
+                font-size: 18px;
+            }
+
+
+            .slide-caption p {
+
+                font-size: 12px;
+            }
+
+
+            .prev,
+            .next {
+
+                width: 38px;
+
+                height: 38px;
+
+                font-size: 20px;
+            }
+
+
+            .event-card {
+
+                padding: 25px;
+            }
+
+
+            .message h2 {
+
+                font-size: 25px;
+            }
+
+
+            .message p {
+
+                font-size: 15px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            nav ul li a {
+
+                font-size: 10px;
+
+                padding: 6px 7px;
+            }
+
+
+            .page-banner h1 {
+
+                font-size: 30px;
+            }
+
+
+            .slider-container {
+
+                height: 240px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header>
+
+
+        <!-- IWS LOGO -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="iws_image1.jpeg"
+                alt="IWS LOGO"
+            >
+
+            <div class="logo-text">
+
+                <h2>IWS</h2>
+
+                <p>
+                    INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+
+                    <a href="index.html">
+                        HOME
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="about.html"
+                        class="active"
+                    >
+                        ABOUT US
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="faculty.html">
+                        FACULTY COORDINATORS
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="members.html">
+                        MEMBERS
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="why-iws.html">
+                        WHY IWS
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="events.html">
+                        EVENTS
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="contact.html"
+                        class="join"
+                    >
+                        CONTACT US
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE BANNER
+    ========================================= -->
+
+    <section class="page-banner">
+
+        <div>
+
+            <h1>
+                ABOUT US
+            </h1>
+
+            <p>
+                INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ABOUT IWS
+    ========================================= -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+            <h2>
+                ABOUT IWS
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h3>
+                INDIAN WELDING SOCIETY - KEC STUDENT FORUM
+            </h3>
+
+
+            <p>
+
+                THE IWS STUDENT FORUM PROVIDES A PLATFORM
+                FOR STUDENTS INTERESTED IN WELDING AND
+                RELATED TECHNOLOGIES TO LEARN, EXPLORE AND
+                DEVELOP THEIR TECHNICAL INTERESTS.
+
+            </p>
+
+
+            <p>
+
+                THROUGH TECHNICAL ACTIVITIES, LEARNING
+                OPPORTUNITIES AND EVENTS, THE SOCIETY
+                ENCOURAGES STUDENTS TO ENGAGE WITH WELDING
+                TECHNOLOGY AND ITS PRACTICAL APPLICATIONS.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         IWS GALLERY
+    ========================================= -->
+
+    <section class="section gallery-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                IWS GALLERY
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="slider-container">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="slide active">
+
+                <img
+                    src="DSC_0221.JPG"
+                    alt="IWS ACTIVITY"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        IWS ACTIVITIES
+                    </h3>
+
+                    <p>
+                        MOMENTS FROM ACTIVITIES AND
+                        LEARNING EXPERIENCES OF THE SOCIETY.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="slide">
+
+                <img
+                    src="DSC_0224.JPG"
+                    alt="IWS EVENT"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        TECHNICAL EVENTS
+                    </h3>
+
+                    <p>
+                        TECHNICAL ACTIVITIES PROVIDE
+                        OPPORTUNITIES FOR STUDENTS TO LEARN
+                        AND PARTICIPATE.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="slide">
+
+                <img
+                    src="DSC_0286.JPG"
+                    alt="IWS WORKSHOP"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        LEARNING TOGETHER
+                    </h3>
+
+                    <p>
+                        A SPACE FOR STUDENTS TO EXPLORE
+                        WELDING AND RELATED TECHNOLOGIES.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 4 -->
+
+            <div class="slide">
+
+                <img
+                    src="DSC_0321.JPG"
+                    alt="IWS STUDENT ACTIVITY"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        STUDENT PARTICIPATION
+                    </h3>
+
+                    <p>
+                        ENCOURAGING STUDENTS TO PARTICIPATE
+                        IN TECHNICAL ACTIVITIES AND EVENTS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 5 -->
+
+            <div class="slide">
+
+                <img
+                    src="DSC_0383.JPG"
+                    alt="IWS TECHNICAL ACTIVITY"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        TECHNICAL EXPOSURE
+                    </h3>
+
+                    <p>
+                        OPPORTUNITIES TO OBSERVE, LEARN
+                        AND DEVELOP TECHNICAL INTERESTS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 6 -->
+
+            <div class="slide">
+
+                <img
+                    src="DSC_0385.JPG"
+                    alt="IWS SOCIETY ACTIVITY"
+                >
+
+                <div class="slide-caption">
+
+                    <h3>
+                        IWS COMMUNITY
+                    </h3>
+
+                    <p>
+                        CONNECTING STUDENTS THROUGH
+                        LEARNING AND TECHNICAL ACTIVITIES.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREVIOUS BUTTON -->
+
+            <button
+                class="prev"
+                onclick="changeSlide(-1)"
+                aria-label="Previous slide"
+            >
+                &#10094;
+            </button>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="next"
+                onclick="changeSlide(1)"
+                aria-label="Next slide"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="dots">
+
+            <span
+                class="dot active"
+                onclick="currentSlide(1)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(2)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(3)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(4)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(5)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(6)"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EVENTS & ACTIVITIES
+    ========================================= -->
+
+    <section class="section events-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                EVENTS & ACTIVITIES
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="events-intro">
+
+            <p>
+
+                IWS PROVIDES OPPORTUNITIES FOR STUDENTS
+                TO PARTICIPATE IN TECHNICAL ACTIVITIES,
+                LEARNING SESSIONS AND EVENTS RELATED TO
+                WELDING AND ITS APPLICATIONS.
+
+            </p>
+
+        </div>
+
+
+        <div class="event-grid">
+
+
+            <!-- EVENT CARD 1 -->
+
+            <div class="event-card">
+
+                <h3>
+                    TECHNICAL SESSIONS
+                </h3>
+
+                <p>
+
+                    SESSIONS FOCUSED ON WELDING TECHNOLOGY
+                    AND RELATED TECHNICAL TOPICS HELP
+                    STUDENTS STRENGTHEN THEIR UNDERSTANDING
+                    BEYOND THE CLASSROOM.
+
+                </p>
+
+            </div>
+
+
+            <!-- EVENT CARD 2 -->
+
+            <div class="event-card">
+
+                <h3>
+                    WORKSHOPS
+                </h3>
+
+                <p>
+
+                    PRACTICAL LEARNING ACTIVITIES GIVE
+                    STUDENTS AN OPPORTUNITY TO EXPLORE
+                    WELDING PROCESSES, TOOLS AND RELATED
+                    TECHNOLOGIES.
+
+                </p>
+
+            </div>
+
+
+            <!-- EVENT CARD 3 -->
+
+            <div class="event-card">
+
+                <h3>
+                    STUDENT ACTIVITIES
+                </h3>
+
+                <p>
+
+                    SOCIETY ACTIVITIES ENCOURAGE STUDENTS
+                    TO PARTICIPATE, LEARN TOGETHER AND
+                    DEVELOP THEIR TECHNICAL INTERESTS.
+
+                </p>
+
+            </div>
+
+
+            <!-- EVENT CARD 4 -->
+
+            <div class="event-card">
+
+                <h3>
+                    DEMONSTRATIONS
+                </h3>
+
+                <p>
+
+                    DEMONSTRATIONS HELP STUDENTS
+                    UNDERSTAND WELDING PROCESSES AND
+                    THEIR PRACTICAL APPLICATIONS.
+
+                </p>
+
+            </div>
+
+
+            <!-- EVENT CARD 5 -->
+
+            <div class="event-card">
+
+                <h3>
+                    COMPETITIONS
+                </h3>
+
+                <p>
+
+                    TECHNICAL COMPETITIONS PROVIDE
+                    STUDENTS WITH OPPORTUNITIES TO APPLY
+                    THEIR KNOWLEDGE AND CREATIVITY.
+
+                </p>
+
+            </div>
+
+
+            <!-- EVENT CARD 6 -->
+
+            <div class="event-card">
+
+                <h3>
+                    KNOWLEDGE SHARING
+                </h3>
+
+                <p>
+
+                    KNOWLEDGE-SHARING ACTIVITIES PROVIDE
+                    A WAY FOR STUDENTS TO EXCHANGE IDEAS
+                    AND LEARN FROM ONE ANOTHER.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MESSAGE
+    ========================================= -->
+
+    <section class="section message-section">
+
+
+        <div class="message">
+
+            <h2>
+                LEARN. EXPLORE. PARTICIPATE.
+            </h2>
+
+
+            <p>
+
+                IWS AIMS TO CREATE AN ENVIRONMENT WHERE
+                STUDENTS CAN EXPLORE WELDING TECHNOLOGY,
+                PARTICIPATE IN TECHNICAL ACTIVITIES AND
+                DEVELOP THEIR INTEREST THROUGH LEARNING
+                AND COLLABORATION.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <h3>
+            IWS | INDIAN WELDING SOCIETY
+        </h3>
+
+        <p>
+            KEC STUDENT FORUM
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         SLIDER JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        let slideIndex = 1;
+
+        let slideTimer;
+
+
+        /* =========================================
+           SHOW SLIDE
+        ========================================= */
+
+        function showSlide(n) {
+
+            const slides =
+                document.getElementsByClassName("slide");
+
+            const dots =
+                document.getElementsByClassName("dot");
+
+
+            if (n > slides.length) {
+
+                slideIndex = 1;
+            }
+
+
+            if (n < 1) {
+
+                slideIndex = slides.length;
+            }
+
+
+            for (
+                let i = 0;
+                i < slides.length;
+                i++
+            ) {
+
+                slides[i].classList.remove("active");
+            }
+
+
+            for (
+                let i = 0;
+                i < dots.length;
+                i++
+            ) {
+
+                dots[i].classList.remove("active");
+            }
+
+
+            slides[slideIndex - 1]
+                .classList.add("active");
+
+
+            dots[slideIndex - 1]
+                .classList.add("active");
+        }
+
+
+        /* =========================================
+           CHANGE SLIDE
+        ========================================= */
+
+        function changeSlide(n) {
+
+            slideIndex = slideIndex + n;
+
+            showSlide(slideIndex);
+
+            restartTimer();
+        }
+
+
+        /* =========================================
+           SELECT SLIDE
+        ========================================= */
+
+        function currentSlide(n) {
+
+            slideIndex = n;
+
+            showSlide(slideIndex);
+
+            restartTimer();
+        }
+
+
+        /* =========================================
+           AUTOMATIC SLIDER
+        ========================================= */
+
+        function startTimer() {
+
+            slideTimer = setInterval(
+
+                function() {
+
+                    slideIndex++;
+
+                    showSlide(slideIndex);
+
+                },
+
+                3000
+            );
+        }
+
+
+        /* =========================================
+           RESTART TIMER
+        ========================================= */
+
+        function restartTimer() {
+
+            clearInterval(slideTimer);
+
+            startTimer();
+        }
+
+
+        /* =========================================
+           START SLIDER
+        ========================================= */
+
+        showSlide(slideIndex);
+
+        startTimer();
+
+    </script>
+
+
+</body>
+
+</html>
