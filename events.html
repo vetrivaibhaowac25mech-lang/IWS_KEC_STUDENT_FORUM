@@ -33,7 +33,6 @@
 
         /* =========================================
            HEADER
-           SAME AS HOME PAGE
         ========================================= */
 
         header {
@@ -47,15 +46,15 @@
 
             padding: 10px 45px;
 
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
 
-            border-bottom: 2px solid #ffffff;
-
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 18px
+                rgba(0, 0, 0, 0.15);
 
             position: relative;
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
@@ -111,97 +110,192 @@
 
 
         /* =========================================
-           NAVIGATION
+           HAMBURGER BUTTON
         ========================================= */
 
-        nav ul {
+        .menu-button {
+
+            width: 48px;
+            height: 48px;
+
+            background: #ff6b00;
+
+            border: none;
+
+            border-radius: 5px;
 
             display: flex;
 
+            flex-direction: column;
+
             align-items: center;
 
-            justify-content: flex-end;
+            justify-content: center;
 
-            gap: 8px;
+            gap: 5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            z-index: 1100;
+        }
+
+        .menu-button span {
+
+            width: 25px;
+            height: 3px;
+
+            background: #ffffff;
+
+            border-radius: 3px;
+
+            transition: 0.3s;
+        }
+
+        .menu-button:hover {
+
+            background: #000000;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HAMBURGER ANIMATION
+        ========================================= */
+
+        .menu-button.active span:nth-child(1) {
+
+            transform:
+                translateY(8px)
+                rotate(45deg);
+        }
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+        .menu-button.active span:nth-child(3) {
+
+            transform:
+                translateY(-8px)
+                rotate(-45deg);
+        }
+
+
+        /* =========================================
+           NAVIGATION MENU
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 85px;
+
+            right: 45px;
+
+            width: 280px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.20);
+
+            border-radius:
+                0 0 8px 8px;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(-15px);
+
+            transition: 0.3s ease;
+
+            z-index: 1050;
+        }
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        nav ul {
 
             list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            padding: 10px 0;
+        }
+
+        nav ul li {
+
+            width: 100%;
         }
 
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
+
+            padding: 15px 22px;
 
             text-decoration: none;
 
-            color: #000000;
-
-            background: #ffffff;
-
-            border: 2px solid #ffffff;
-
-            padding: 10px 14px;
-
-            border-radius: 5px;
+            color: #222222;
 
             font-size: 14px;
 
-            font-weight: 600;
+            font-weight: 700;
 
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
 
-            white-space: nowrap;
+            border-left:
+                4px solid transparent;
 
-            transition:
-                background 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
+
+            background: #fff3eb;
+
+            color: #ff6b00;
+
+            border-left:
+                4px solid #ff6b00;
+
+            padding-left: 28px;
+        }
+
+
+        /* =========================================
+           ACTIVE PAGE
+        ========================================= */
+
+        nav ul li a.active-page {
 
             background: #ff6b00;
 
             color: #ffffff;
 
-            border-color: #ffffff;
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-        }
-
-
-        /* =========================================
-           ACTIVE EVENTS BUTTON
-        ========================================= */
-
-        .events {
-
-            background: #ff6b00 !important;
-
-            color: #ffffff !important;
-
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
-
-            font-weight: 700 !important;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .events:hover {
-
-            background: #000000 !important;
-
-            color: #ffffff !important;
-
-            border-color: #ffffff !important;
-
-            transform: translateY(-2px);
+            border-left:
+                4px solid #000000;
         }
 
 
@@ -211,7 +305,7 @@
 
         .banner {
 
-            min-height: 310px;
+            min-height: 330px;
 
             display: flex;
 
@@ -226,8 +320,8 @@
             background-image:
 
                 linear-gradient(
-                    rgba(0, 0, 0, 0.65),
-                    rgba(0, 0, 0, 0.65)
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
                 ),
 
                 url("iws_image2 - Copy.avif");
@@ -259,11 +353,11 @@
 
         .banner h1 {
 
-            font-size: 52px;
+            font-size: 55px;
 
             font-weight: 800;
 
-            margin-bottom: 12px;
+            margin-bottom: 15px;
 
             letter-spacing: 1px;
         }
@@ -275,7 +369,7 @@
 
         .banner p {
 
-            font-size: 16px;
+            font-size: 17px;
 
             color: #eeeeee;
 
@@ -286,12 +380,12 @@
 
 
         /* =========================================
-           EVENTS INTRODUCTION
+           UPCOMING EVENTS SECTION
         ========================================= */
 
         .events-section {
 
-            padding: 85px 8%;
+            padding: 90px 8%;
 
             background: #ffffff;
 
@@ -305,7 +399,7 @@
 
         .section-title h2 {
 
-            font-size: 35px;
+            font-size: 36px;
 
             color: #222222;
 
@@ -325,36 +419,31 @@
 
 
         /* =========================================
-           MAIN MESSAGE
+           MAIN EVENT MESSAGE
         ========================================= */
 
         .event-message {
 
-            max-width: 900px;
+            max-width: 850px;
 
             margin: auto;
 
             padding: 55px 40px;
 
-            background: #f5f5f5;
+            background: #f7f7f7;
 
             border-top: 5px solid #ff6b00;
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.08);
+                0 10px 30px
+                rgba(0, 0, 0, 0.08);
 
             border-radius: 5px;
         }
 
-
-        /* =========================================
-           EVENT ICON
-        ========================================= */
-
         .event-icon {
 
             width: 90px;
-
             height: 90px;
 
             margin: 0 auto 25px;
@@ -371,13 +460,8 @@
 
             border-radius: 50%;
 
-            font-size: 40px;
+            font-size: 42px;
         }
-
-
-        /* =========================================
-           EVENT MESSAGE CONTENT
-        ========================================= */
 
         .event-message h3 {
 
@@ -395,175 +479,149 @@
 
         .event-message p {
 
-            max-width: 720px;
-
-            margin: auto;
-
             font-size: 16px;
+
+            color: #555555;
 
             line-height: 1.9;
 
-            color: #555555;
+            max-width: 700px;
+
+            margin: auto;
         }
 
 
         /* =========================================
-           COMING SOON BOX
+           EVENT STATUS
         ========================================= */
 
-        .coming-soon {
+        .event-status {
 
-            margin: 40px auto 0;
+            display: inline-block;
 
-            max-width: 650px;
+            margin-top: 28px;
 
-            padding: 20px 25px;
+            padding: 12px 25px;
 
-            background: #ffffff;
+            background: #ff6b00;
 
-            border: 1px solid #eeeeee;
+            color: #ffffff;
 
-            border-left: 5px solid #ff6b00;
-
-            box-shadow:
-                0 5px 18px rgba(0, 0, 0, 0.06);
-        }
-
-        .coming-soon h4 {
-
-            color: #ff6b00;
-
-            font-size: 18px;
-
-            letter-spacing: 1px;
-
-            margin-bottom: 8px;
-        }
-
-        .coming-soon p {
+            border-radius: 5px;
 
             font-size: 14px;
 
-            color: #666666;
+            font-weight: 700;
 
-            line-height: 1.7;
+            letter-spacing: 0.5px;
         }
 
 
         /* =========================================
-           EVENT TYPES
+           FUTURE EVENTS
         ========================================= */
 
-        .event-types {
+        .future-section {
 
             padding: 80px 8%;
 
             background: #f5f5f5;
-        }
-
-        .event-types-grid {
-
-            max-width: 1050px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .event-type-card {
-
-            background: #ffffff;
-
-            padding: 32px 25px;
 
             text-align: center;
-
-            border-radius: 7px;
-
-            border: 1px solid #eeeeee;
-
-            box-shadow:
-                0 7px 22px rgba(0, 0, 0, 0.07);
-
-            transition: 0.3s;
         }
 
-        .event-type-card:hover {
+        .future-section h2 {
 
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 14px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .event-type-icon {
-
-            font-size: 35px;
+            font-size: 30px;
 
             margin-bottom: 18px;
         }
 
-        .event-type-card h3 {
-
-            font-size: 20px;
-
-            margin-bottom: 10px;
-
-            color: #222222;
-        }
-
-        .event-type-card p {
-
-            font-size: 14px;
-
-            color: #666666;
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================================
-           STAY CONNECTED
-        ========================================= */
-
-        .connect-section {
-
-            padding: 75px 8%;
-
-            text-align: center;
-
-            background: #ffffff;
-        }
-
-        .connect-section h2 {
-
-            font-size: 30px;
-
-            margin-bottom: 15px;
-
-            color: #222222;
-        }
-
-        .connect-section h2 span {
+        .future-section h2 span {
 
             color: #ff6b00;
         }
 
-        .connect-section p {
+        .future-section p {
 
             max-width: 750px;
 
             margin: auto;
 
-            font-size: 15px;
+            color: #555555;
+
+            font-size: 16px;
 
             line-height: 1.8;
+        }
 
-            color: #555555;
+
+        /* =========================================
+           EVENT PLACEHOLDER CARDS
+        ========================================= */
+
+        .event-placeholder {
+
+            max-width: 1000px;
+
+            margin: 45px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .placeholder-card {
+
+            background: #ffffff;
+
+            padding: 30px 20px;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 7px;
+
+            box-shadow:
+                0 7px 20px
+                rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .placeholder-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(0, 0, 0, 0.12);
+        }
+
+        .placeholder-card .icon {
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .placeholder-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+        .placeholder-card p {
+
+            color: #666666;
+
+            font-size: 14px;
+
+            line-height: 1.6;
         }
 
 
@@ -575,11 +633,11 @@
 
             background: #111111;
 
-            color: white;
+            color: #ffffff;
 
             text-align: center;
 
-            padding: 25px;
+            padding: 28px;
         }
 
         footer h3 {
@@ -601,70 +659,23 @@
            TABLET
         ========================================= */
 
-        @media (max-width: 1100px) {
-
-            header {
-
-                padding: 10px 25px;
-            }
-
-            nav ul {
-
-                gap: 5px;
-            }
-
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
-            }
-
-            .event-types-grid {
-
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-
-        /* =========================================
-           SMALL LAPTOP / TABLET
-        ========================================= */
-
         @media (max-width: 950px) {
 
             header {
 
-                position: relative;
-
-                height: auto;
-
-                padding: 15px 25px;
-
-                flex-direction: column;
-
-                gap: 15px;
+                padding: 12px 25px;
             }
 
-            nav ul {
+            nav {
 
-                flex-wrap: wrap;
+                top: 85px;
 
-                justify-content: center;
-
-                gap: 7px;
-            }
-
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
+                right: 25px;
             }
 
             .banner {
 
-                min-height: 280px;
+                min-height: 300px;
             }
 
             .banner h1 {
@@ -672,9 +683,10 @@
                 font-size: 45px;
             }
 
-            .event-message {
+            .event-placeholder {
 
-                padding: 45px 30px;
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
         }
 
@@ -687,7 +699,9 @@
 
             header {
 
-                padding: 12px 15px;
+                min-height: 75px;
+
+                padding: 10px 15px;
             }
 
             .logo img {
@@ -706,41 +720,54 @@
 
                 font-size: 8px;
 
-                letter-spacing: 1.5px;
+                letter-spacing: 1.3px;
             }
 
-            nav ul {
+            .menu-button {
 
-                gap: 5px;
+                width: 44px;
+
+                height: 44px;
+            }
+
+            nav {
+
+                top: 75px;
+
+                right: 15px;
+
+                left: 15px;
+
+                width: auto;
             }
 
             nav ul li a {
 
-                font-size: 11px;
+                padding: 14px 20px;
 
-                padding: 7px 8px;
-            }
-
-            .events {
-
-                padding: 8px 11px !important;
+                font-size: 13px;
             }
 
             .banner {
 
-                min-height: 250px;
+                min-height: 270px;
+            }
+
+            .banner-content {
+
+                padding: 20px;
             }
 
             .banner h4 {
 
                 font-size: 11px;
 
-                letter-spacing: 2px;
+                letter-spacing: 2.5px;
             }
 
             .banner h1 {
 
-                font-size: 34px;
+                font-size: 35px;
             }
 
             .banner p {
@@ -750,12 +777,7 @@
 
             .events-section {
 
-                padding: 60px 20px;
-            }
-
-            .section-title {
-
-                margin-bottom: 35px;
+                padding: 65px 20px;
             }
 
             .section-title h2 {
@@ -770,7 +792,7 @@
 
             .event-message h3 {
 
-                font-size: 25px;
+                font-size: 24px;
             }
 
             .event-message p {
@@ -778,35 +800,26 @@
                 font-size: 14px;
             }
 
-            .event-icon {
-
-                width: 75px;
-
-                height: 75px;
-
-                font-size: 32px;
-            }
-
-            .event-types {
+            .future-section {
 
                 padding: 60px 20px;
             }
 
-            .event-types-grid {
+            .future-section h2 {
+
+                font-size: 25px;
+            }
+
+            .future-section p {
+
+                font-size: 14px;
+            }
+
+            .event-placeholder {
 
                 grid-template-columns: 1fr;
 
-                gap: 20px;
-            }
-
-            .connect-section {
-
-                padding: 60px 20px;
-            }
-
-            .connect-section h2 {
-
-                font-size: 25px;
+                gap: 18px;
             }
         }
 
@@ -817,11 +830,14 @@
 
         @media (max-width: 400px) {
 
-            nav ul li a {
+            .logo-text h2 {
 
-                font-size: 10px;
+                font-size: 17px;
+            }
 
-                padding: 6px 7px;
+            .logo-text p {
+
+                font-size: 7px;
             }
 
             .banner h1 {
@@ -829,14 +845,9 @@
                 font-size: 29px;
             }
 
-            .banner p {
-
-                font-size: 12px;
-            }
-
             .event-message h3 {
 
-                font-size: 22px;
+                font-size: 21px;
             }
         }
 
@@ -878,47 +889,88 @@
 
 
         <!-- =========================================
-             NAVIGATION
+             THREE LINE MENU BUTTON
         ========================================= -->
 
-        <nav>
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================================
+             NAVIGATION MENU
+        ========================================= -->
+
+        <nav id="navigationMenu">
 
             <ul>
 
                 <li>
+
+                    <a href="index.html">
+                        HOME
+                    </a>
+
+                </li>
+
+                <li>
+
                     <a href="about.html">
                         ABOUT US
                     </a>
+
                 </li>
 
                 <li>
+
                     <a href="faculty.html">
                         FACULTY COORDINATORS
                     </a>
+
                 </li>
 
                 <li>
+
                     <a href="members.html">
                         MEMBERS
                     </a>
+
                 </li>
 
                 <li>
+
                     <a href="why-iws.html">
                         WHY IWS
                     </a>
+
                 </li>
 
                 <li>
-                    <a href="events.html" class="events">
+
+                    <a
+                        href="events.html"
+                        class="active-page"
+                    >
                         EVENTS
                     </a>
+
                 </li>
 
                 <li>
+
                     <a href="contact.html">
                         CONTACT US
                     </a>
+
                 </li>
 
             </ul>
@@ -937,7 +989,7 @@
         <div class="banner-content">
 
             <h4>
-                LEARN • PARTICIPATE • EXPERIENCE
+                CONNECT • PARTICIPATE • EXPERIENCE
             </h4>
 
             <h1>
@@ -945,8 +997,8 @@
             </h1>
 
             <p>
-                DISCOVER, PARTICIPATE AND BE A PART OF
-                OUR UPCOMING TECHNICAL ACTIVITIES.
+                STAY CONNECTED WITH THE LATEST ACTIVITIES,
+                PROGRAMMES AND EVENTS OF IWS - KEC STUDENT FORUM.
             </p>
 
         </div>
@@ -955,11 +1007,10 @@
 
 
     <!-- =========================================
-         EVENTS SECTION
+         UPCOMING EVENTS
     ========================================= -->
 
     <section class="events-section">
-
 
         <div class="section-title">
 
@@ -972,57 +1023,26 @@
         </div>
 
 
-        <!-- =========================================
-             MAIN EVENT MESSAGE
-        ========================================= -->
-
         <div class="event-message">
-
 
             <div class="event-icon">
                 📅
             </div>
 
-
             <h3>
-                UPCOMING EVENTS <span>COMING SOON</span>
+                SOMETHING <span>EXCITING</span> IS COMING!
             </h3>
 
-
             <p>
-
                 WE ARE CURRENTLY PLANNING OUR UPCOMING
-                EVENTS, TECHNICAL ACTIVITIES AND STUDENT
-                ENGAGEMENT PROGRAMMES.
-
-                <br><br>
-
-                DETAILS ABOUT THE UPCOMING EVENTS WILL BE
-                ANNOUNCED HERE. STAY CONNECTED WITH IWS -
-                KEC STUDENT FORUM FOR THE LATEST UPDATES.
-
+                EVENTS AND TECHNICAL ACTIVITIES. DETAILS
+                ABOUT THE EVENTS WILL BE ANNOUNCED HERE
+                ONCE THEY ARE CONFIRMED.
             </p>
 
-
-            <!-- COMING SOON -->
-
-            <div class="coming-soon">
-
-                <h4>
-                    🔔 STAY TUNED
-                </h4>
-
-                <p>
-
-                    EVENT DATES, VENUE, REGISTRATION DETAILS
-                    AND OTHER INFORMATION WILL BE UPDATED
-                    ON THIS PAGE WHEN THE EVENTS ARE
-                    ANNOUNCED.
-
-                </p>
-
+            <div class="event-status">
+                UPCOMING EVENTS WILL BE ANNOUNCED SOON
             </div>
-
 
         </div>
 
@@ -1030,55 +1050,53 @@
 
 
     <!-- =========================================
-         EVENT TYPES
+         STAY UPDATED
     ========================================= -->
 
-    <section class="event-types">
+    <section class="future-section">
+
+        <h2>
+            WE WILL <span>LET YOU KNOW</span>
+        </h2>
+
+        <p>
+            KEEP CHECKING THIS PAGE FOR UPDATES ABOUT
+            WORKSHOPS, TECHNICAL SESSIONS, COMPETITIONS,
+            INDUSTRIAL ACTIVITIES AND OTHER IWS EVENTS.
+            WE LOOK FORWARD TO WELCOMING YOU TO OUR
+            UPCOMING PROGRAMMES.
+        </p>
 
 
-        <div class="section-title">
-
-            <h2>
-                WHAT TO EXPECT
-            </h2>
-
-            <div class="line"></div>
-
-        </div>
+        <div class="event-placeholder">
 
 
-        <div class="event-types-grid">
+            <!-- CARD 1 -->
 
+            <div class="placeholder-card">
 
-            <!-- CARD 01 -->
-
-            <div class="event-type-card">
-
-                <div class="event-type-icon">
+                <div class="icon">
                     🔧
                 </div>
 
                 <h3>
-                    TECHNICAL EVENTS
+                    TECHNICAL ACTIVITIES
                 </h3>
 
                 <p>
-
-                    PRACTICAL AND TECHNICAL ACTIVITIES
-                    DESIGNED TO DEVELOP KNOWLEDGE AND
-                    INTEREST IN WELDING TECHNOLOGY.
-
+                    TECHNICAL PROGRAMMES AND ACTIVITIES
+                    WILL BE ANNOUNCED HERE.
                 </p>
 
             </div>
 
 
-            <!-- CARD 02 -->
+            <!-- CARD 2 -->
 
-            <div class="event-type-card">
+            <div class="placeholder-card">
 
-                <div class="event-type-icon">
-                    💡
+                <div class="icon">
+                    🎓
                 </div>
 
                 <h3>
@@ -1086,21 +1104,18 @@
                 </h3>
 
                 <p>
-
-                    HANDS-ON LEARNING OPPORTUNITIES
-                    THAT HELP STUDENTS EXPLORE WELDING
-                    AND RELATED TECHNOLOGIES.
-
+                    INFORMATION ABOUT UPCOMING WORKSHOPS
+                    WILL BE SHARED SOON.
                 </p>
 
             </div>
 
 
-            <!-- CARD 03 -->
+            <!-- CARD 3 -->
 
-            <div class="event-type-card">
+            <div class="placeholder-card">
 
-                <div class="event-type-icon">
+                <div class="icon">
                     🏆
                 </div>
 
@@ -1109,39 +1124,14 @@
                 </h3>
 
                 <p>
-
-                    CHALLENGE YOUR SKILLS, SHOW YOUR
-                    CREATIVITY AND EXPERIENCE THE SPIRIT
-                    OF TECHNICAL COMPETITION.
-
+                    STAY TUNED FOR FUTURE IWS COMPETITIONS
+                    AND STUDENT ACTIVITIES.
                 </p>
 
             </div>
 
 
         </div>
-
-    </section>
-
-
-    <!-- =========================================
-         STAY CONNECTED
-    ========================================= -->
-
-    <section class="connect-section">
-
-        <h2>
-            SOMETHING <span>EXCITING</span> IS COMING.
-        </h2>
-
-        <p>
-
-            KEEP VISITING THE IWS - KEC STUDENT FORUM
-            WEBSITE TO KNOW ABOUT OUR UPCOMING EVENTS.
-            YOUR NEXT LEARNING EXPERIENCE COULD BE
-            JUST AROUND THE CORNER.
-
-        </p>
 
     </section>
 
@@ -1161,6 +1151,114 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================================
+         HAMBURGER MENU JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navigationMenu =
+            document.getElementById("navigationMenu");
+
+
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navigationMenu.classList.toggle("active");
+
+                menuButton.classList.toggle("active");
+
+
+                const isOpen =
+                    navigationMenu.classList.contains("active");
+
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING LINK
+        ========================================= */
+
+        const menuLinks =
+            navigationMenu.querySelectorAll("a");
+
+
+        menuLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navigationMenu.classList.remove(
+                            "active"
+                        );
+
+                        menuButton.classList.remove(
+                            "active"
+                        );
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    !menuButton.contains(event.target) &&
+                    !navigationMenu.contains(event.target)
+                ) {
+
+                    navigationMenu.classList.remove(
+                        "active"
+                    );
+
+                    menuButton.classList.remove(
+                        "active"
+                    );
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
 
 
 </body>

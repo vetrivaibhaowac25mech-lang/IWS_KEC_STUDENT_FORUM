@@ -67,7 +67,7 @@
 
             box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
@@ -123,25 +123,160 @@
 
 
         /* =========================================
-           NAVIGATION
+           THREE-LINE HAMBURGER BUTTON
         ========================================= */
+
+        .menu-button {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            background: #ffffff;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            z-index: 1100;
+        }
+
+
+        .menu-button span {
+
+            width: 24px;
+            height: 3px;
+
+            background: #000000;
+
+            border-radius: 2px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .menu-button:hover {
+
+            background: #ff6b00;
+        }
+
+
+        .menu-button:hover span {
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HAMBURGER → X ANIMATION
+        ========================================= */
+
+        .menu-button.active span:nth-child(1) {
+
+            transform: translateY(8px) rotate(45deg);
+        }
+
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+
+        .menu-button.active span:nth-child(3) {
+
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
+        /* =========================================
+           NAVIGATION MENU
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 85px;
+
+            right: 45px;
+
+            width: 280px;
+
+            background: #ffffff;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.20);
+
+            padding: 12px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+            z-index: 1050;
+        }
+
+
+        /* =========================================
+           OPEN NAVIGATION
+        ========================================= */
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
 
         nav ul {
 
             display: flex;
 
-            align-items: center;
+            flex-direction: column;
 
-            justify-content: flex-end;
-
-            gap: 8px;
+            gap: 5px;
 
             list-style: none;
         }
 
+
+        nav ul li {
+
+            width: 100%;
+        }
+
+
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
 
             text-decoration: none;
 
@@ -151,7 +286,7 @@
 
             border: 2px solid #ffffff;
 
-            padding: 10px 14px;
+            padding: 12px 15px;
 
             border-radius: 5px;
 
@@ -161,8 +296,6 @@
 
             letter-spacing: 0.3px;
 
-            white-space: nowrap;
-
             transition:
                 background 0.3s ease,
                 color 0.3s ease,
@@ -170,17 +303,19 @@
                 box-shadow 0.3s ease;
         }
 
+
         nav ul li a:hover {
 
             background: #ff6b00;
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
-            transform: translateY(-2px);
+            transform: translateX(4px);
 
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -196,7 +331,8 @@
 
             border-color: #ff6b00;
 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -210,16 +346,11 @@
 
             color: #ffffff !important;
 
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
+            border: 2px solid #ff6b00 !important;
 
             font-weight: 700 !important;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
+
 
         .contact:hover {
 
@@ -227,9 +358,7 @@
 
             color: #ffffff !important;
 
-            border-color: #ffffff !important;
-
-            transform: translateY(-2px);
+            border-color: #000000 !important;
         }
 
 
@@ -300,7 +429,8 @@
 
             font-weight: 800;
 
-            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
+            text-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.45);
         }
 
 
@@ -472,7 +602,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 28px;
         }
@@ -486,7 +617,8 @@
 
             border-top: 4px solid #ff6b00;
 
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
 
             transition: 0.3s;
         }
@@ -496,7 +628,8 @@
 
             transform: translateY(-8px);
 
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.14);
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.14);
         }
 
 
@@ -680,7 +813,8 @@
 
             border-left: 6px solid #ff6b00;
 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -835,7 +969,8 @@
 
             transform: translateY(-3px);
 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
 
@@ -882,22 +1017,19 @@
                 padding: 10px 25px;
             }
 
-            nav ul {
 
-                gap: 5px;
+            nav {
+
+                right: 25px;
             }
 
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
-            }
 
             .why-grid {
 
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
 
             .banner h1 {
 
@@ -914,33 +1046,17 @@
 
             header {
 
-                position: relative;
+                min-height: 75px;
 
-                height: auto;
-
-                padding: 15px 25px;
-
-                flex-direction: column;
-
-                gap: 15px;
+                padding: 10px 25px;
             }
 
 
-            nav ul {
+            nav {
 
-                flex-wrap: wrap;
+                top: 75px;
 
-                justify-content: center;
-
-                gap: 7px;
-            }
-
-
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
+                right: 25px;
             }
 
 
@@ -975,7 +1091,8 @@
 
                 border-right: none;
 
-                border-bottom: 1px solid #dddddd;
+                border-bottom:
+                    1px solid #dddddd;
             }
 
 
@@ -1008,7 +1125,9 @@
 
             header {
 
-                padding: 12px 15px;
+                min-height: 70px;
+
+                padding: 10px 15px;
             }
 
 
@@ -1034,23 +1153,32 @@
             }
 
 
-            nav ul {
+            .menu-button {
 
-                gap: 5px;
+                width: 44px;
+
+                height: 44px;
+            }
+
+
+            nav {
+
+                top: 70px;
+
+                right: 15px;
+
+                width:
+                    calc(100% - 30px);
+
+                max-width: 320px;
             }
 
 
             nav ul li a {
 
-                font-size: 11px;
+                font-size: 13px;
 
-                padding: 7px 8px;
-            }
-
-
-            .contact {
-
-                padding: 8px 11px !important;
+                padding: 11px 13px;
             }
 
 
@@ -1193,11 +1321,12 @@
 
         @media (max-width: 400px) {
 
-            nav ul li a {
+            nav {
 
-                font-size: 10px;
+                right: 10px;
 
-                padding: 6px 7px;
+                width:
+                    calc(100% - 20px);
             }
 
 
@@ -1254,12 +1383,37 @@
 
 
             <!-- =========================================
+                 THREE-LINE MENU BUTTON
+            ========================================= -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- =========================================
                  NAVIGATION
             ========================================= -->
 
-            <nav>
+            <nav id="mainNav">
 
                 <ul>
+
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+
 
                     <li>
                         <a href="about.html">
@@ -1267,17 +1421,20 @@
                         </a>
                     </li>
 
+
                     <li>
                         <a href="faculty.html">
                             FACULTY COORDINATORS
                         </a>
                     </li>
 
+
                     <li>
                         <a href="members.html">
                             MEMBERS
                         </a>
                     </li>
+
 
                     <li>
                         <a
@@ -1288,11 +1445,13 @@
                         </a>
                     </li>
 
+
                     <li>
                         <a href="events.html">
                             EVENTS
                         </a>
                     </li>
+
 
                     <li>
                         <a
@@ -1851,6 +2010,102 @@
 
 
     </div>
+
+
+    <!-- =========================================
+         HAMBURGER MENU JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
+
+        menuButton.addEventListener("click", function () {
+
+            menuButton.classList.toggle("active");
+
+            mainNav.classList.toggle("active");
+
+
+            const isOpen =
+                mainNav.classList.contains("active");
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING A LINK
+        ========================================= */
+
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* =========================================
+           CLOSE WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideMenu =
+                mainNav.contains(event.target);
+
+            const clickedButton =
+                menuButton.contains(event.target);
+
+
+            if (
+                !clickedInsideMenu &&
+                !clickedButton
+            ) {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
 
 
 </body>

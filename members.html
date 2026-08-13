@@ -33,7 +33,6 @@
 
         /* =========================================
            HEADER
-           EXACTLY SAME AS HOME PAGE
         ========================================= */
 
         header {
@@ -55,13 +54,12 @@
 
             position: relative;
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
         /* =========================================
            IWS LOGO
-           SAME AS HOME PAGE
         ========================================= */
 
         .logo {
@@ -112,26 +110,155 @@
 
 
         /* =========================================
-           NAVIGATION
-           SAME AS HOME PAGE
+           HAMBURGER BUTTON
         ========================================= */
+
+        .menu-button {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            background: #ffffff;
+
+            border: 2px solid #ff6b00;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            z-index: 1100;
+        }
+
+
+        .menu-button span {
+
+            width: 24px;
+            height: 3px;
+
+            background: #000000;
+
+            border-radius: 2px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .menu-button:hover {
+
+            background: #ff6b00;
+        }
+
+        .menu-button:hover span {
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HAMBURGER ANIMATION
+        ========================================= */
+
+        .menu-button.active span:nth-child(1) {
+
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+        .menu-button.active span:nth-child(3) {
+
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
+        /* =========================================
+           NAVIGATION MENU
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 85px;
+
+            right: 45px;
+
+            width: 280px;
+
+            background: #ffffff;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.20);
+
+            padding: 12px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+            z-index: 1050;
+        }
+
+
+        /* OPEN MENU */
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
 
         nav ul {
 
             display: flex;
 
-            align-items: center;
+            flex-direction: column;
 
-            justify-content: flex-end;
-
-            gap: 8px;
+            gap: 5px;
 
             list-style: none;
         }
 
+
+        nav ul li {
+
+            width: 100%;
+        }
+
+
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
 
             text-decoration: none;
 
@@ -141,7 +268,7 @@
 
             border: 2px solid #ffffff;
 
-            padding: 10px 14px;
+            padding: 12px 15px;
 
             border-radius: 5px;
 
@@ -151,8 +278,6 @@
 
             letter-spacing: 0.3px;
 
-            white-space: nowrap;
-
             transition:
                 background 0.3s ease,
                 color 0.3s ease,
@@ -160,17 +285,19 @@
                 box-shadow 0.3s ease;
         }
 
+
         nav ul li a:hover {
 
             background: #ff6b00;
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
-            transform: translateY(-2px);
+            transform: translateX(4px);
 
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -184,15 +311,15 @@
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
 
         /* =========================================
            CONTACT US BUTTON
-           SAME AS HOME PAGE
         ========================================= */
 
         .contact {
@@ -201,16 +328,11 @@
 
             color: #ffffff !important;
 
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
+            border: 2px solid #ff6b00 !important;
 
             font-weight: 700 !important;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
+
 
         .contact:hover {
 
@@ -218,9 +340,7 @@
 
             color: #ffffff !important;
 
-            border-color: #ffffff !important;
-
-            transform: translateY(-2px);
+            border-color: #000000 !important;
         }
 
 
@@ -508,7 +628,6 @@
 
         /* =========================================
            FOOTER
-           SAME AS HOME PAGE
         ========================================= */
 
         footer {
@@ -551,17 +670,9 @@
             }
 
 
-            nav ul {
+            nav {
 
-                gap: 5px;
-            }
-
-
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
+                right: 25px;
             }
 
 
@@ -581,31 +692,17 @@
 
             header {
 
-                height: auto;
+                min-height: 75px;
 
-                padding: 15px 25px;
-
-                flex-direction: column;
-
-                gap: 15px;
+                padding: 10px 25px;
             }
 
 
-            nav ul {
+            nav {
 
-                flex-wrap: wrap;
+                top: 75px;
 
-                justify-content: center;
-
-                gap: 7px;
-            }
-
-
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
+                right: 25px;
             }
 
 
@@ -639,7 +736,9 @@
 
             header {
 
-                padding: 12px 15px;
+                min-height: 70px;
+
+                padding: 10px 15px;
             }
 
 
@@ -665,23 +764,31 @@
             }
 
 
-            nav ul {
+            .menu-button {
 
-                gap: 5px;
+                width: 44px;
+
+                height: 44px;
+            }
+
+
+            nav {
+
+                top: 70px;
+
+                right: 15px;
+
+                width: calc(100% - 30px);
+
+                max-width: 320px;
             }
 
 
             nav ul li a {
 
-                font-size: 11px;
+                font-size: 13px;
 
-                padding: 7px 8px;
-            }
-
-
-            .contact {
-
-                padding: 8px 11px !important;
+                padding: 11px 13px;
             }
 
 
@@ -770,11 +877,17 @@
 
         @media (max-width: 400px) {
 
-            nav ul li a {
+            .logo-text p {
 
-                font-size: 10px;
+                font-size: 7px;
+            }
 
-                padding: 6px 7px;
+
+            nav {
+
+                right: 10px;
+
+                width: calc(100% - 20px);
             }
 
 
@@ -806,7 +919,6 @@
 
     <!-- =========================================
          HEADER
-         SAME AS HOME PAGE
     ========================================= -->
 
     <header>
@@ -835,10 +947,28 @@
 
 
         <!-- =========================================
-             NAVIGATION
+             THREE-LINE MENU BUTTON
         ========================================= -->
 
-        <nav>
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================================
+             NAVIGATION MENU
+        ========================================= -->
+
+        <nav id="mainNav">
 
             <ul>
 
@@ -949,14 +1079,10 @@
 
 
 
-        <!-- =========================================
-             MEMBERS GRID
-        ========================================= -->
-
         <div class="members-grid">
 
 
-            <!-- ================= MEMBER 01 ================= -->
+            <!-- MEMBER 01 -->
 
             <div class="member-card">
 
@@ -992,7 +1118,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 02 ================= -->
+            <!-- MEMBER 02 -->
 
             <div class="member-card">
 
@@ -1028,7 +1154,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 03 ================= -->
+            <!-- MEMBER 03 -->
 
             <div class="member-card">
 
@@ -1064,7 +1190,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 04 ================= -->
+            <!-- MEMBER 04 -->
 
             <div class="member-card">
 
@@ -1100,7 +1226,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 05 ================= -->
+            <!-- MEMBER 05 -->
 
             <div class="member-card">
 
@@ -1136,7 +1262,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 06 ================= -->
+            <!-- MEMBER 06 -->
 
             <div class="member-card">
 
@@ -1172,7 +1298,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 07 ================= -->
+            <!-- MEMBER 07 -->
 
             <div class="member-card">
 
@@ -1208,7 +1334,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 08 ================= -->
+            <!-- MEMBER 08 -->
 
             <div class="member-card">
 
@@ -1244,7 +1370,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 09 ================= -->
+            <!-- MEMBER 09 -->
 
             <div class="member-card">
 
@@ -1280,7 +1406,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 10 ================= -->
+            <!-- MEMBER 10 -->
 
             <div class="member-card">
 
@@ -1316,7 +1442,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 11 ================= -->
+            <!-- MEMBER 11 -->
 
             <div class="member-card">
 
@@ -1352,7 +1478,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 12 ================= -->
+            <!-- MEMBER 12 -->
 
             <div class="member-card">
 
@@ -1388,7 +1514,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 13 ================= -->
+            <!-- MEMBER 13 -->
 
             <div class="member-card">
 
@@ -1424,7 +1550,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 14 ================= -->
+            <!-- MEMBER 14 -->
 
             <div class="member-card">
 
@@ -1460,7 +1586,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 15 ================= -->
+            <!-- MEMBER 15 -->
 
             <div class="member-card">
 
@@ -1496,7 +1622,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 16 ================= -->
+            <!-- MEMBER 16 -->
 
             <div class="member-card">
 
@@ -1532,7 +1658,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 17 ================= -->
+            <!-- MEMBER 17 -->
 
             <div class="member-card">
 
@@ -1540,7 +1666,7 @@
 
                     <img
                         src="28.png"
-                        alt="MEMBER 17"
+                        alt="HARI KRISHNA JAGADEESH"
                     >
 
                 </div>
@@ -1560,7 +1686,7 @@
                     </p>
 
                     <p>
-                        YEAR: 3rd YEAR
+                        YEAR: 3RD YEAR
                     </p>
 
                 </div>
@@ -1568,7 +1694,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 18 ================= -->
+            <!-- MEMBER 18 -->
 
             <div class="member-card">
 
@@ -1604,7 +1730,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 19 ================= -->
+            <!-- MEMBER 19 -->
 
             <div class="member-card">
 
@@ -1640,7 +1766,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 20 ================= -->
+            <!-- MEMBER 20 -->
 
             <div class="member-card">
 
@@ -1676,7 +1802,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 21 ================= -->
+            <!-- MEMBER 21 -->
 
             <div class="member-card">
 
@@ -1712,7 +1838,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 22 ================= -->
+            <!-- MEMBER 22 -->
 
             <div class="member-card">
 
@@ -1748,7 +1874,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 23 ================= -->
+            <!-- MEMBER 23 -->
 
             <div class="member-card">
 
@@ -1784,7 +1910,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 24 ================= -->
+            <!-- MEMBER 24 -->
 
             <div class="member-card">
 
@@ -1820,7 +1946,7 @@
             </div>
 
 
-            <!-- ================= MEMBER 25 ================= -->
+            <!-- MEMBER 25 -->
 
             <div class="member-card">
 
@@ -1877,6 +2003,91 @@
         </p>
 
     </footer>
+
+
+
+    <!-- =========================================
+         HAMBURGER MENU JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        const menuButton = document.getElementById("menuButton");
+
+        const mainNav = document.getElementById("mainNav");
+
+
+        /* OPEN / CLOSE MENU */
+
+        menuButton.addEventListener("click", function () {
+
+            menuButton.classList.toggle("active");
+
+            mainNav.classList.toggle("active");
+
+
+            const isOpen =
+                mainNav.classList.contains("active");
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* CLOSE MENU AFTER CLICKING A LINK */
+
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideMenu =
+                mainNav.contains(event.target);
+
+            const clickedButton =
+                menuButton.contains(event.target);
+
+
+            if (!clickedInsideMenu && !clickedButton) {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
+        });
+
+    </script>
 
 
 </body>

@@ -33,7 +33,6 @@
 
         /* =========================================
            HEADER
-           SAME AS HOME PAGE
         ========================================= */
 
         header {
@@ -55,7 +54,7 @@
 
             position: relative;
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
@@ -111,26 +110,157 @@
 
 
         /* =========================================
-           NAVIGATION
-           SAME BORDER STYLE AS HOME PAGE
+           HAMBURGER BUTTON
         ========================================= */
+
+        .menu-toggle {
+
+            width: 48px;
+            height: 44px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            background: #ffffff;
+
+            border: 2px solid #000000;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            padding: 0;
+        }
+
+        .menu-toggle span {
+
+            display: block;
+
+            width: 25px;
+            height: 3px;
+
+            background: #000000;
+
+            border-radius: 3px;
+
+            transition: 0.3s;
+        }
+
+        .menu-toggle:hover {
+
+            background: #ff6b00;
+
+            border-color: #ff6b00;
+        }
+
+        .menu-toggle:hover span {
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HAMBURGER ANIMATION
+        ========================================= */
+
+        .menu-toggle.active span:nth-child(1) {
+
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 85px;
+            right: 45px;
+
+            width: 270px;
+
+            background: #ffffff;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+            border-radius: 0 0 8px 8px;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        /* =========================================
+           OPEN NAVIGATION
+        ========================================= */
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
 
         nav ul {
 
             display: flex;
 
-            align-items: center;
+            flex-direction: column;
 
-            justify-content: flex-end;
-
-            gap: 8px;
+            align-items: stretch;
 
             list-style: none;
+
+            padding: 10px;
         }
+
+
+        nav ul li {
+
+            width: 100%;
+        }
+
 
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
 
             text-decoration: none;
 
@@ -138,9 +268,9 @@
 
             background: #ffffff;
 
-            border: 2px solid #ffffff;
+            border: 2px solid transparent;
 
-            padding: 10px 14px;
+            padding: 13px 16px;
 
             border-radius: 5px;
 
@@ -159,19 +289,19 @@
                 box-shadow 0.3s ease;
         }
 
+
         nav ul li a:hover {
 
             background: #ff6b00;
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
-            transform: translateY(-2px);
+            transform: translateX(4px);
 
             box-shadow:
-                0 5px 12px
-                rgba(0, 0, 0, 0.15);
+                0 5px 12px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -185,16 +315,15 @@
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
             box-shadow:
-                0 4px 10px
-                rgba(0, 0, 0, 0.15);
+                0 4px 10px rgba(0, 0, 0, 0.12);
         }
 
 
         /* =========================================
-           CONTACT US
+           CONTACT BUTTON
         ========================================= */
 
         .contact {
@@ -203,17 +332,12 @@
 
             color: #ffffff !important;
 
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
+            border: 2px solid #ff6b00 !important;
 
             font-weight: 700 !important;
 
             box-shadow:
-                0 4px 10px
-                rgba(0, 0, 0, 0.15);
+                0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .contact:hover {
@@ -222,9 +346,7 @@
 
             color: #ffffff !important;
 
-            border-color: #ffffff !important;
-
-            transform: translateY(-2px);
+            border-color: #000000 !important;
         }
 
 
@@ -260,6 +382,7 @@
             background-position: center;
         }
 
+
         .banner h1 {
 
             font-size: 50px;
@@ -272,6 +395,7 @@
                 0 3px 12px
                 rgba(0, 0, 0, 0.45);
         }
+
 
         .banner p {
 
@@ -295,6 +419,7 @@
 
             background: #ffffff;
         }
+
 
         .faculty-section h2 {
 
@@ -368,6 +493,7 @@
                 box-shadow 0.3s ease;
         }
 
+
         .faculty-card:hover {
 
             transform: translateY(-7px);
@@ -401,6 +527,7 @@
             padding: 10px;
         }
 
+
         .faculty-image img {
 
             width: 100%;
@@ -416,6 +543,7 @@
             transition:
                 transform 0.4s ease;
         }
+
 
         .faculty-card:hover
         .faculty-image img {
@@ -435,6 +563,7 @@
             text-align: center;
         }
 
+
         .faculty-info h3 {
 
             font-size: 23px;
@@ -446,6 +575,7 @@
             margin-bottom: 8px;
         }
 
+
         .faculty-role {
 
             color: #ff6b00;
@@ -456,6 +586,7 @@
 
             margin-bottom: 15px;
         }
+
 
         .faculty-info p {
 
@@ -471,7 +602,6 @@
 
         /* =========================================
            FOOTER
-           SAME AS HOME PAGE
         ========================================= */
 
         footer {
@@ -487,12 +617,14 @@
             margin-top: 0;
         }
 
+
         footer h3 {
 
             font-size: 20px;
 
             margin-bottom: 7px;
         }
+
 
         footer p {
 
@@ -513,16 +645,9 @@
                 padding: 10px 25px;
             }
 
-            nav ul {
+            nav {
 
-                gap: 5px;
-            }
-
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
+                right: 25px;
             }
         }
 
@@ -537,27 +662,18 @@
 
                 height: auto;
 
+                min-height: 80px;
+
                 padding: 15px 25px;
 
-                flex-direction: column;
-
-                gap: 15px;
+                flex-direction: row;
             }
 
-            nav ul {
+            nav {
 
-                flex-wrap: wrap;
+                top: 80px;
 
-                justify-content: center;
-
-                gap: 7px;
-            }
-
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
+                right: 25px;
             }
 
             .faculty-container {
@@ -578,7 +694,10 @@
             header {
 
                 padding: 12px 15px;
+
+                min-height: 74px;
             }
+
 
             .logo img {
 
@@ -587,10 +706,12 @@
                 height: 50px;
             }
 
+
             .logo-text h2 {
 
                 font-size: 19px;
             }
+
 
             .logo-text p {
 
@@ -599,52 +720,74 @@
                 letter-spacing: 1.5px;
             }
 
-            nav ul {
 
-                gap: 5px;
+            .menu-toggle {
+
+                width: 44px;
+
+                height: 42px;
             }
+
+
+            nav {
+
+                top: 74px;
+
+                right: 15px;
+
+                width: calc(100% - 30px);
+
+                max-width: 320px;
+            }
+
 
             nav ul li a {
 
-                font-size: 11px;
+                font-size: 13px;
 
-                padding: 7px 8px;
+                padding: 12px 14px;
             }
 
-            .contact {
-
-                padding: 8px 11px !important;
-            }
 
             .banner {
 
                 min-height: 250px;
             }
 
+
             .banner h1 {
 
                 font-size: 36px;
             }
 
+
             .banner p {
 
                 font-size: 13px;
+
+                padding: 0 20px;
+
+                line-height: 1.6;
             }
+
 
             .faculty-section {
 
                 padding: 60px 25px 70px;
             }
 
+
             .faculty-section h2 {
 
                 font-size: 28px;
             }
 
+
             .orange-line {
 
                 margin-bottom: 35px;
             }
+
 
             .faculty-image {
 
@@ -653,10 +796,12 @@
                 padding: 8px;
             }
 
+
             .faculty-info {
 
                 padding: 25px 20px;
             }
+
 
             .faculty-info h3 {
 
@@ -671,17 +816,35 @@
 
         @media (max-width: 400px) {
 
-            nav ul li a {
+            .logo-text p {
 
-                font-size: 10px;
+                font-size: 7px;
 
-                padding: 6px 7px;
+                letter-spacing: 1px;
             }
+
+
+            .menu-toggle {
+
+                width: 42px;
+
+                height: 40px;
+            }
+
+
+            nav {
+
+                right: 10px;
+
+                width: calc(100% - 20px);
+            }
+
 
             .banner h1 {
 
                 font-size: 30px;
             }
+
 
             .faculty-section h2 {
 
@@ -730,10 +893,28 @@
 
 
         <!-- =========================================
+             THREE LINE MENU BUTTON
+        ========================================= -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================================
              NAVIGATION
         ========================================= -->
 
-        <nav>
+        <nav id="mainNav">
 
             <ul>
 
@@ -898,7 +1079,7 @@
 
                     <img
                         src="kvsatheeshkumar.502528732c1b2c73953f.webp"
-                        alt="MR.K. V. SATHEESHKUMAR"
+                        alt="MR. K. V. SATHEESHKUMAR"
                     >
 
                 </div>
@@ -1023,6 +1204,89 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================================
+         HAMBURGER MENU JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        /* OPEN / CLOSE MENU */
+
+        menuToggle.addEventListener("click", function () {
+
+            mainNav.classList.toggle("active");
+
+            menuToggle.classList.toggle("active");
+
+
+            const isOpen =
+                mainNav.classList.contains("active");
+
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* CLOSE MENU AFTER CLICKING A LINK */
+
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !mainNav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
 
 
 </body>

@@ -33,7 +33,6 @@
 
         /* =========================================
            HEADER
-           SAME AS HOME PAGE
         ========================================= */
 
         header {
@@ -55,7 +54,7 @@
 
             position: relative;
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
@@ -75,6 +74,7 @@
             flex-shrink: 0;
         }
 
+
         .logo img {
 
             width: 65px;
@@ -84,6 +84,7 @@
 
             margin-right: 12px;
         }
+
 
         .logo-text h2 {
 
@@ -98,6 +99,7 @@
             color: #000000;
         }
 
+
         .logo-text p {
 
             font-size: 10px;
@@ -111,25 +113,155 @@
 
 
         /* =========================================
-           NAVIGATION
+           HAMBURGER BUTTON
         ========================================= */
 
-        nav ul {
+        .menu-button {
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            background: #111111;
+
+            border-radius: 5px;
 
             display: flex;
 
+            flex-direction: column;
+
+            justify-content: center;
+
             align-items: center;
 
-            justify-content: flex-end;
+            gap: 5px;
 
-            gap: 8px;
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            z-index: 1100;
+        }
+
+
+        .menu-button span {
+
+            width: 25px;
+            height: 3px;
+
+            background: #ffffff;
+
+            border-radius: 3px;
+
+            transition: 0.3s;
+        }
+
+
+        .menu-button:hover {
+
+            background: #ff6b00;
+        }
+
+
+        /* =========================================
+           HAMBURGER ACTIVE ANIMATION
+        ========================================= */
+
+        .menu-button.active span:nth-child(1) {
+
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+
+        .menu-button.active span:nth-child(3) {
+
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+
+        /* =========================================
+           NAVIGATION MENU
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 85px;
+
+            right: 45px;
+
+            width: 270px;
+
+            background: #ffffff;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+            border-top: 4px solid #ff6b00;
+
+            border-radius: 0 0 6px 6px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                transform 0.3s ease;
+
+            z-index: 1050;
+        }
+
+
+        /* =========================================
+           OPEN NAVIGATION
+        ========================================= */
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        nav ul {
 
             list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            width: 100%;
         }
+
+
+        nav ul li {
+
+            width: 100%;
+        }
+
 
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
+
+            padding: 15px 20px;
 
             text-decoration: none;
 
@@ -137,26 +269,26 @@
 
             background: #ffffff;
 
-            border: 2px solid #ffffff;
-
-            padding: 10px 14px;
-
-            border-radius: 5px;
+            border-bottom: 1px solid #eeeeee;
 
             font-size: 14px;
 
             font-weight: 600;
 
-            letter-spacing: 0.3px;
-
-            white-space: nowrap;
+            letter-spacing: 0.5px;
 
             transition:
                 background 0.3s ease,
                 color 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+                padding-left 0.3s ease;
         }
+
+
+        nav ul li:last-child a {
+
+            border-bottom: none;
+        }
+
 
         nav ul li a:hover {
 
@@ -164,11 +296,7 @@
 
             color: #ffffff;
 
-            border-color: #ffffff;
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+            padding-left: 28px;
         }
 
 
@@ -176,32 +304,13 @@
            ACTIVE CONTACT BUTTON
         ========================================= */
 
-        .contact {
+        nav ul li a.active {
 
-            background: #ff6b00 !important;
+            background: #ff6b00;
 
-            color: #ffffff !important;
+            color: #ffffff;
 
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
-
-            font-weight: 700 !important;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact:hover {
-
-            background: #000000 !important;
-
-            color: #ffffff !important;
-
-            border-color: #ffffff !important;
-
-            transform: translateY(-2px);
+            font-weight: 700;
         }
 
 
@@ -239,12 +348,14 @@
             position: relative;
         }
 
+
         .banner-content {
 
             max-width: 800px;
 
             padding: 30px;
         }
+
 
         .banner h4 {
 
@@ -257,6 +368,7 @@
             margin-bottom: 15px;
         }
 
+
         .banner h1 {
 
             font-size: 52px;
@@ -268,10 +380,12 @@
             letter-spacing: 1px;
         }
 
+
         .banner h1 span {
 
             color: #ff6b00;
         }
+
 
         .banner p {
 
@@ -296,12 +410,14 @@
             background: #ffffff;
         }
 
+
         .section-title {
 
             text-align: center;
 
             margin-bottom: 50px;
         }
+
 
         .section-title h2 {
 
@@ -311,6 +427,7 @@
 
             margin-bottom: 14px;
         }
+
 
         .line {
 
@@ -323,6 +440,7 @@
             margin: auto;
         }
 
+
         .intro {
 
             max-width: 850px;
@@ -331,6 +449,7 @@
 
             text-align: center;
         }
+
 
         .intro p {
 
@@ -382,6 +501,7 @@
             transition: 0.3s;
         }
 
+
         .contact-card:hover {
 
             transform: translateY(-8px);
@@ -398,7 +518,6 @@
         .contact-icon {
 
             width: 70px;
-
             height: 70px;
 
             margin: 0 auto 20px;
@@ -432,6 +551,7 @@
             color: #222222;
         }
 
+
         .designation {
 
             color: #ff6b00;
@@ -444,6 +564,7 @@
 
             text-transform: uppercase;
         }
+
 
         .contact-card p {
 
@@ -484,6 +605,7 @@
             transition: 0.3s;
         }
 
+
         .phone:hover {
 
             background: #000000;
@@ -515,6 +637,7 @@
             background: #f5f5f5;
         }
 
+
         .faculty-content {
 
             max-width: 1000px;
@@ -527,6 +650,7 @@
 
             gap: 30px;
         }
+
 
         .faculty-box {
 
@@ -542,6 +666,7 @@
             transition: 0.3s;
         }
 
+
         .faculty-box:hover {
 
             transform: translateY(-5px);
@@ -549,6 +674,7 @@
             box-shadow:
                 0 12px 28px rgba(0, 0, 0, 0.12);
         }
+
 
         .faculty-box h3 {
 
@@ -558,6 +684,7 @@
 
             color: #222222;
         }
+
 
         .faculty-box .role {
 
@@ -569,6 +696,7 @@
 
             margin-bottom: 15px;
         }
+
 
         .faculty-box p {
 
@@ -593,6 +721,7 @@
             text-align: center;
         }
 
+
         .message-section h2 {
 
             font-size: 30px;
@@ -600,10 +729,12 @@
             margin-bottom: 15px;
         }
 
+
         .message-section h2 span {
 
             color: #ff6b00;
         }
+
 
         .message-section p {
 
@@ -634,12 +765,14 @@
             padding: 25px;
         }
 
+
         footer h3 {
 
             font-size: 20px;
 
             margin-bottom: 7px;
         }
+
 
         footer p {
 
@@ -660,22 +793,18 @@
                 padding: 10px 25px;
             }
 
-            nav ul {
 
-                gap: 5px;
+            nav {
+
+                right: 25px;
             }
 
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
-            }
 
             .contact-grid {
 
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
 
 
@@ -689,45 +818,35 @@
 
                 position: relative;
 
-                height: auto;
-
                 padding: 15px 25px;
-
-                flex-direction: column;
-
-                gap: 15px;
             }
 
-            nav ul {
 
-                flex-wrap: wrap;
+            nav {
 
-                justify-content: center;
+                top: 85px;
 
-                gap: 7px;
+                right: 25px;
             }
 
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
-            }
 
             .banner {
 
                 min-height: 280px;
             }
 
+
             .banner h1 {
 
                 font-size: 45px;
             }
 
+
             .faculty-content {
 
                 grid-template-columns: 1fr;
             }
+
         }
 
 
@@ -740,7 +859,10 @@
             header {
 
                 padding: 12px 15px;
+
+                min-height: 75px;
             }
+
 
             .logo img {
 
@@ -749,10 +871,12 @@
                 height: 50px;
             }
 
+
             .logo-text h2 {
 
                 font-size: 19px;
             }
+
 
             .logo-text p {
 
@@ -761,27 +885,48 @@
                 letter-spacing: 1.5px;
             }
 
-            nav ul {
 
-                gap: 5px;
+            .menu-button {
+
+                width: 44px;
+
+                height: 44px;
             }
+
+
+            .menu-button span {
+
+                width: 23px;
+
+                height: 3px;
+            }
+
+
+            nav {
+
+                top: 75px;
+
+                right: 15px;
+
+                width: calc(100% - 30px);
+
+                max-width: 320px;
+            }
+
 
             nav ul li a {
 
-                font-size: 11px;
+                font-size: 13px;
 
-                padding: 7px 8px;
+                padding: 14px 18px;
             }
 
-            .contact {
-
-                padding: 8px 11px !important;
-            }
 
             .banner {
 
                 min-height: 250px;
             }
+
 
             .banner h4 {
 
@@ -790,35 +935,42 @@
                 letter-spacing: 2px;
             }
 
+
             .banner h1 {
 
                 font-size: 34px;
             }
+
 
             .banner p {
 
                 font-size: 13px;
             }
 
+
             .contact-section {
 
                 padding: 60px 20px;
             }
+
 
             .section-title {
 
                 margin-bottom: 35px;
             }
 
+
             .section-title h2 {
 
                 font-size: 28px;
             }
 
+
             .intro p {
 
                 font-size: 14px;
             }
+
 
             .contact-grid {
 
@@ -827,20 +979,24 @@
                 gap: 20px;
             }
 
+
             .faculty-section {
 
                 padding: 60px 20px;
             }
+
 
             .message-section {
 
                 padding: 60px 20px;
             }
 
+
             .message-section h2 {
 
                 font-size: 25px;
             }
+
         }
 
 
@@ -850,22 +1006,45 @@
 
         @media (max-width: 400px) {
 
+            .logo-text h2 {
+
+                font-size: 17px;
+            }
+
+
+            .logo-text p {
+
+                font-size: 7px;
+            }
+
+
+            nav {
+
+                right: 10px;
+
+                width: calc(100% - 20px);
+            }
+
+
             nav ul li a {
 
-                font-size: 10px;
+                font-size: 12px;
 
-                padding: 6px 7px;
+                padding: 13px 16px;
             }
+
 
             .banner h1 {
 
                 font-size: 29px;
             }
 
+
             .banner p {
 
                 font-size: 12px;
             }
+
         }
 
     </style>
@@ -881,6 +1060,7 @@
     ========================================= -->
 
     <header>
+
 
         <!-- IWS LOGO -->
 
@@ -905,10 +1085,28 @@
 
 
         <!-- =========================================
+             HAMBURGER BUTTON
+        ========================================= -->
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open Navigation Menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================================
              NAVIGATION
         ========================================= -->
 
-        <nav>
+        <nav id="mainNav">
 
             <ul>
 
@@ -943,7 +1141,10 @@
                 </li>
 
                 <li>
-                    <a href="contact.html" class="contact">
+                    <a
+                        href="contact.html"
+                        class="active"
+                    >
                         CONTACT US
                     </a>
                 </li>
@@ -1040,10 +1241,8 @@
                     KEC STUDENT FORUM
                 </p>
 
-                <!-- ENTER TEAM NUMBER 01 -->
-
                 <a
-                    href="tel:+91XXXXXXXXXX"
+                    href="tel:+916381639687"
                     class="phone"
                 >
                     📞 +91 6381639687
@@ -1076,10 +1275,8 @@
                     KEC STUDENT FORUM
                 </p>
 
-                <!-- ENTER TEAM NUMBER 02 -->
-
                 <a
-                    href="tel:+91XXXXXXXXXX"
+                    href="tel:+917871717126"
                     class="phone"
                 >
                     📞 +91 7871717126
@@ -1112,10 +1309,8 @@
                     KEC STUDENT FORUM
                 </p>
 
-                <!-- ENTER TEAM NUMBER 03 -->
-
                 <a
-                    href="tel:+91XXXXXXXXXX"
+                    href="tel:+919361493037"
                     class="phone"
                 >
                     📞 +91 9361493037
@@ -1172,6 +1367,7 @@
 
                 <p>
                     PHONE:
+
                     <a
                         href="tel:+919578367576"
                         style="color:#ff6b00; text-decoration:none; font-weight:700;"
@@ -1205,6 +1401,7 @@
 
                 <p>
                     PHONE:
+
                     <a
                         href="tel:+919894711713"
                         style="color:#ff6b00; text-decoration:none; font-weight:700;"
@@ -1257,6 +1454,80 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================================
+         HAMBURGER MENU JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        const menuButton = document.getElementById("menuButton");
+        const mainNav = document.getElementById("mainNav");
+
+        menuButton.addEventListener("click", function () {
+
+            menuButton.classList.toggle("active");
+            mainNav.classList.toggle("active");
+
+            const isOpen = mainNav.classList.contains("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* CLOSE MENU AFTER CLICKING A NAVIGATION LINK */
+
+        const navLinks = document.querySelectorAll("#mainNav a");
+
+        navLinks.forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+        document.addEventListener("click", function(event) {
+
+            const clickedInsideMenu =
+                mainNav.contains(event.target);
+
+            const clickedButton =
+                menuButton.contains(event.target);
+
+            if (!clickedInsideMenu && !clickedButton) {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
 
 
 </body>
