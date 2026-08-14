@@ -28,6 +28,7 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
             color: #222222;
+            overflow-x: hidden;
         }
 
 
@@ -106,7 +107,7 @@
 
 
         /* =========================================
-           THREE-LINE MENU BUTTON
+           HAMBURGER MENU BUTTON
         ========================================= */
 
         .menu-button {
@@ -118,10 +119,9 @@
 
             background: transparent;
 
-            border-radius: 0;
-
             display: flex;
             flex-direction: column;
+
             justify-content: center;
             align-items: center;
 
@@ -153,7 +153,7 @@
 
 
         /* =========================================
-           THREE-LINE → X ANIMATION
+           HAMBURGER → X
         ========================================= */
 
         .menu-button.active span:nth-child(1) {
@@ -174,14 +174,13 @@
 
 
         /* =========================================
-           NAVIGATION MENU
+           NAVIGATION
         ========================================= */
 
         nav {
             position: absolute;
 
             top: 85px;
-
             right: 45px;
 
             width: 270px;
@@ -211,11 +210,6 @@
 
             z-index: 1050;
         }
-
-
-        /* =========================================
-           OPEN MENU
-        ========================================= */
 
         nav.active {
             opacity: 1;
@@ -369,7 +363,7 @@
 
 
         /* =========================================
-           UPCOMING EVENTS
+           UPCOMING EVENTS SECTION
         ========================================= */
 
         .events-section {
@@ -404,7 +398,7 @@
 
 
         /* =========================================
-           EVENT MESSAGE
+           EVENT MESSAGE CARD
         ========================================= */
 
         .event-message {
@@ -425,9 +419,20 @@
             border-radius: 5px;
         }
 
+
+        /* =========================================
+           DATE-FREE NOTIFICATION ICON
+           
+           IMPORTANT:
+           NO EMOJI USED HERE.
+           
+           This prevents phones from displaying
+           an automatic calendar date such as
+           "July 17".
+        ========================================= */
+
         .event-icon {
             width: 90px;
-
             height: 90px;
 
             margin:
@@ -445,8 +450,60 @@
 
             border-radius: 50%;
 
-            font-size: 42px;
+            position: relative;
         }
+
+
+        /* Bell body */
+
+        .event-icon::before {
+            content: "";
+
+            width: 30px;
+            height: 32px;
+
+            background: #ff6b00;
+
+            border-radius:
+                16px 16px 8px 8px;
+
+            position: absolute;
+
+            top: 24px;
+            left: 28px;
+        }
+
+
+        /* Bell bottom */
+
+        .event-icon::after {
+            content: "";
+
+            width: 38px;
+            height: 5px;
+
+            background: #ff6b00;
+
+            border-radius: 10px;
+
+            position: absolute;
+
+            left: 24px;
+            top: 55px;
+        }
+
+
+        /* Small bell top */
+
+        .event-icon {
+            box-shadow:
+                inset 0 0 0 0 transparent;
+        }
+
+
+        /* =========================================
+           EVENT MESSAGE TEXT
+        ========================================= */
 
         .event-message h3 {
             font-size: 30px;
@@ -454,6 +511,8 @@
             color: #222222;
 
             margin-bottom: 18px;
+
+            line-height: 1.25;
         }
 
         .event-message h3 span {
@@ -499,7 +558,7 @@
 
 
         /* =========================================
-           FUTURE EVENTS
+           STAY UPDATED SECTION
         ========================================= */
 
         .future-section {
@@ -514,6 +573,8 @@
             font-size: 30px;
 
             margin-bottom: 18px;
+
+            line-height: 1.3;
         }
 
         .future-section h2 span {
@@ -534,7 +595,7 @@
 
 
         /* =========================================
-           EVENT CARDS
+           EVENT CATEGORY CARDS
         ========================================= */
 
         .event-placeholder {
@@ -689,7 +750,6 @@
 
             .logo img {
                 width: 50px;
-
                 height: 50px;
             }
 
@@ -705,13 +765,11 @@
 
             .menu-button {
                 width: 44px;
-
                 height: 44px;
             }
 
             .menu-button span {
                 width: 27px;
-
                 height: 4px;
             }
 
@@ -733,6 +791,9 @@
                     14px 18px;
             }
 
+
+            /* Mobile banner */
+
             .banner {
                 min-height: 270px;
             }
@@ -745,6 +806,8 @@
                 font-size: 11px;
 
                 letter-spacing: 2px;
+
+                line-height: 1.5;
             }
 
             .banner h1 {
@@ -753,36 +816,104 @@
 
             .banner p {
                 font-size: 13px;
+
+                line-height: 1.6;
             }
+
+
+            /* Mobile events section */
 
             .events-section {
                 padding:
-                    65px 20px;
+                    60px 18px;
+            }
+
+            .section-title {
+                margin-bottom: 38px;
             }
 
             .section-title h2 {
                 font-size: 28px;
             }
 
+
+            /* Mobile event card */
+
             .event-message {
+                width: 100%;
+
                 padding:
-                    40px 20px;
+                    45px 20px;
+
+                border-top-width: 5px;
             }
+
+
+            /* Mobile date-free icon */
+
+            .event-icon {
+                width: 85px;
+                height: 85px;
+
+                margin-bottom: 28px;
+            }
+
+            .event-icon::before {
+                width: 28px;
+                height: 30px;
+
+                top: 23px;
+                left: 26px;
+            }
+
+            .event-icon::after {
+                width: 36px;
+                height: 5px;
+
+                left: 23px;
+                top: 53px;
+            }
+
+
+            /* Mobile heading */
 
             .event-message h3 {
                 font-size: 24px;
+
+                line-height: 1.35;
+
+                margin-bottom: 20px;
             }
+
+
+            /* Mobile paragraph */
 
             .event-message p {
                 font-size: 14px;
+
+                line-height: 1.9;
             }
+
+
+            /* Mobile status */
 
             .event-status {
-                font-size: 12px;
+                display: block;
+
+                width: 100%;
+
+                margin-top: 28px;
 
                 padding:
-                    11px 16px;
+                    12px 10px;
+
+                font-size: 11px;
+
+                line-height: 1.5;
             }
+
+
+            /* Mobile future section */
 
             .future-section {
                 padding:
@@ -791,16 +922,29 @@
 
             .future-section h2 {
                 font-size: 25px;
+
+                line-height: 1.4;
             }
 
             .future-section > p {
                 font-size: 14px;
+
+                line-height: 1.8;
             }
+
+
+            /* Mobile cards */
 
             .event-placeholder {
                 grid-template-columns: 1fr;
 
                 gap: 18px;
+
+                margin-top: 35px;
+            }
+
+            .placeholder-card {
+                padding: 28px 20px;
             }
         }
 
@@ -833,6 +977,15 @@
             .event-message h3 {
                 font-size: 21px;
             }
+
+            .event-message {
+                padding:
+                    40px 17px;
+            }
+
+            .future-section h2 {
+                font-size: 23px;
+            }
         }
 
     </style>
@@ -848,9 +1001,6 @@
     ========================================= -->
 
     <header>
-
-
-        <!-- IWS LOGO -->
 
         <a href="index.html" class="logo">
 
@@ -872,9 +1022,7 @@
         </a>
 
 
-        <!-- =========================================
-             THREE-LINE MENU
-        ========================================= -->
+        <!-- HAMBURGER BUTTON -->
 
         <button
             class="menu-button"
@@ -890,9 +1038,7 @@
         </button>
 
 
-        <!-- =========================================
-             NAVIGATION
-        ========================================= -->
+        <!-- NAVIGATION -->
 
         <nav id="mainNav">
 
@@ -947,7 +1093,6 @@
 
         </nav>
 
-
     </header>
 
 
@@ -994,15 +1139,30 @@
         </div>
 
 
+        <!-- EVENT MESSAGE -->
+
         <div class="event-message">
 
-            <div class="event-icon">
-                📅
-            </div>
+
+            <!--
+                IMPORTANT:
+                This is a CSS icon.
+                No calendar emoji is used.
+                Therefore NO DATE can appear.
+            -->
+
+            <div
+                class="event-icon"
+                aria-hidden="true"
+            ></div>
+
 
             <h3>
-                SOMETHING <span>EXCITING</span> IS COMING!
+                SOMETHING
+                <span>EXCITING</span>
+                IS COMING!
             </h3>
+
 
             <p>
                 WE ARE CURRENTLY PLANNING OUR UPCOMING
@@ -1010,6 +1170,7 @@
                 ABOUT THE EVENTS WILL BE ANNOUNCED HERE
                 ONCE THEY ARE CONFIRMED.
             </p>
+
 
             <div class="event-status">
                 UPCOMING EVENTS WILL BE ANNOUNCED SOON
@@ -1027,8 +1188,10 @@
     <section class="future-section">
 
         <h2>
-            WE WILL <span>LET YOU KNOW</span>
+            WE WILL
+            <span>LET YOU KNOW</span>
         </h2>
+
 
         <p>
             KEEP CHECKING THIS PAGE FOR UPDATES ABOUT
@@ -1038,6 +1201,8 @@
             UPCOMING PROGRAMMES.
         </p>
 
+
+        <!-- EVENT CATEGORY CARDS -->
 
         <div class="event-placeholder">
 
@@ -1151,10 +1316,8 @@
 
                 mainNav.classList.toggle("active");
 
-
                 const isOpen =
                     mainNav.classList.contains("active");
-
 
                 menuButton.setAttribute(
                     "aria-expanded",
@@ -1166,7 +1329,7 @@
 
 
         /* =========================================
-           CLOSE MENU AFTER CLICKING A LINK
+           CLOSE MENU AFTER CLICKING LINK
         ========================================= */
 
         const navLinks =
