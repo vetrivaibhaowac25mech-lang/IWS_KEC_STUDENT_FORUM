@@ -32,7 +32,7 @@
 
 
         /* =========================================
-           HEADER — SAME AS HOME PAGE
+           HEADER
         ========================================= */
 
         header {
@@ -50,11 +50,13 @@
 
             border-bottom: 2px solid #ffffff;
 
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 18px
+                rgba(0, 0, 0, 0.15);
 
             position: relative;
 
-            z-index: 100;
+            z-index: 1000;
         }
 
 
@@ -110,25 +112,177 @@
 
 
         /* =========================================
-           NAVIGATION — SAME AS HOME PAGE
+           HAMBURGER BUTTON
         ========================================= */
 
-        nav ul {
+        .menu-button {
+
+            width: 50px;
+            height: 50px;
+
+            border: none;
+
+            background: #ffffff;
 
             display: flex;
 
+            flex-direction: column;
+
             align-items: center;
 
-            justify-content: flex-end;
+            justify-content: center;
 
-            gap: 8px;
+            gap: 6px;
+
+            cursor: pointer;
+
+            border-radius: 5px;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            z-index: 1100;
+        }
+
+
+        .menu-button span {
+
+            display: block;
+
+            width: 28px;
+            height: 3px;
+
+            background: #000000;
+
+            border-radius: 3px;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        .menu-button:hover {
+
+            background: #ff6b00;
+
+            box-shadow:
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        .menu-button:hover span {
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HAMBURGER → X ANIMATION
+        ========================================= */
+
+        .menu-button.active span:nth-child(1) {
+
+            transform:
+                translateY(9px)
+                rotate(45deg);
+        }
+
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+
+        .menu-button.active span:nth-child(3) {
+
+            transform:
+                translateY(-9px)
+                rotate(-45deg);
+        }
+
+
+        /* =========================================
+           NAVIGATION MENU
+        ========================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 100%;
+
+            right: 45px;
+
+            width: 300px;
+
+            background: #ffffff;
+
+            border-radius: 0 0 8px 8px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.20);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+            overflow: hidden;
+
+            z-index: 1050;
+        }
+
+
+        /* =========================================
+           OPEN MENU
+        ========================================= */
+
+        nav.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        nav ul {
 
             list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            padding: 10px;
         }
+
+
+        nav ul li {
+
+            width: 100%;
+        }
+
 
         nav ul li a {
 
-            display: inline-block;
+            display: block;
+
+            width: 100%;
 
             text-decoration: none;
 
@@ -136,9 +290,9 @@
 
             background: #ffffff;
 
-            border: 2px solid #ffffff;
+            border: 2px solid transparent;
 
-            padding: 10px 14px;
+            padding: 14px 18px;
 
             border-radius: 5px;
 
@@ -148,13 +302,13 @@
 
             letter-spacing: 0.3px;
 
-            white-space: nowrap;
-
             transition:
                 background 0.3s ease,
                 color 0.3s ease,
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
+
+            margin-bottom: 3px;
         }
 
 
@@ -168,9 +322,9 @@
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
-            transform: translateY(-2px);
+            transform: translateX(4px);
 
             box-shadow:
                 0 5px 12px
@@ -188,7 +342,7 @@
 
             color: #ffffff;
 
-            border-color: #ffffff;
+            border-color: #ff6b00;
 
             box-shadow:
                 0 4px 10px
@@ -197,37 +351,26 @@
 
 
         /* =========================================
-           CONTACT US BUTTON
+           CONTACT US
         ========================================= */
 
-        .join {
+        nav ul li a.contact {
 
-            background: #ff6b00 !important;
+            background: #ff6b00;
 
-            color: #ffffff !important;
+            color: #ffffff;
 
-            border: 2px solid #ffffff !important;
-
-            padding: 11px 20px !important;
-
-            border-radius: 5px;
-
-            font-weight: 700 !important;
-
-            box-shadow:
-                0 4px 10px
-                rgba(0, 0, 0, 0.15);
+            font-weight: 700;
         }
 
-        .join:hover {
 
-            background: #000000 !important;
+        nav ul li a.contact:hover {
 
-            color: #ffffff !important;
+            background: #000000;
 
-            border-color: #ffffff !important;
+            color: #ffffff;
 
-            transform: translateY(-2px);
+            border-color: #000000;
         }
 
 
@@ -438,10 +581,6 @@
         }
 
 
-        /* =========================================
-           SLIDE IMAGE
-        ========================================= */
-
         .slide img {
 
             width: 100%;
@@ -471,6 +610,7 @@
             padding: 28px;
 
             background:
+
                 linear-gradient(
                     transparent,
                     rgba(0, 0, 0, 0.88)
@@ -792,20 +932,10 @@
                 padding: 10px 25px;
             }
 
+            nav {
 
-            nav ul {
-
-                gap: 5px;
+                right: 25px;
             }
-
-
-            nav ul li a {
-
-                padding: 9px 10px;
-
-                font-size: 13px;
-            }
-
 
             .event-grid {
 
@@ -823,39 +953,22 @@
 
             header {
 
-                height: auto;
+                min-height: 80px;
 
-                padding: 15px 25px;
-
-                flex-direction: column;
-
-                gap: 15px;
+                padding: 12px 25px;
             }
 
+            nav {
 
-            nav ul {
+                width: 280px;
 
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-                gap: 7px;
+                right: 25px;
             }
-
-
-            nav ul li a {
-
-                font-size: 13px;
-
-                padding: 8px 11px;
-            }
-
 
             .slider-container {
 
                 height: 400px;
             }
-
 
             .event-grid {
 
@@ -873,6 +986,8 @@
             header {
 
                 padding: 12px 15px;
+
+                min-height: 75px;
             }
 
 
@@ -898,23 +1013,33 @@
             }
 
 
-            nav ul {
+            .menu-button {
 
-                gap: 5px;
+                width: 45px;
+
+                height: 45px;
+            }
+
+
+            .menu-button span {
+
+                width: 25px;
+            }
+
+
+            nav {
+
+                width: calc(100% - 30px);
+
+                right: 15px;
             }
 
 
             nav ul li a {
 
-                font-size: 11px;
+                font-size: 13px;
 
-                padding: 7px 8px;
-            }
-
-
-            .join {
-
-                padding: 8px 11px !important;
+                padding: 13px 15px;
             }
 
 
@@ -1028,11 +1153,31 @@
 
         @media (max-width: 400px) {
 
+            .logo-text h2 {
+
+                font-size: 17px;
+            }
+
+
+            .logo-text p {
+
+                font-size: 7px;
+            }
+
+
+            nav {
+
+                width: calc(100% - 20px);
+
+                right: 10px;
+            }
+
+
             nav ul li a {
 
-                font-size: 10px;
+                font-size: 12px;
 
-                padding: 6px 7px;
+                padding: 12px 14px;
             }
 
 
@@ -1086,79 +1231,84 @@
 
 
         <!-- =========================================
-             NAVIGATION
+             THREE LINE MENU BUTTON
         ========================================= -->
 
-        <nav>
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================================
+             NAVIGATION MENU
+        ========================================= -->
+
+        <nav id="navigation">
 
             <ul>
 
                 <li>
-
                     <a href="index.html">
                         HOME
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a
                         href="about.html"
                         class="active"
                     >
                         ABOUT US
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a href="faculty.html">
                         FACULTY COORDINATORS
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a href="members.html">
                         MEMBERS
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a href="why-iws.html">
                         WHY IWS
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a href="events.html">
                         EVENTS
                     </a>
-
                 </li>
 
 
                 <li>
-
                     <a
                         href="contact.html"
-                        class="join"
+                        class="contact"
                     >
                         CONTACT US
                     </a>
-
                 </li>
 
             </ul>
@@ -1194,7 +1344,6 @@
     ========================================= -->
 
     <section class="section">
-
 
         <div class="section-title">
 
@@ -1479,7 +1628,6 @@
 
     <section class="section events-section">
 
-
         <div class="section-title">
 
             <h2>
@@ -1508,8 +1656,6 @@
         <div class="event-grid">
 
 
-            <!-- EVENT CARD 1 -->
-
             <div class="event-card">
 
                 <h3>
@@ -1527,8 +1673,6 @@
 
             </div>
 
-
-            <!-- EVENT CARD 2 -->
 
             <div class="event-card">
 
@@ -1548,8 +1692,6 @@
             </div>
 
 
-            <!-- EVENT CARD 3 -->
-
             <div class="event-card">
 
                 <h3>
@@ -1566,8 +1708,6 @@
 
             </div>
 
-
-            <!-- EVENT CARD 4 -->
 
             <div class="event-card">
 
@@ -1586,8 +1726,6 @@
             </div>
 
 
-            <!-- EVENT CARD 5 -->
-
             <div class="event-card">
 
                 <h3>
@@ -1605,8 +1743,6 @@
             </div>
 
 
-            <!-- EVENT CARD 6 -->
-
             <div class="event-card">
 
                 <h3>
@@ -1623,6 +1759,7 @@
 
             </div>
 
+
         </div>
 
     </section>
@@ -1634,13 +1771,11 @@
 
     <section class="section message-section">
 
-
         <div class="message">
 
             <h2>
                 LEARN. EXPLORE. PARTICIPATE.
             </h2>
-
 
             <p>
 
@@ -1675,10 +1810,99 @@
 
 
     <!-- =========================================
-         SLIDER JAVASCRIPT
+         JAVASCRIPT
+         HAMBURGER MENU + SLIDER
     ========================================= -->
 
     <script>
+
+
+        /* =========================================
+           HAMBURGER MENU
+        ========================================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navigation =
+            document.getElementById("navigation");
+
+
+        menuButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            menuButton.classList.toggle("active");
+
+            navigation.classList.toggle("active");
+
+            const isOpen =
+                navigation.classList.contains("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING A LINK
+        ========================================= */
+
+        const navigationLinks =
+            document.querySelectorAll(
+                "#navigation a"
+            );
+
+
+        navigationLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navigation.classList.remove("active");
+
+                menuButton.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !navigation.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+
+                navigation.classList.remove("active");
+
+                menuButton.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+        /* =========================================
+           SLIDER
+        ========================================= */
 
         let slideIndex = 1;
 
@@ -1716,7 +1940,10 @@
                 i++
             ) {
 
-                slides[i].classList.remove("active");
+                slides[i]
+                    .classList
+                    .remove("active");
+
             }
 
 
@@ -1726,16 +1953,22 @@
                 i++
             ) {
 
-                dots[i].classList.remove("active");
+                dots[i]
+                    .classList
+                    .remove("active");
+
             }
 
 
             slides[slideIndex - 1]
-                .classList.add("active");
+                .classList
+                .add("active");
 
 
             dots[slideIndex - 1]
-                .classList.add("active");
+                .classList
+                .add("active");
+
         }
 
 
@@ -1745,11 +1978,13 @@
 
         function changeSlide(n) {
 
-            slideIndex = slideIndex + n;
+            slideIndex =
+                slideIndex + n;
 
             showSlide(slideIndex);
 
             restartTimer();
+
         }
 
 
@@ -1764,6 +1999,7 @@
             showSlide(slideIndex);
 
             restartTimer();
+
         }
 
 
@@ -1773,18 +2009,21 @@
 
         function startTimer() {
 
-            slideTimer = setInterval(
+            slideTimer =
+                setInterval(
 
-                function() {
+                    function () {
 
-                    slideIndex++;
+                        slideIndex++;
 
-                    showSlide(slideIndex);
+                        showSlide(slideIndex);
 
-                },
+                    },
 
-                3000
-            );
+                    3000
+
+                );
+
         }
 
 
@@ -1797,6 +2036,7 @@
             clearInterval(slideTimer);
 
             startTimer();
+
         }
 
 
@@ -1807,6 +2047,7 @@
         showSlide(slideIndex);
 
         startTimer();
+
 
     </script>
 
