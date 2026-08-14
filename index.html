@@ -40,10 +40,12 @@
             min-height: 100vh;
 
             background-image:
+
                 linear-gradient(
                     rgba(0, 0, 0, 0.62),
                     rgba(0, 0, 0, 0.62)
                 ),
+
                 url("iws_image2 - Copy.avif");
 
             background-size: cover;
@@ -80,7 +82,8 @@
 
             border-bottom: 2px solid #ffffff;
 
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 18px rgba(0, 0, 0, 0.15);
 
             z-index: 1000;
         }
@@ -102,6 +105,7 @@
             flex-shrink: 0;
         }
 
+
         .logo img {
 
             width: 65px;
@@ -111,6 +115,7 @@
 
             margin-right: 12px;
         }
+
 
         .logo-text h2 {
 
@@ -125,6 +130,7 @@
             color: #000000;
         }
 
+
         .logo-text p {
 
             font-size: 10px;
@@ -138,7 +144,9 @@
 
 
         /* =========================================
-           HAMBURGER BUTTON
+           THREE-LINE HAMBURGER BUTTON
+           SAME AS MEMBERS PAGE
+           NO ORANGE BORDER
         ========================================= */
 
         .menu-button {
@@ -146,239 +154,250 @@
             width: 48px;
             height: 48px;
 
-            border: none;
-
-            background: #ff6b00;
-
-            border-radius: 5px;
-
             display: flex;
 
             flex-direction: column;
 
-            align-items: center;
-
             justify-content: center;
+
+            align-items: center;
 
             gap: 5px;
 
+            background: #ffffff;
+
+            border: none;
+
+            border-radius: 5px;
+
             cursor: pointer;
 
-            transition: 0.3s;
+            transition: all 0.3s ease;
 
             z-index: 1100;
         }
 
+
         .menu-button span {
 
-            width: 25px;
-
+            width: 24px;
             height: 3px;
-
-            background: #ffffff;
-
-            border-radius: 3px;
-
-            transition: 0.3s;
-        }
-
-        .menu-button:hover {
 
             background: #000000;
 
-            transform: translateY(-2px);
+            border-radius: 2px;
+
+            transition: all 0.3s ease;
         }
 
 
         /* =========================================
-           HAMBURGER ANIMATION
+           HAMBURGER HOVER
+        ========================================= */
+
+        .menu-button:hover {
+
+            background: #ff6b00;
+        }
+
+
+        .menu-button:hover span {
+
+            background: #ffffff;
+        }
+
+
+        /* =========================================
+           HAMBURGER ACTIVE ANIMATION
         ========================================= */
 
         .menu-button.active span:nth-child(1) {
 
             transform:
-                rotate(45deg)
-                translate(6px, 6px);
+                translateY(8px)
+                rotate(45deg);
         }
+
 
         .menu-button.active span:nth-child(2) {
 
             opacity: 0;
         }
 
+
         .menu-button.active span:nth-child(3) {
 
             transform:
-                rotate(-45deg)
-                translate(6px, -6px);
+                translateY(-8px)
+                rotate(-45deg);
         }
 
 
         /* =========================================
-           SIDE NAVIGATION
+           NAVIGATION MENU
         ========================================= */
 
-        .side-menu {
+        nav {
 
-            position: fixed;
+            position: absolute;
 
             top: 85px;
 
-            right: -330px;
+            right: 45px;
 
-            width: 310px;
+            width: 280px;
 
-            height: calc(100vh - 85px);
+            background: #ffffff;
 
-            background: rgba(255, 255, 255, 0.98);
+            border-radius: 6px;
 
             box-shadow:
-                -8px 0 25px rgba(0, 0, 0, 0.18);
+                0 10px 30px rgba(0, 0, 0, 0.20);
 
-            padding: 30px 25px;
-
-            z-index: 1050;
-
-            transition: right 0.4s ease;
-
-            overflow-y: auto;
-        }
-
-        .side-menu.active {
-
-            right: 0;
-        }
-
-
-        /* =========================================
-           MENU TITLE
-        ========================================= */
-
-        .menu-title {
-
-            padding-bottom: 20px;
-
-            margin-bottom: 20px;
-
-            border-bottom: 2px solid #eeeeee;
-        }
-
-        .menu-title h3 {
-
-            font-size: 22px;
-
-            color: #222222;
-
-            margin-bottom: 5px;
-        }
-
-        .menu-title p {
-
-            font-size: 11px;
-
-            color: #ff6b00;
-
-            letter-spacing: 1.5px;
-
-            font-weight: 700;
-        }
-
-
-        /* =========================================
-           MENU LINKS
-        ========================================= */
-
-        .side-menu ul {
-
-            list-style: none;
-        }
-
-        .side-menu ul li {
-
-            margin-bottom: 10px;
-        }
-
-        .side-menu ul li a {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            text-decoration: none;
-
-            color: #222222;
-
-            background: #f7f7f7;
-
-            padding: 15px 16px;
-
-            border-left: 4px solid transparent;
-
-            border-radius: 4px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-        .side-menu ul li a:hover {
-
-            background: #ff6b00;
-
-            color: #ffffff;
-
-            border-left-color: #000000;
-
-            transform: translateX(-4px);
-        }
-
-        .arrow {
-
-            font-size: 18px;
-
-            transition: 0.3s;
-        }
-
-        .side-menu ul li a:hover .arrow {
-
-            transform: translateX(5px);
-        }
-
-
-        /* =========================================
-           MENU OVERLAY
-        ========================================= */
-
-        .menu-overlay {
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background: rgba(0, 0, 0, 0.45);
+            padding: 12px;
 
             opacity: 0;
 
             visibility: hidden;
 
-            transition: 0.3s;
+            transform: translateY(-15px);
 
-            z-index: 1001;
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+            z-index: 1050;
         }
 
-        .menu-overlay.active {
+
+        /* =========================================
+           OPEN MENU
+        ========================================= */
+
+        nav.active {
 
             opacity: 1;
 
             visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           NAVIGATION LIST
+        ========================================= */
+
+        nav ul {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            list-style: none;
+        }
+
+
+        nav ul li {
+
+            width: 100%;
+        }
+
+
+        nav ul li a {
+
+            display: block;
+
+            width: 100%;
+
+            text-decoration: none;
+
+            color: #000000;
+
+            background: #ffffff;
+
+            border: 2px solid #ffffff;
+
+            padding: 12px 15px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.3px;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =========================================
+           NAVIGATION HOVER
+        ========================================= */
+
+        nav ul li a:hover {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ff6b00;
+
+            transform: translateX(4px);
+
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           ACTIVE HOME BUTTON
+        ========================================= */
+
+        nav ul li a.active {
+
+            background: #ff6b00;
+
+            color: #ffffff;
+
+            border-color: #ff6b00;
+
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================
+           CONTACT US BUTTON
+        ========================================= */
+
+        .contact {
+
+            background: #ff6b00 !important;
+
+            color: #ffffff !important;
+
+            border: 2px solid #ff6b00 !important;
+
+            font-weight: 700 !important;
+        }
+
+
+        .contact:hover {
+
+            background: #000000 !important;
+
+            color: #ffffff !important;
+
+            border-color: #000000 !important;
         }
 
 
@@ -391,6 +410,7 @@
             position: absolute;
 
             top: 54%;
+
             left: 8%;
 
             transform: translateY(-50%);
@@ -423,6 +443,7 @@
 
             position: relative;
         }
+
 
         .hero h4::after {
 
@@ -461,6 +482,7 @@
             text-shadow:
                 0 3px 15px rgba(0, 0, 0, 0.45);
         }
+
 
         .hero h1 span {
 
@@ -522,6 +544,7 @@
             transition: 0.3s;
         }
 
+
         .explore:hover {
 
             background: #ffffff;
@@ -560,6 +583,7 @@
             margin-bottom: 48px;
         }
 
+
         .section-title h2 {
 
             font-size: 35px;
@@ -570,6 +594,7 @@
 
             margin-bottom: 14px;
         }
+
 
         .line {
 
@@ -592,6 +617,7 @@
             background: #f5f5f5;
         }
 
+
         .college-content {
 
             max-width: 900px;
@@ -601,6 +627,7 @@
             text-align: center;
         }
 
+
         .college-content h3 {
 
             font-size: 27px;
@@ -609,6 +636,7 @@
 
             color: #222222;
         }
+
 
         .college-content p {
 
@@ -637,10 +665,12 @@
             gap: 65px;
         }
 
+
         .iws-text {
 
             flex: 1;
         }
+
 
         .iws-text h3 {
 
@@ -652,6 +682,7 @@
 
             color: #222222;
         }
+
 
         .iws-text p {
 
@@ -685,6 +716,7 @@
             flex-shrink: 0;
         }
 
+
         .iws-box h3 {
 
             font-size: 24px;
@@ -693,6 +725,7 @@
 
             color: #222222;
         }
+
 
         .iws-box p {
 
@@ -719,12 +752,14 @@
             padding: 25px;
         }
 
+
         footer h3 {
 
             font-size: 20px;
 
             margin-bottom: 7px;
         }
+
 
         footer p {
 
@@ -745,6 +780,13 @@
                 padding: 10px 25px;
             }
 
+
+            nav {
+
+                right: 25px;
+            }
+
+
             .hero {
 
                 left: 6%;
@@ -752,10 +794,12 @@
                 max-width: 650px;
             }
 
+
             .hero h1 {
 
                 font-size: 50px;
             }
+
         }
 
 
@@ -767,19 +811,19 @@
 
             header {
 
-                position: absolute;
-
                 min-height: 75px;
 
-                padding: 10px 20px;
+                padding: 10px 25px;
             }
 
-            .side-menu {
+
+            nav {
 
                 top: 75px;
 
-                height: calc(100vh - 75px);
+                right: 25px;
             }
+
 
             .hero {
 
@@ -792,15 +836,18 @@
                 top: 57%;
             }
 
+
             .hero h1 {
 
                 font-size: 45px;
             }
 
+
             .hero p {
 
                 font-size: 16px;
             }
+
 
             .iws-content {
 
@@ -809,10 +856,12 @@
                 gap: 35px;
             }
 
+
             .iws-box {
 
                 width: 100%;
             }
+
         }
 
 
@@ -824,10 +873,11 @@
 
             header {
 
-                padding: 12px 15px;
+                min-height: 70px;
 
-                min-height: 72px;
+                padding: 10px 15px;
             }
+
 
             .logo img {
 
@@ -836,10 +886,12 @@
                 height: 50px;
             }
 
+
             .logo-text h2 {
 
                 font-size: 19px;
             }
+
 
             .logo-text p {
 
@@ -848,12 +900,16 @@
                 letter-spacing: 1.5px;
             }
 
+
+            /* MOBILE MENU BUTTON */
+
             .menu-button {
 
                 width: 44px;
 
                 height: 44px;
             }
+
 
             .menu-button span {
 
@@ -862,16 +918,30 @@
                 height: 3px;
             }
 
-            .side-menu {
 
-                top: 72px;
+            /* MOBILE NAVIGATION */
 
-                width: 285px;
+            nav {
 
-                height: calc(100vh - 72px);
+                top: 70px;
 
-                padding: 25px 20px;
+                right: 15px;
+
+                width: calc(100% - 30px);
+
+                max-width: 320px;
             }
+
+
+            nav ul li a {
+
+                font-size: 13px;
+
+                padding: 11px 13px;
+            }
+
+
+            /* HERO */
 
             .hero {
 
@@ -882,6 +952,7 @@
                 top: 58%;
             }
 
+
             .hero h4 {
 
                 font-size: 12px;
@@ -890,6 +961,7 @@
 
                 margin-bottom: 13px;
             }
+
 
             .hero h1 {
 
@@ -900,6 +972,7 @@
                 letter-spacing: 0;
             }
 
+
             .hero p {
 
                 font-size: 14px;
@@ -909,6 +982,7 @@
                 margin-bottom: 24px;
             }
 
+
             .explore {
 
                 padding: 11px 20px;
@@ -916,40 +990,50 @@
                 font-size: 13px;
             }
 
+
+            /* SECTIONS */
+
             .section {
 
                 padding: 60px 25px;
             }
+
 
             .section-title {
 
                 margin-bottom: 35px;
             }
 
+
             .section-title h2 {
 
                 font-size: 28px;
             }
+
 
             .college-content h3 {
 
                 font-size: 23px;
             }
 
+
             .college-content p {
 
                 font-size: 15px;
             }
+
 
             .iws-text h3 {
 
                 font-size: 24px;
             }
 
+
             .iws-text p {
 
                 font-size: 15px;
             }
+
         }
 
 
@@ -964,6 +1048,7 @@
                 font-size: 17px;
             }
 
+
             .logo-text p {
 
                 font-size: 7px;
@@ -971,20 +1056,26 @@
                 letter-spacing: 1px;
             }
 
-            .side-menu {
 
-                width: 270px;
+            nav {
+
+                right: 10px;
+
+                width: calc(100% - 20px);
             }
+
 
             .hero h1 {
 
                 font-size: 29px;
             }
 
+
             .hero p {
 
                 font-size: 13px;
             }
+
         }
 
     </style>
@@ -993,17 +1084,6 @@
 
 
 <body>
-
-
-    <!-- =========================================
-         MENU OVERLAY
-    ========================================= -->
-
-    <div
-        class="menu-overlay"
-        id="menuOverlay"
-        onclick="closeMenu()">
-    </div>
 
 
     <!-- =========================================
@@ -1043,14 +1123,16 @@
 
 
             <!-- =========================================
-                 THREE LINE MENU BUTTON
+                 THREE-LINE HAMBURGER BUTTON
             ========================================= -->
 
             <button
                 class="menu-button"
                 id="menuButton"
-                onclick="toggleMenu()"
-                aria-label="Open Navigation Menu">
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                type="button"
+            >
 
                 <span></span>
                 <span></span>
@@ -1059,143 +1141,103 @@
             </button>
 
 
+            <!-- =========================================
+                 NAVIGATION MENU
+            ========================================= -->
+
+            <nav id="mainNav">
+
+                <ul>
+
+
+                    <!-- HOME -->
+
+                    <li>
+
+                        <a
+                            href="index.html"
+                            class="active"
+                        >
+                            HOME
+                        </a>
+
+                    </li>
+
+
+                    <!-- ABOUT -->
+
+                    <li>
+
+                        <a href="about.html">
+                            ABOUT US
+                        </a>
+
+                    </li>
+
+
+                    <!-- FACULTY -->
+
+                    <li>
+
+                        <a href="faculty.html">
+                            FACULTY COORDINATORS
+                        </a>
+
+                    </li>
+
+
+                    <!-- MEMBERS -->
+
+                    <li>
+
+                        <a href="members.html">
+                            MEMBERS
+                        </a>
+
+                    </li>
+
+
+                    <!-- WHY IWS -->
+
+                    <li>
+
+                        <a href="why-iws.html">
+                            WHY IWS
+                        </a>
+
+                    </li>
+
+
+                    <!-- EVENTS -->
+
+                    <li>
+
+                        <a href="events.html">
+                            EVENTS
+                        </a>
+
+                    </li>
+
+
+                    <!-- CONTACT -->
+
+                    <li>
+
+                        <a
+                            href="contact.html"
+                            class="contact"
+                        >
+                            CONTACT US
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
         </header>
-
-
-        <!-- =========================================
-             SIDE NAVIGATION MENU
-        ========================================= -->
-
-        <div
-            class="side-menu"
-            id="sideMenu">
-
-
-            <div class="menu-title">
-
-                <h3>
-                    IWS MENU
-                </h3>
-
-                <p>
-                    INDIAN WELDING SOCIETY
-                </p>
-
-            </div>
-
-
-            <ul>
-
-
-                <li>
-
-                    <a href="index.html">
-
-                        HOME
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="about.html">
-
-                        ABOUT US
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="faculty.html">
-
-                        FACULTY COORDINATORS
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="members.html">
-
-                        MEMBERS
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="why-iws.html">
-
-                        WHY IWS
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="events.html">
-
-                        EVENTS
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="contact.html">
-
-                        CONTACT US
-
-                        <span class="arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </li>
-
-
-            </ul>
-
-
-        </div>
 
 
         <!-- =========================================
@@ -1204,9 +1246,11 @@
 
         <div class="hero">
 
+
             <h4>
                 JOIN • LEARN • INNOVATE
             </h4>
+
 
             <h1>
 
@@ -1222,6 +1266,7 @@
 
             </h1>
 
+
             <p>
 
                 A PLATFORM FOR STUDENTS TO LEARN,
@@ -1230,15 +1275,19 @@
 
             </p>
 
+
             <a
                 href="#about"
-                class="explore">
+                class="explore"
+            >
 
                 EXPLORE IWS
 
             </a>
 
+
         </div>
+
 
     </section>
 
@@ -1249,7 +1298,9 @@
 
     <section
         class="section college-section"
-        id="about">
+        id="about"
+    >
+
 
         <div class="section-title">
 
@@ -1268,6 +1319,7 @@
                 KONGU ENGINEERING COLLEGE
             </h3>
 
+
             <p>
 
                 KONGU ENGINEERING COLLEGE IS THE INSTITUTION
@@ -1280,6 +1332,7 @@
 
         </div>
 
+
     </section>
 
 
@@ -1288,6 +1341,7 @@
     ========================================= -->
 
     <section class="section">
+
 
         <div class="section-title">
 
@@ -1304,6 +1358,7 @@
 
 
             <div class="iws-text">
+
 
                 <h3>
 
@@ -1331,6 +1386,7 @@
 
                 </p>
 
+
             </div>
 
 
@@ -1350,7 +1406,9 @@
 
             </div>
 
+
         </div>
+
 
     </section>
 
@@ -1378,65 +1436,134 @@
 
     <script>
 
+        /* =========================================
+           GET ELEMENTS
+        ========================================= */
+
         const menuButton =
             document.getElementById("menuButton");
 
-        const sideMenu =
-            document.getElementById("sideMenu");
-
-        const menuOverlay =
-            document.getElementById("menuOverlay");
+        const mainNav =
+            document.getElementById("mainNav");
 
 
-        function toggleMenu() {
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
 
-            menuButton.classList.toggle("active");
+        menuButton.addEventListener(
+            "click",
+            function (event) {
 
-            sideMenu.classList.toggle("active");
+                event.stopPropagation();
 
-            menuOverlay.classList.toggle("active");
+                menuButton.classList.toggle("active");
 
-        }
-
-
-        function closeMenu() {
-
-            menuButton.classList.remove("active");
-
-            sideMenu.classList.remove("active");
-
-            menuOverlay.classList.remove("active");
-
-        }
+                mainNav.classList.toggle("active");
 
 
-        /* CLOSE MENU AFTER CLICKING A LINK */
-
-        const menuLinks =
-            document.querySelectorAll(".side-menu a");
-
-        menuLinks.forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
-                closeMenu();
-
-            });
-
-        });
+                const isOpen =
+                    mainNav.classList.contains("active");
 
 
-        /* ESC KEY CLOSES MENU */
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
-                closeMenu();
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
 
             }
+        );
 
-        });
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING LINK
+        ========================================= */
+
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        menuButton.classList.remove("active");
+
+                        mainNav.classList.remove("active");
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const clickedInsideMenu =
+                    mainNav.contains(event.target);
+
+                const clickedButton =
+                    menuButton.contains(event.target);
+
+
+                if (
+                    !clickedInsideMenu &&
+                    !clickedButton
+                ) {
+
+                    menuButton.classList.remove("active");
+
+                    mainNav.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           ESC KEY CLOSES MENU
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    menuButton.classList.remove("active");
+
+                    mainNav.classList.remove("active");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
 
     </script>
 

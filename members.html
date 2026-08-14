@@ -50,7 +50,9 @@
 
             border-bottom: 2px solid #ffffff;
 
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 18px
+                rgba(0, 0, 0, 0.15);
 
             position: relative;
 
@@ -74,6 +76,7 @@
             flex-shrink: 0;
         }
 
+
         .logo img {
 
             width: 65px;
@@ -83,6 +86,7 @@
 
             margin-right: 12px;
         }
+
 
         .logo-text h2 {
 
@@ -96,6 +100,7 @@
 
             color: #000000;
         }
+
 
         .logo-text p {
 
@@ -111,56 +116,74 @@
 
         /* =========================================
            HAMBURGER BUTTON
+           SAME AS FACULTY PAGE
         ========================================= */
 
-        .menu-button {
+        .menu-toggle {
 
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
+
+            border: none;
+
+            background: #ffffff;
 
             display: flex;
 
             flex-direction: column;
 
-            justify-content: center;
-
             align-items: center;
 
-            gap: 5px;
+            justify-content: center;
 
-            background: #ffffff;
-
-            border: 2px solid #ff6b00;
-
-            border-radius: 5px;
+            gap: 6px;
 
             cursor: pointer;
 
-            transition: all 0.3s ease;
+            border-radius: 5px;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
 
             z-index: 1100;
         }
 
 
-        .menu-button span {
+        .menu-toggle span {
 
-            width: 24px;
+            display: block;
+
+            width: 28px;
             height: 3px;
 
             background: #000000;
 
-            border-radius: 2px;
+            border-radius: 3px;
 
-            transition: all 0.3s ease;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease,
+                background 0.3s ease;
         }
 
 
-        .menu-button:hover {
+        /* =========================================
+           HAMBURGER HOVER
+        ========================================= */
+
+        .menu-toggle:hover {
 
             background: #ff6b00;
+
+            box-shadow:
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
         }
 
-        .menu-button:hover span {
+
+        .menu-toggle:hover span {
 
             background: #ffffff;
         }
@@ -170,19 +193,25 @@
            HAMBURGER ANIMATION
         ========================================= */
 
-        .menu-button.active span:nth-child(1) {
+        .menu-toggle.active span:nth-child(1) {
 
-            transform: translateY(8px) rotate(45deg);
+            transform:
+                translateY(9px)
+                rotate(45deg);
         }
 
-        .menu-button.active span:nth-child(2) {
+
+        .menu-toggle.active span:nth-child(2) {
 
             opacity: 0;
         }
 
-        .menu-button.active span:nth-child(3) {
 
-            transform: translateY(-8px) rotate(-45deg);
+        .menu-toggle.active span:nth-child(3) {
+
+            transform:
+                translateY(-9px)
+                rotate(-45deg);
         }
 
 
@@ -194,7 +223,7 @@
 
             position: absolute;
 
-            top: 85px;
+            top: 100%;
 
             right: 45px;
 
@@ -202,29 +231,33 @@
 
             background: #ffffff;
 
-            border-radius: 6px;
+            border-radius: 0 0 8px 8px;
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.20);
-
-            padding: 12px;
+                0 10px 30px
+                rgba(0, 0, 0, 0.18);
 
             opacity: 0;
 
             visibility: hidden;
 
-            transform: translateY(-15px);
+            transform:
+                translateY(-15px);
 
             transition:
                 opacity 0.3s ease,
                 transform 0.3s ease,
                 visibility 0.3s ease;
 
+            overflow: hidden;
+
             z-index: 1050;
         }
 
 
-        /* OPEN MENU */
+        /* =========================================
+           OPEN MENU
+        ========================================= */
 
         nav.active {
 
@@ -238,13 +271,13 @@
 
         nav ul {
 
+            list-style: none;
+
             display: flex;
 
             flex-direction: column;
 
-            gap: 5px;
-
-            list-style: none;
+            padding: 10px;
         }
 
 
@@ -266,9 +299,9 @@
 
             background: #ffffff;
 
-            border: 2px solid #ffffff;
+            border: 2px solid transparent;
 
-            padding: 12px 15px;
+            padding: 14px 18px;
 
             border-radius: 5px;
 
@@ -283,8 +316,14 @@
                 color 0.3s ease,
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
+
+            margin-bottom: 3px;
         }
 
+
+        /* =========================================
+           NAVIGATION HOVER
+        ========================================= */
 
         nav ul li a:hover {
 
@@ -292,17 +331,18 @@
 
             color: #ffffff;
 
-            border-color: #ff6b00;
+            border-color: #ffffff;
 
             transform: translateX(4px);
 
             box-shadow:
-                0 5px 12px rgba(0, 0, 0, 0.15);
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
         }
 
 
         /* =========================================
-           ACTIVE MEMBERS BUTTON
+           ACTIVE MEMBERS PAGE
         ========================================= */
 
         nav ul li a.active {
@@ -311,36 +351,33 @@
 
             color: #ffffff;
 
-            border-color: #ff6b00;
+            border-color: #ffffff;
 
             box-shadow:
-                0 4px 10px rgba(0, 0, 0, 0.15);
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
         }
 
 
         /* =========================================
-           CONTACT US BUTTON
+           CONTACT US
         ========================================= */
 
-        .contact {
+        nav ul li a.contact {
 
-            background: #ff6b00 !important;
+            background: #ff6b00;
 
-            color: #ffffff !important;
+            color: #ffffff;
 
-            border: 2px solid #ff6b00 !important;
-
-            font-weight: 700 !important;
+            font-weight: 700;
         }
 
 
-        .contact:hover {
+        nav ul li a.contact:hover {
 
-            background: #000000 !important;
+            background: #000000;
 
-            color: #ffffff !important;
-
-            border-color: #000000 !important;
+            color: #ffffff;
         }
 
 
@@ -350,7 +387,7 @@
 
         .banner {
 
-            height: 320px;
+            min-height: 320px;
 
             display: flex;
 
@@ -414,7 +451,8 @@
             margin-bottom: 12px;
 
             text-shadow:
-                0 3px 15px rgba(0, 0, 0, 0.45);
+                0 3px 15px
+                rgba(0, 0, 0, 0.45);
         }
 
 
@@ -512,7 +550,8 @@
             text-align: center;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.08);
+                0 8px 25px
+                rgba(0, 0, 0, 0.08);
 
             transition:
                 transform 0.3s ease,
@@ -527,7 +566,8 @@
             transform: translateY(-7px);
 
             box-shadow:
-                0 12px 30px rgba(0, 0, 0, 0.15);
+                0 12px 30px
+                rgba(0, 0, 0, 0.15);
         }
 
 
@@ -570,7 +610,8 @@
         }
 
 
-        .member-card:hover .member-image img {
+        .member-card:hover
+        .member-image img {
 
             transform: scale(1.03);
         }
@@ -582,7 +623,8 @@
 
         .member-info {
 
-            padding: 22px 18px 25px;
+            padding:
+                22px 18px 25px;
 
             min-height: 150px;
         }
@@ -634,7 +676,7 @@
 
             background: #111111;
 
-            color: white;
+            color: #ffffff;
 
             text-align: center;
 
@@ -692,15 +734,15 @@
 
             header {
 
-                min-height: 75px;
+                min-height: 80px;
 
-                padding: 10px 25px;
+                padding: 12px 25px;
             }
 
 
             nav {
 
-                top: 75px;
+                width: 280px;
 
                 right: 25px;
             }
@@ -708,7 +750,7 @@
 
             .banner {
 
-                height: 300px;
+                min-height: 300px;
             }
 
 
@@ -736,9 +778,9 @@
 
             header {
 
-                min-height: 70px;
+                padding: 12px 15px;
 
-                padding: 10px 15px;
+                min-height: 75px;
             }
 
 
@@ -764,23 +806,26 @@
             }
 
 
-            .menu-button {
+            .menu-toggle {
 
-                width: 44px;
+                width: 45px;
 
-                height: 44px;
+                height: 45px;
+            }
+
+
+            .menu-toggle span {
+
+                width: 25px;
             }
 
 
             nav {
 
-                top: 70px;
+                width:
+                    calc(100% - 30px);
 
                 right: 15px;
-
-                width: calc(100% - 30px);
-
-                max-width: 320px;
             }
 
 
@@ -788,13 +833,13 @@
 
                 font-size: 13px;
 
-                padding: 11px 13px;
+                padding: 13px 15px;
             }
 
 
             .banner {
 
-                height: 260px;
+                min-height: 260px;
             }
 
 
@@ -834,7 +879,8 @@
 
             .members-section {
 
-                padding: 60px 25px;
+                padding:
+                    60px 25px;
             }
 
 
@@ -877,17 +923,40 @@
 
         @media (max-width: 400px) {
 
+            .logo-text h2 {
+
+                font-size: 17px;
+            }
+
+
             .logo-text p {
 
                 font-size: 7px;
             }
 
 
+            .menu-toggle {
+
+                width: 45px;
+
+                height: 45px;
+            }
+
+
             nav {
 
-                right: 10px;
+                width:
+                    calc(100% - 20px);
 
-                width: calc(100% - 20px);
+                right: 10px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 12px;
+
+                padding: 12px 14px;
             }
 
 
@@ -900,6 +969,12 @@
             .banner p {
 
                 font-size: 12px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 25px;
             }
 
 
@@ -926,7 +1001,10 @@
 
         <!-- IWS LOGO -->
 
-        <a href="index.html" class="logo">
+        <a
+            href="index.html"
+            class="logo"
+        >
 
             <img
                 src="iws_image1.jpeg"
@@ -947,12 +1025,12 @@
 
 
         <!-- =========================================
-             THREE-LINE MENU BUTTON
+             THREE LINE MENU BUTTON
         ========================================= -->
 
         <button
-            class="menu-button"
-            id="menuButton"
+            class="menu-toggle"
+            id="menuToggle"
             aria-label="Open navigation menu"
             aria-expanded="false"
         >
@@ -972,58 +1050,101 @@
 
             <ul>
 
+
+                <!-- HOME -->
+
                 <li>
+
                     <a href="index.html">
+
                         HOME
+
                     </a>
+
                 </li>
 
 
+                <!-- ABOUT -->
+
                 <li>
+
                     <a href="about.html">
+
                         ABOUT US
+
                     </a>
+
                 </li>
 
 
+                <!-- FACULTY -->
+
                 <li>
+
                     <a href="faculty.html">
+
                         FACULTY COORDINATORS
+
                     </a>
+
                 </li>
 
 
+                <!-- MEMBERS -->
+
                 <li>
+
                     <a
                         href="members.html"
                         class="active"
                     >
+
                         MEMBERS
+
                     </a>
+
                 </li>
 
 
+                <!-- WHY IWS -->
+
                 <li>
+
                     <a href="why-iws.html">
+
                         WHY IWS
+
                     </a>
+
                 </li>
 
 
+                <!-- EVENTS -->
+
                 <li>
+
                     <a href="events.html">
+
                         EVENTS
+
                     </a>
+
                 </li>
 
 
+                <!-- CONTACT -->
+
                 <li>
+
                     <a
                         href="contact.html"
                         class="contact"
                     >
+
                         CONTACT US
+
                     </a>
+
                 </li>
 
             </ul>
@@ -2012,80 +2133,121 @@
 
     <script>
 
-        const menuButton = document.getElementById("menuButton");
+        /* =========================================
+           GET MENU ELEMENTS
+        ========================================= */
 
-        const mainNav = document.getElementById("mainNav");
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-
-        /* OPEN / CLOSE MENU */
-
-        menuButton.addEventListener("click", function () {
-
-            menuButton.classList.toggle("active");
-
-            mainNav.classList.toggle("active");
+        const mainNav =
+            document.getElementById("mainNav");
 
 
-            const isOpen =
-                mainNav.classList.contains("active");
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
+
+        menuToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                menuToggle.classList.toggle("active");
+
+                mainNav.classList.toggle("active");
 
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-        });
+                const isOpen =
+                    mainNav.classList.contains("active");
 
 
-        /* CLOSE MENU AFTER CLICKING A LINK */
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING LINK
+        ========================================= */
 
         const navLinks =
-            document.querySelectorAll("#mainNav a");
+            document.querySelectorAll(
+                "#mainNav a"
+            );
 
 
-        navLinks.forEach(function (link) {
+        navLinks.forEach(
+            function (link) {
 
-            link.addEventListener("click", function () {
+                link.addEventListener(
+                    "click",
+                    function () {
 
-                menuButton.classList.remove("active");
+                        mainNav.classList.remove(
+                            "active"
+                        );
 
-                mainNav.classList.remove("active");
+                        menuToggle.classList.remove(
+                            "active"
+                        );
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
                 );
 
-            });
-
-        });
-
-
-        /* CLOSE MENU WHEN CLICKING OUTSIDE */
-
-        document.addEventListener("click", function (event) {
-
-            const clickedInsideMenu =
-                mainNav.contains(event.target);
-
-            const clickedButton =
-                menuButton.contains(event.target);
-
-
-            if (!clickedInsideMenu && !clickedButton) {
-
-                menuButton.classList.remove("active");
-
-                mainNav.classList.remove("active");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
             }
+        );
 
-        });
+
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+
+                    !mainNav.contains(
+                        event.target
+                    )
+
+                    &&
+
+                    !menuToggle.contains(
+                        event.target
+                    )
+
+                ) {
+
+                    mainNav.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
 
     </script>
 

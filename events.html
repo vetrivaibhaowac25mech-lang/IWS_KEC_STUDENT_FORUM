@@ -36,7 +36,6 @@
         ========================================= */
 
         header {
-
             width: 100%;
             min-height: 85px;
 
@@ -46,11 +45,12 @@
 
             padding: 10px 45px;
 
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 2px solid #ffffff;
 
             box-shadow:
-                0 4px 18px
-                rgba(0, 0, 0, 0.15);
+                0 4px 18px rgba(0, 0, 0, 0.15);
 
             position: relative;
 
@@ -63,7 +63,6 @@
         ========================================= */
 
         .logo {
-
             display: flex;
             align-items: center;
 
@@ -74,8 +73,8 @@
             flex-shrink: 0;
         }
 
-        .logo img {
 
+        .logo img {
             width: 65px;
             height: 65px;
 
@@ -84,8 +83,8 @@
             margin-right: 12px;
         }
 
-        .logo-text h2 {
 
+        .logo-text h2 {
             font-size: 23px;
 
             font-weight: 700;
@@ -97,8 +96,8 @@
             color: #000000;
         }
 
-        .logo-text p {
 
+        .logo-text p {
             font-size: 10px;
 
             letter-spacing: 2px;
@@ -110,78 +109,75 @@
 
 
         /* =========================================
-           HAMBURGER BUTTON
+           THREE-LINE MENU BUTTON
+           MATCHES REFERENCE IMAGE
         ========================================= */
 
         .menu-button {
-
             width: 48px;
             height: 48px;
 
-            background: #ff6b00;
-
             border: none;
+            outline: none;
 
-            border-radius: 5px;
+            background: transparent;
+
+            border-radius: 0;
 
             display: flex;
-
             flex-direction: column;
-
-            align-items: center;
-
             justify-content: center;
+            align-items: center;
 
             gap: 5px;
 
-            cursor: pointer;
+            padding: 0;
 
-            transition: 0.3s;
+            cursor: pointer;
 
             z-index: 1100;
         }
 
+
         .menu-button span {
+            width: 29px;
+            height: 4px;
 
-            width: 25px;
-            height: 3px;
+            background: #111111;
 
-            background: #ffffff;
+            border-radius: 4px;
 
-            border-radius: 3px;
+            display: block;
 
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
+
         .menu-button:hover {
-
-            background: #000000;
-
-            transform: translateY(-2px);
+            background: transparent;
         }
 
 
         /* =========================================
-           HAMBURGER ANIMATION
+           THREE-LINE → X ANIMATION
         ========================================= */
 
         .menu-button.active span:nth-child(1) {
-
             transform:
-                translateY(8px)
-                rotate(45deg);
+                rotate(45deg)
+                translate(6px, 6px);
         }
 
-        .menu-button.active span:nth-child(2) {
 
+        .menu-button.active span:nth-child(2) {
             opacity: 0;
         }
 
-        .menu-button.active span:nth-child(3) {
 
+        .menu-button.active span:nth-child(3) {
             transform:
-                translateY(-8px)
-                rotate(-45deg);
+                rotate(-45deg)
+                translate(5px, -5px);
         }
 
 
@@ -190,25 +186,24 @@
         ========================================= */
 
         nav {
-
             position: absolute;
 
             top: 85px;
 
             right: 45px;
 
-            width: 280px;
+            width: 270px;
 
             background: #ffffff;
 
             box-shadow:
                 0 12px 30px
-                rgba(0, 0, 0, 0.20);
+                rgba(0, 0, 0, 0.18);
+
+            border-top: 4px solid #ff6b00;
 
             border-radius:
-                0 0 8px 8px;
-
-            overflow: hidden;
+                0 0 6px 6px;
 
             opacity: 0;
 
@@ -217,85 +212,98 @@
             transform:
                 translateY(-15px);
 
-            transition: 0.3s ease;
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease,
+                transform 0.3s ease;
 
             z-index: 1050;
         }
 
-        nav.active {
 
+        /* =========================================
+           OPEN MENU
+        ========================================= */
+
+        nav.active {
             opacity: 1;
 
             visibility: visible;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
         }
 
-        nav ul {
 
+        nav ul {
             list-style: none;
 
             display: flex;
 
             flex-direction: column;
 
-            padding: 10px 0;
-        }
-
-        nav ul li {
-
             width: 100%;
         }
 
-        nav ul li a {
 
+        nav ul li {
+            width: 100%;
+        }
+
+
+        nav ul li a {
             display: block;
 
             width: 100%;
 
-            padding: 15px 22px;
+            padding: 15px 20px;
 
             text-decoration: none;
 
-            color: #222222;
+            color: #000000;
+
+            background: #ffffff;
+
+            border-bottom:
+                1px solid #eeeeee;
 
             font-size: 14px;
 
-            font-weight: 700;
+            font-weight: 600;
 
             letter-spacing: 0.5px;
 
-            border-left:
-                4px solid transparent;
-
-            transition: 0.3s;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                padding-left 0.3s ease;
         }
 
+
+        nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+
         nav ul li a:hover {
+            background: #ff6b00;
 
-            background: #fff3eb;
-
-            color: #ff6b00;
-
-            border-left:
-                4px solid #ff6b00;
+            color: #ffffff;
 
             padding-left: 28px;
         }
 
 
         /* =========================================
-           ACTIVE PAGE
+           ACTIVE EVENTS PAGE
         ========================================= */
 
-        nav ul li a.active-page {
-
+        nav ul li a.active {
             background: #ff6b00;
 
             color: #ffffff;
 
-            border-left:
-                4px solid #000000;
+            font-weight: 700;
         }
 
 
@@ -304,7 +312,6 @@
         ========================================= */
 
         .banner {
-
             min-height: 330px;
 
             display: flex;
@@ -333,15 +340,15 @@
             position: relative;
         }
 
-        .banner-content {
 
+        .banner-content {
             max-width: 850px;
 
             padding: 30px;
         }
 
-        .banner h4 {
 
+        .banner h4 {
             color: #ff6b00;
 
             font-size: 15px;
@@ -351,8 +358,8 @@
             margin-bottom: 15px;
         }
 
-        .banner h1 {
 
+        .banner h1 {
             font-size: 55px;
 
             font-weight: 800;
@@ -362,13 +369,13 @@
             letter-spacing: 1px;
         }
 
-        .banner h1 span {
 
+        .banner h1 span {
             color: #ff6b00;
         }
 
-        .banner p {
 
+        .banner p {
             font-size: 17px;
 
             color: #eeeeee;
@@ -380,11 +387,10 @@
 
 
         /* =========================================
-           UPCOMING EVENTS SECTION
+           UPCOMING EVENTS
         ========================================= */
 
         .events-section {
-
             padding: 90px 8%;
 
             background: #ffffff;
@@ -392,13 +398,13 @@
             text-align: center;
         }
 
-        .section-title {
 
+        .section-title {
             margin-bottom: 45px;
         }
 
-        .section-title h2 {
 
+        .section-title h2 {
             font-size: 36px;
 
             color: #222222;
@@ -406,8 +412,8 @@
             margin-bottom: 14px;
         }
 
-        .line {
 
+        .line {
             width: 60px;
 
             height: 3px;
@@ -419,11 +425,10 @@
 
 
         /* =========================================
-           MAIN EVENT MESSAGE
+           EVENT MESSAGE
         ========================================= */
 
         .event-message {
-
             max-width: 850px;
 
             margin: auto;
@@ -441,12 +446,14 @@
             border-radius: 5px;
         }
 
-        .event-icon {
 
+        .event-icon {
             width: 90px;
+
             height: 90px;
 
-            margin: 0 auto 25px;
+            margin:
+                0 auto 25px;
 
             display: flex;
 
@@ -463,8 +470,8 @@
             font-size: 42px;
         }
 
-        .event-message h3 {
 
+        .event-message h3 {
             font-size: 30px;
 
             color: #222222;
@@ -472,13 +479,13 @@
             margin-bottom: 18px;
         }
 
-        .event-message h3 span {
 
+        .event-message h3 span {
             color: #ff6b00;
         }
 
-        .event-message p {
 
+        .event-message p {
             font-size: 16px;
 
             color: #555555;
@@ -496,7 +503,6 @@
         ========================================= */
 
         .event-status {
-
             display: inline-block;
 
             margin-top: 28px;
@@ -522,7 +528,6 @@
         ========================================= */
 
         .future-section {
-
             padding: 80px 8%;
 
             background: #f5f5f5;
@@ -530,20 +535,20 @@
             text-align: center;
         }
 
-        .future-section h2 {
 
+        .future-section h2 {
             font-size: 30px;
 
             margin-bottom: 18px;
         }
 
-        .future-section h2 span {
 
+        .future-section h2 span {
             color: #ff6b00;
         }
 
-        .future-section p {
 
+        .future-section p {
             max-width: 750px;
 
             margin: auto;
@@ -557,11 +562,10 @@
 
 
         /* =========================================
-           EVENT PLACEHOLDER CARDS
+           EVENT CARDS
         ========================================= */
 
         .event-placeholder {
-
             max-width: 1000px;
 
             margin: 45px auto 0;
@@ -574,8 +578,8 @@
             gap: 25px;
         }
 
-        .placeholder-card {
 
+        .placeholder-card {
             background: #ffffff;
 
             padding: 30px 20px;
@@ -591,8 +595,8 @@
             transition: 0.3s;
         }
 
-        .placeholder-card:hover {
 
+        .placeholder-card:hover {
             transform:
                 translateY(-6px);
 
@@ -601,22 +605,22 @@
                 rgba(0, 0, 0, 0.12);
         }
 
-        .placeholder-card .icon {
 
+        .placeholder-card .icon {
             font-size: 32px;
 
             margin-bottom: 15px;
         }
 
-        .placeholder-card h3 {
 
+        .placeholder-card h3 {
             font-size: 18px;
 
             margin-bottom: 10px;
         }
 
-        .placeholder-card p {
 
+        .placeholder-card p {
             color: #666666;
 
             font-size: 14px;
@@ -630,7 +634,6 @@
         ========================================= */
 
         footer {
-
             background: #111111;
 
             color: #ffffff;
@@ -640,15 +643,15 @@
             padding: 28px;
         }
 
-        footer h3 {
 
+        footer h3 {
             font-size: 20px;
 
             margin-bottom: 7px;
         }
 
-        footer p {
 
+        footer p {
             font-size: 13px;
 
             color: #bbbbbb;
@@ -659,34 +662,52 @@
            TABLET
         ========================================= */
 
-        @media (max-width: 950px) {
+        @media (max-width: 1100px) {
 
             header {
-
-                padding: 12px 25px;
+                padding:
+                    10px 25px;
             }
 
             nav {
+                right: 25px;
+            }
 
+            .event-placeholder {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================
+           SMALL LAPTOP / TABLET
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            header {
+                position: relative;
+
+                padding:
+                    15px 25px;
+            }
+
+
+            nav {
                 top: 85px;
 
                 right: 25px;
             }
 
-            .banner {
 
+            .banner {
                 min-height: 300px;
             }
 
+
             .banner h1 {
-
                 font-size: 45px;
-            }
-
-            .event-placeholder {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
             }
         }
 
@@ -698,125 +719,137 @@
         @media (max-width: 600px) {
 
             header {
+                padding:
+                    12px 15px;
 
                 min-height: 75px;
-
-                padding: 10px 15px;
             }
 
-            .logo img {
 
+            .logo img {
                 width: 50px;
 
                 height: 50px;
             }
 
-            .logo-text h2 {
 
+            .logo-text h2 {
                 font-size: 19px;
             }
 
-            .logo-text p {
 
+            .logo-text p {
                 font-size: 8px;
 
-                letter-spacing: 1.3px;
+                letter-spacing: 1.5px;
             }
 
-            .menu-button {
 
+            .menu-button {
                 width: 44px;
 
                 height: 44px;
             }
 
-            nav {
 
+            .menu-button span {
+                width: 27px;
+
+                height: 4px;
+            }
+
+
+            nav {
                 top: 75px;
 
                 right: 15px;
 
-                left: 15px;
+                width:
+                    calc(100% - 30px);
 
-                width: auto;
+                max-width: 320px;
             }
+
 
             nav ul li a {
-
-                padding: 14px 20px;
-
                 font-size: 13px;
+
+                padding:
+                    14px 18px;
             }
 
-            .banner {
 
+            .banner {
                 min-height: 270px;
             }
 
-            .banner-content {
 
+            .banner-content {
                 padding: 20px;
             }
 
-            .banner h4 {
 
+            .banner h4 {
                 font-size: 11px;
 
-                letter-spacing: 2.5px;
+                letter-spacing: 2px;
             }
 
-            .banner h1 {
 
+            .banner h1 {
                 font-size: 35px;
             }
 
-            .banner p {
 
+            .banner p {
                 font-size: 13px;
             }
 
-            .events-section {
 
-                padding: 65px 20px;
+            .events-section {
+                padding:
+                    65px 20px;
             }
 
-            .section-title h2 {
 
+            .section-title h2 {
                 font-size: 28px;
             }
 
-            .event-message {
 
-                padding: 40px 20px;
+            .event-message {
+                padding:
+                    40px 20px;
             }
 
-            .event-message h3 {
 
+            .event-message h3 {
                 font-size: 24px;
             }
 
-            .event-message p {
 
+            .event-message p {
                 font-size: 14px;
             }
 
-            .future-section {
 
-                padding: 60px 20px;
+            .future-section {
+                padding:
+                    60px 20px;
             }
 
-            .future-section h2 {
 
+            .future-section h2 {
                 font-size: 25px;
             }
 
-            .future-section p {
 
+            .future-section p {
                 font-size: 14px;
             }
 
-            .event-placeholder {
 
+            .event-placeholder {
                 grid-template-columns: 1fr;
 
                 gap: 18px;
@@ -831,22 +864,29 @@
         @media (max-width: 400px) {
 
             .logo-text h2 {
-
                 font-size: 17px;
             }
 
-            .logo-text p {
 
+            .logo-text p {
                 font-size: 7px;
             }
 
-            .banner h1 {
 
+            nav {
+                right: 10px;
+
+                width:
+                    calc(100% - 20px);
+            }
+
+
+            .banner h1 {
                 font-size: 29px;
             }
 
-            .event-message h3 {
 
+            .event-message h3 {
                 font-size: 21px;
             }
         }
@@ -889,13 +929,13 @@
 
 
         <!-- =========================================
-             THREE LINE MENU BUTTON
+             THREE-LINE MENU
         ========================================= -->
 
         <button
             class="menu-button"
             id="menuButton"
-            aria-label="Open navigation menu"
+            aria-label="Open Navigation Menu"
             aria-expanded="false"
         >
 
@@ -907,75 +947,62 @@
 
 
         <!-- =========================================
-             NAVIGATION MENU
+             NAVIGATION
         ========================================= -->
 
-        <nav id="navigationMenu">
+        <nav id="mainNav">
 
             <ul>
 
                 <li>
-
                     <a href="index.html">
                         HOME
                     </a>
-
                 </li>
 
                 <li>
-
                     <a href="about.html">
                         ABOUT US
                     </a>
-
                 </li>
 
                 <li>
-
                     <a href="faculty.html">
                         FACULTY COORDINATORS
                     </a>
-
                 </li>
 
                 <li>
-
                     <a href="members.html">
                         MEMBERS
                     </a>
-
                 </li>
 
                 <li>
-
                     <a href="why-iws.html">
                         WHY IWS
                     </a>
-
                 </li>
 
                 <li>
-
                     <a
                         href="events.html"
-                        class="active-page"
+                        class="active"
                     >
                         EVENTS
                     </a>
-
                 </li>
 
                 <li>
-
                     <a href="contact.html">
                         CONTACT US
                     </a>
-
                 </li>
 
             </ul>
 
         </nav>
+
 
     </header>
 
@@ -1162,8 +1189,8 @@
         const menuButton =
             document.getElementById("menuButton");
 
-        const navigationMenu =
-            document.getElementById("navigationMenu");
+        const mainNav =
+            document.getElementById("mainNav");
 
 
         /* =========================================
@@ -1172,15 +1199,17 @@
 
         menuButton.addEventListener(
             "click",
-            function () {
+            function (event) {
 
-                navigationMenu.classList.toggle("active");
+                event.stopPropagation();
 
                 menuButton.classList.toggle("active");
 
+                mainNav.classList.toggle("active");
+
 
                 const isOpen =
-                    navigationMenu.classList.contains("active");
+                    mainNav.classList.contains("active");
 
 
                 menuButton.setAttribute(
@@ -1193,38 +1222,32 @@
 
 
         /* =========================================
-           CLOSE MENU AFTER CLICKING LINK
+           CLOSE MENU AFTER CLICKING A LINK
         ========================================= */
 
-        const menuLinks =
-            navigationMenu.querySelectorAll("a");
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
 
 
-        menuLinks.forEach(
-            function (link) {
+        navLinks.forEach(function (link) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                        navigationMenu.classList.remove(
-                            "active"
-                        );
+                    menuButton.classList.remove("active");
 
-                        menuButton.classList.remove(
-                            "active"
-                        );
+                    mainNav.classList.remove("active");
 
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-                    }
-                );
+                }
+            );
 
-            }
-        );
+        });
 
 
         /* =========================================
@@ -1235,18 +1258,21 @@
             "click",
             function (event) {
 
+                const clickedInsideMenu =
+                    mainNav.contains(event.target);
+
+                const clickedButton =
+                    menuButton.contains(event.target);
+
+
                 if (
-                    !menuButton.contains(event.target) &&
-                    !navigationMenu.contains(event.target)
+                    !clickedInsideMenu &&
+                    !clickedButton
                 ) {
 
-                    navigationMenu.classList.remove(
-                        "active"
-                    );
+                    menuButton.classList.remove("active");
 
-                    menuButton.classList.remove(
-                        "active"
-                    );
+                    mainNav.classList.remove("active");
 
                     menuButton.setAttribute(
                         "aria-expanded",

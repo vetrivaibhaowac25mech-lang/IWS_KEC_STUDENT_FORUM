@@ -50,7 +50,9 @@
 
             border-bottom: 2px solid #ffffff;
 
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 18px
+                rgba(0, 0, 0, 0.15);
 
             position: relative;
 
@@ -74,6 +76,7 @@
             flex-shrink: 0;
         }
 
+
         .logo img {
 
             width: 65px;
@@ -83,6 +86,7 @@
 
             margin-right: 12px;
         }
+
 
         .logo-text h2 {
 
@@ -96,6 +100,7 @@
 
             color: #000000;
         }
+
 
         .logo-text p {
 
@@ -111,119 +116,155 @@
 
         /* =========================================
            HAMBURGER BUTTON
+           CLEAN THREE BLACK LINES
+           LIKE REFERENCE IMAGE
         ========================================= */
 
         .menu-toggle {
 
             width: 48px;
-            height: 44px;
+            height: 48px;
+
+            border: none;
+
+            background: transparent;
 
             display: flex;
 
             flex-direction: column;
 
-            justify-content: center;
-
             align-items: center;
 
-            gap: 6px;
+            justify-content: center;
 
-            background: #ffffff;
-
-            border: 2px solid #000000;
-
-            border-radius: 5px;
+            gap: 5px;
 
             cursor: pointer;
 
-            transition: 0.3s;
-
             padding: 0;
+
+            z-index: 1100;
+
+            appearance: none;
+
+            -webkit-appearance: none;
+
+            box-shadow: none;
+
+            outline: none;
         }
+
+
+        /* =========================================
+           THREE BLACK LINES
+        ========================================= */
 
         .menu-toggle span {
 
             display: block;
 
-            width: 25px;
-            height: 3px;
+            width: 29px;
+
+            height: 4px;
 
             background: #000000;
 
-            border-radius: 3px;
+            border-radius: 2px;
 
-            transition: 0.3s;
-        }
-
-        .menu-toggle:hover {
-
-            background: #ff6b00;
-
-            border-color: #ff6b00;
-        }
-
-        .menu-toggle:hover span {
-
-            background: #ffffff;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
         }
 
 
         /* =========================================
-           HAMBURGER ANIMATION
+           REMOVE HOVER BACKGROUND
+        ========================================= */
+
+        .menu-toggle:hover {
+
+            background: transparent;
+
+            box-shadow: none;
+
+            transform: none;
+        }
+
+
+        .menu-toggle:hover span {
+
+            background: #000000;
+        }
+
+
+        /* =========================================
+           HAMBURGER → X ANIMATION
         ========================================= */
 
         .menu-toggle.active span:nth-child(1) {
 
-            transform: translateY(9px) rotate(45deg);
+            transform:
+                translateY(9px)
+                rotate(45deg);
         }
+
 
         .menu-toggle.active span:nth-child(2) {
 
             opacity: 0;
         }
 
+
         .menu-toggle.active span:nth-child(3) {
 
-            transform: translateY(-9px) rotate(-45deg);
+            transform:
+                translateY(-9px)
+                rotate(-45deg);
         }
 
 
         /* =========================================
-           NAVIGATION
+           NAVIGATION MENU
         ========================================= */
 
         nav {
 
             position: absolute;
 
-            top: 85px;
+            top: 100%;
+
             right: 45px;
 
-            width: 270px;
+            width: 280px;
 
             background: #ffffff;
 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-
             border-radius: 0 0 8px 8px;
 
-            overflow: hidden;
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.18);
 
             opacity: 0;
 
             visibility: hidden;
 
-            transform: translateY(-15px);
+            transform:
+                translateY(-15px);
 
             transition:
                 opacity 0.3s ease,
-                visibility 0.3s ease,
-                transform 0.3s ease;
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+            overflow: hidden;
+
+            z-index: 1050;
         }
 
 
         /* =========================================
-           OPEN NAVIGATION
+           OPEN MENU
         ========================================= */
 
         nav.active {
@@ -238,13 +279,11 @@
 
         nav ul {
 
+            list-style: none;
+
             display: flex;
 
             flex-direction: column;
-
-            align-items: stretch;
-
-            list-style: none;
 
             padding: 10px;
         }
@@ -270,7 +309,7 @@
 
             border: 2px solid transparent;
 
-            padding: 13px 16px;
+            padding: 14px 18px;
 
             border-radius: 5px;
 
@@ -280,15 +319,19 @@
 
             letter-spacing: 0.3px;
 
-            white-space: nowrap;
-
             transition:
                 background 0.3s ease,
                 color 0.3s ease,
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
+
+            margin-bottom: 3px;
         }
 
+
+        /* =========================================
+           NAVIGATION HOVER
+        ========================================= */
 
         nav ul li a:hover {
 
@@ -296,12 +339,13 @@
 
             color: #ffffff;
 
-            border-color: #ff6b00;
+            border-color: #ffffff;
 
             transform: translateX(4px);
 
             box-shadow:
-                0 5px 12px rgba(0, 0, 0, 0.15);
+                0 5px 12px
+                rgba(0, 0, 0, 0.15);
         }
 
 
@@ -315,38 +359,33 @@
 
             color: #ffffff;
 
-            border-color: #ff6b00;
+            border-color: #ffffff;
 
             box-shadow:
-                0 4px 10px rgba(0, 0, 0, 0.12);
+                0 4px 10px
+                rgba(0, 0, 0, 0.15);
         }
 
 
         /* =========================================
-           CONTACT BUTTON
+           CONTACT US
         ========================================= */
 
-        .contact {
+        nav ul li a.contact {
 
-            background: #ff6b00 !important;
+            background: #ff6b00;
 
-            color: #ffffff !important;
+            color: #ffffff;
 
-            border: 2px solid #ff6b00 !important;
-
-            font-weight: 700 !important;
-
-            box-shadow:
-                0 4px 10px rgba(0, 0, 0, 0.15);
+            font-weight: 700;
         }
 
-        .contact:hover {
 
-            background: #000000 !important;
+        nav ul li a.contact:hover {
 
-            color: #ffffff !important;
+            background: #000000;
 
-            border-color: #000000 !important;
+            color: #ffffff;
         }
 
 
@@ -380,6 +419,8 @@
             background-size: cover;
 
             background-position: center;
+
+            background-repeat: no-repeat;
         }
 
 
@@ -445,7 +486,8 @@
 
             background: #ff6b00;
 
-            margin: 0 auto 48px;
+            margin:
+                0 auto 48px;
         }
 
 
@@ -558,7 +600,8 @@
 
         .faculty-info {
 
-            padding: 28px 25px 30px;
+            padding:
+                28px 25px 30px;
 
             text-align: center;
         }
@@ -645,10 +688,12 @@
                 padding: 10px 25px;
             }
 
+
             nav {
 
                 right: 25px;
             }
+
         }
 
 
@@ -660,21 +705,19 @@
 
             header {
 
-                height: auto;
-
                 min-height: 80px;
 
-                padding: 15px 25px;
-
-                flex-direction: row;
+                padding: 12px 25px;
             }
+
 
             nav {
 
-                top: 80px;
+                width: 280px;
 
                 right: 25px;
             }
+
 
             .faculty-container {
 
@@ -682,6 +725,7 @@
 
                 max-width: 550px;
             }
+
         }
 
 
@@ -695,7 +739,7 @@
 
                 padding: 12px 15px;
 
-                min-height: 74px;
+                min-height: 75px;
             }
 
 
@@ -721,23 +765,56 @@
             }
 
 
+            /* =====================================
+               MOBILE HAMBURGER
+               SAME CLEAN THREE-LINE DESIGN
+            ===================================== */
+
             .menu-toggle {
 
                 width: 44px;
 
-                height: 42px;
+                height: 44px;
+
+                background: transparent;
+
+                border: none;
+
+                gap: 5px;
+            }
+
+
+            .menu-toggle span {
+
+                width: 28px;
+
+                height: 4px;
+
+                background: #000000;
+
+                border-radius: 2px;
+            }
+
+
+            .menu-toggle:hover {
+
+                background: transparent;
+
+                box-shadow: none;
+            }
+
+
+            .menu-toggle:hover span {
+
+                background: #000000;
             }
 
 
             nav {
 
-                top: 74px;
-
-                right: 15px;
-
                 width: calc(100% - 30px);
 
-                max-width: 320px;
+                right: 15px;
             }
 
 
@@ -745,7 +822,7 @@
 
                 font-size: 13px;
 
-                padding: 12px 14px;
+                padding: 13px 15px;
             }
 
 
@@ -773,7 +850,8 @@
 
             .faculty-section {
 
-                padding: 60px 25px 70px;
+                padding:
+                    60px 25px 70px;
             }
 
 
@@ -799,7 +877,8 @@
 
             .faculty-info {
 
-                padding: 25px 20px;
+                padding:
+                    25px 20px;
             }
 
 
@@ -807,6 +886,7 @@
 
                 font-size: 20px;
             }
+
         }
 
 
@@ -816,27 +896,47 @@
 
         @media (max-width: 400px) {
 
+            .logo-text h2 {
+
+                font-size: 17px;
+            }
+
+
             .logo-text p {
 
                 font-size: 7px;
-
-                letter-spacing: 1px;
             }
 
 
             .menu-toggle {
 
-                width: 42px;
+                width: 44px;
 
-                height: 40px;
+                height: 44px;
+            }
+
+
+            .menu-toggle span {
+
+                width: 27px;
+
+                height: 4px;
             }
 
 
             nav {
 
-                right: 10px;
-
                 width: calc(100% - 20px);
+
+                right: 10px;
+            }
+
+
+            nav ul li a {
+
+                font-size: 12px;
+
+                padding: 12px 14px;
             }
 
 
@@ -850,6 +950,7 @@
 
                 font-size: 25px;
             }
+
         }
 
     </style>
@@ -867,7 +968,9 @@
     <header>
 
 
-        <!-- IWS LOGO -->
+        <!-- =========================================
+             IWS LOGO
+        ========================================= -->
 
         <a
             href="index.html"
@@ -893,7 +996,7 @@
 
 
         <!-- =========================================
-             THREE LINE MENU BUTTON
+             CLEAN THREE-LINE MENU BUTTON
         ========================================= -->
 
         <button
@@ -901,6 +1004,7 @@
             id="menuToggle"
             aria-label="Open navigation menu"
             aria-expanded="false"
+            type="button"
         >
 
             <span></span>
@@ -911,7 +1015,7 @@
 
 
         <!-- =========================================
-             NAVIGATION
+             NAVIGATION MENU
         ========================================= -->
 
         <nav id="mainNav">
@@ -1000,7 +1104,7 @@
                 </li>
 
 
-                <!-- CONTACT US -->
+                <!-- CONTACT -->
 
                 <li>
 
@@ -1014,7 +1118,6 @@
                     </a>
 
                 </li>
-
 
             </ul>
 
@@ -1207,10 +1310,16 @@
 
 
     <!-- =========================================
-         HAMBURGER MENU JAVASCRIPT
+         JAVASCRIPT
+         HAMBURGER MENU
     ========================================= -->
 
     <script>
+
+
+        /* =========================================
+           GET MENU ELEMENTS
+        ========================================= */
 
         const menuToggle =
             document.getElementById("menuToggle");
@@ -1219,72 +1328,139 @@
             document.getElementById("mainNav");
 
 
-        /* OPEN / CLOSE MENU */
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener(
+            "click",
+            function (event) {
 
-            mainNav.classList.toggle("active");
+                event.stopPropagation();
 
-            menuToggle.classList.toggle("active");
+                menuToggle.classList.toggle("active");
 
-
-            const isOpen =
-                mainNav.classList.contains("active");
-
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-        });
+                mainNav.classList.toggle("active");
 
 
-        /* CLOSE MENU AFTER CLICKING A LINK */
+                const isOpen =
+                    mainNav.classList.contains("active");
 
-        const navLinks =
-            document.querySelectorAll("#mainNav a");
-
-
-        navLinks.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mainNav.classList.remove("active");
-
-                menuToggle.classList.remove("active");
 
                 menuToggle.setAttribute(
                     "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
-
-
-        /* CLOSE MENU WHEN CLICKING OUTSIDE */
-
-        document.addEventListener("click", function (event) {
-
-            if (
-                !mainNav.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-
-                mainNav.classList.remove("active");
-
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
+                    isOpen
                 );
 
             }
+        );
 
-        });
+
+        /* =========================================
+           CLOSE MENU AFTER CLICKING A LINK
+        ========================================= */
+
+        const navLinks =
+            document.querySelectorAll(
+                "#mainNav a"
+            );
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        mainNav.classList.remove(
+                            "active"
+                        );
+
+                        menuToggle.classList.remove(
+                            "active"
+                        );
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+
+                    !mainNav.contains(
+                        event.target
+                    )
+
+                    &&
+
+                    !menuToggle.contains(
+                        event.target
+                    )
+
+                ) {
+
+                    mainNav.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU WITH ESC KEY
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    mainNav.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
 
     </script>
 

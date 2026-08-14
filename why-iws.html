@@ -87,6 +87,7 @@
             flex-shrink: 0;
         }
 
+
         .logo img {
 
             width: 65px;
@@ -96,6 +97,7 @@
 
             margin-right: 12px;
         }
+
 
         .logo-text h2 {
 
@@ -110,6 +112,7 @@
             color: #000000;
         }
 
+
         .logo-text p {
 
             font-size: 10px;
@@ -123,7 +126,8 @@
 
 
         /* =========================================
-           THREE-LINE HAMBURGER BUTTON
+           HAMBURGER MENU
+           EXACT CLEAN 3-LINE STYLE
         ========================================= */
 
         .menu-button {
@@ -135,48 +139,69 @@
 
             flex-direction: column;
 
-            justify-content: center;
-
             align-items: center;
+
+            justify-content: center;
 
             gap: 5px;
 
-            background: #ffffff;
+            padding: 0;
 
-            border: 2px solid #ff6b00;
+            margin: 0;
 
-            border-radius: 5px;
+            border: none;
+
+            outline: none;
+
+            background: transparent;
 
             cursor: pointer;
 
-            transition: all 0.3s ease;
-
             z-index: 1100;
+
+            appearance: none;
+
+            -webkit-appearance: none;
         }
 
+
+        /* THREE BLACK LINES */
 
         .menu-button span {
 
-            width: 24px;
-            height: 3px;
+            display: block;
+
+            width: 29px;
+
+            height: 4px;
 
             background: #000000;
 
-            border-radius: 2px;
+            border-radius: 10px;
 
-            transition: all 0.3s ease;
+            margin: 0;
+
+            padding: 0;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
         }
 
 
+        /* NO COLOUR CHANGE ON HOVER */
+
         .menu-button:hover {
 
-            background: #ff6b00;
+            background: transparent;
+
+            transform: none;
         }
 
 
         .menu-button:hover span {
 
-            background: #ffffff;
+            background: #000000;
         }
 
 
@@ -186,7 +211,9 @@
 
         .menu-button.active span:nth-child(1) {
 
-            transform: translateY(8px) rotate(45deg);
+            transform:
+                translateY(9px)
+                rotate(45deg);
         }
 
 
@@ -198,7 +225,9 @@
 
         .menu-button.active span:nth-child(3) {
 
-            transform: translateY(-8px) rotate(-45deg);
+            transform:
+                translateY(-9px)
+                rotate(-45deg);
         }
 
 
@@ -239,10 +268,6 @@
             z-index: 1050;
         }
 
-
-        /* =========================================
-           OPEN NAVIGATION
-        ========================================= */
 
         nav.active {
 
@@ -320,7 +345,7 @@
 
 
         /* =========================================
-           ACTIVE WHY IWS BUTTON
+           ACTIVE WHY IWS
         ========================================= */
 
         nav ul li a.active {
@@ -1035,6 +1060,7 @@
 
                 font-size: 48px;
             }
+
         }
 
 
@@ -1114,6 +1140,7 @@
 
                 transform: translateX(50%);
             }
+
         }
 
 
@@ -1153,11 +1180,46 @@
             }
 
 
+            /* =====================================
+               MOBILE HAMBURGER
+               SAME CLEAN 3-LINE STYLE
+            ===================================== */
+
             .menu-button {
 
                 width: 44px;
 
                 height: 44px;
+
+                background: transparent;
+
+                border: none;
+
+                padding: 0;
+            }
+
+
+            .menu-button span {
+
+                width: 29px;
+
+                height: 4px;
+
+                background: #000000;
+
+                border-radius: 10px;
+            }
+
+
+            .menu-button:hover {
+
+                background: transparent;
+            }
+
+
+            .menu-button:hover span {
+
+                background: #000000;
             }
 
 
@@ -1312,6 +1374,7 @@
 
                 font-size: 14px;
             }
+
         }
 
 
@@ -1340,6 +1403,15 @@
 
                 font-size: 25px;
             }
+
+
+            .menu-button span {
+
+                width: 28px;
+
+                height: 4px;
+            }
+
         }
 
     </style>
@@ -1391,6 +1463,7 @@
                 id="menuButton"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                type="button"
             >
 
                 <span></span>
@@ -1521,28 +1594,22 @@
                 </h3>
 
                 <p>
-
                     SOMETIMES THAT SPARK IS A QUESTION.
                     SOMETIMES IT IS A FAILURE.
                     SOMETIMES IT IS A SIMPLE CURIOSITY
                     ABOUT HOW SOMETHING WORKS.
-
                 </p>
 
                 <p>
-
                     IWS IS A PLATFORM WHERE THAT CURIOSITY
                     CAN GROW INTO KNOWLEDGE, EXPERIENCE,
                     CONFIDENCE AND INNOVATION.
-
                 </p>
 
                 <p>
-
                     WE BRING STUDENTS TOGETHER TO LEARN,
                     EXPLORE WELDING TECHNOLOGY AND
                     EXPERIENCE THE REAL WORLD OF ENGINEERING.
-
                 </p>
 
             </div>
@@ -1568,10 +1635,8 @@
                 </h2>
 
                 <p>
-
                     WELDING CONNECTS MATERIALS.
                     IWS CONNECTS PEOPLE, IDEAS AND OPPORTUNITIES.
-
                 </p>
 
             </div>
@@ -1599,8 +1664,6 @@
             <div class="why-grid">
 
 
-                <!-- CARD 01 -->
-
                 <div class="why-card">
 
                     <div class="number">
@@ -1612,18 +1675,14 @@
                     </h3>
 
                     <p>
-
                         CLASSROOMS GIVE YOU THE FOUNDATION.
                         IWS GIVES YOU OPPORTUNITIES TO EXPLORE
                         WELDING TECHNOLOGY THROUGH ACTIVITIES,
                         DISCUSSIONS AND PRACTICAL EXPERIENCES.
-
                     </p>
 
                 </div>
 
-
-                <!-- CARD 02 -->
 
                 <div class="why-card">
 
@@ -1636,20 +1695,16 @@
                     </h3>
 
                     <p>
-
                         HAVE AN IDEA?
 
                         IWS ENCOURAGES STUDENTS TO DISCUSS,
                         DEVELOP AND EXPLORE THEIR IDEAS
                         THROUGH TECHNICAL ACTIVITIES AND
                         INNOVATIVE PROJECTS.
-
                     </p>
 
                 </div>
 
-
-                <!-- CARD 03 -->
 
                 <div class="why-card">
 
@@ -1662,18 +1717,14 @@
                     </h3>
 
                     <p>
-
                         ENGINEERING IS NOT ONLY ABOUT MARKS.
                         IT IS ABOUT PROBLEM SOLVING,
                         TEAMWORK, COMMUNICATION AND
                         THE CONFIDENCE TO BUILD SOMETHING.
-
                     </p>
 
                 </div>
 
-
-                <!-- CARD 04 -->
 
                 <div class="why-card">
 
@@ -1686,18 +1737,14 @@
                     </h3>
 
                     <p>
-
                         GREAT ENGINEERING IS NEVER BUILT
                         ALONE. IWS BRINGS STUDENTS TOGETHER
                         TO PLAN, CREATE, PARTICIPATE AND
                         LEARN FROM EACH OTHER.
-
                     </p>
 
                 </div>
 
-
-                <!-- CARD 05 -->
 
                 <div class="why-card">
 
@@ -1710,18 +1757,14 @@
                     </h3>
 
                     <p>
-
                         PARTICIPATION IN TECHNICAL EVENTS,
                         ACTIVITIES AND SOCIETY PROGRAMMES
                         CAN HELP STUDENTS DISCOVER NEW
                         INTERESTS AND POSSIBILITIES.
-
                     </p>
 
                 </div>
 
-
-                <!-- CARD 06 -->
 
                 <div class="why-card">
 
@@ -1734,11 +1777,9 @@
                     </h3>
 
                     <p>
-
                         EVERY EVENT, EVERY DISCUSSION AND
                         EVERY EXPERIENCE CAN ADD SOMETHING
                         NEW TO YOUR ENGINEERING JOURNEY.
-
                     </p>
 
                 </div>
@@ -1893,13 +1934,11 @@
                     </h3>
 
                     <p>
-
                         ENGINEERING JOURNEY BEGINS WITH
                         QUESTIONS. IWS CREATES A SPACE
                         WHERE STUDENTS CAN ASK QUESTIONS,
                         MAKE MISTAKES, TRY AGAIN AND
                         CONTINUE LEARNING.
-
                     </p>
 
                 </div>
@@ -1912,7 +1951,6 @@
                     </h3>
 
                     <p>
-
                         A STUDENT MAY JOIN IWS WITH ONLY
                         A BASIC INTEREST IN WELDING.
 
@@ -1920,16 +1958,13 @@
                         INTO TECHNICAL KNOWLEDGE, TEAMWORK,
                         LEADERSHIP AND A DEEPER UNDERSTANDING
                         OF ENGINEERING.
-
                     </p>
 
                     <p>
-
                         THE GOAL IS NOT SIMPLY TO PARTICIPATE.
 
                         THE GOAL IS TO LEAVE EVERY EXPERIENCE
                         WITH SOMETHING NEW TO LEARN.
-
                     </p>
 
                 </div>
@@ -2013,7 +2048,7 @@
 
 
     <!-- =========================================
-         HAMBURGER MENU JAVASCRIPT
+         JAVASCRIPT
     ========================================= -->
 
     <script>
@@ -2049,7 +2084,7 @@
 
 
         /* =========================================
-           CLOSE MENU AFTER CLICKING A LINK
+           CLOSE MENU AFTER CLICKING LINK
         ========================================= */
 
         const navLinks =
@@ -2091,6 +2126,28 @@
                 !clickedInsideMenu &&
                 !clickedButton
             ) {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+        /* =========================================
+           ESC KEY CLOSES MENU
+        ========================================= */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
 
                 menuButton.classList.remove("active");
 

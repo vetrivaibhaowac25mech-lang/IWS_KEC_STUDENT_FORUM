@@ -113,7 +113,8 @@
 
 
         /* =========================================
-           HAMBURGER BUTTON
+           THREE-LINE HAMBURGER BUTTON
+           MATCHES REFERENCE IMAGE
         ========================================= */
 
         .menu-button {
@@ -122,24 +123,25 @@
             height: 48px;
 
             border: none;
+            outline: none;
 
-            background: #111111;
+            background: transparent;
 
-            border-radius: 5px;
+            border-radius: 0;
 
             display: flex;
 
             flex-direction: column;
 
-            justify-content: center;
-
             align-items: center;
+
+            justify-content: center;
 
             gap: 5px;
 
-            cursor: pointer;
+            padding: 0;
 
-            transition: 0.3s;
+            cursor: pointer;
 
             z-index: 1100;
         }
@@ -147,30 +149,40 @@
 
         .menu-button span {
 
-            width: 25px;
-            height: 3px;
+            width: 29px;
+            height: 4px;
 
-            background: #ffffff;
+            background: #111111;
 
-            border-radius: 3px;
+            border-radius: 4px;
 
-            transition: 0.3s;
-        }
+            display: block;
 
-
-        .menu-button:hover {
-
-            background: #ff6b00;
+            transition: 0.3s ease;
         }
 
 
         /* =========================================
-           HAMBURGER ACTIVE ANIMATION
+           HAMBURGER HOVER
+        ========================================= */
+
+        .menu-button:hover {
+
+            background: transparent;
+
+            transform: none;
+        }
+
+
+        /* =========================================
+           HAMBURGER → X ANIMATION
         ========================================= */
 
         .menu-button.active span:nth-child(1) {
 
-            transform: rotate(45deg) translate(6px, 6px);
+            transform:
+                rotate(45deg)
+                translate(6px, 6px);
         }
 
 
@@ -182,7 +194,9 @@
 
         .menu-button.active span:nth-child(3) {
 
-            transform: rotate(-45deg) translate(5px, -5px);
+            transform:
+                rotate(-45deg)
+                translate(6px, -6px);
         }
 
 
@@ -202,7 +216,8 @@
 
             background: #ffffff;
 
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.18);
 
             border-top: 4px solid #ff6b00;
 
@@ -818,13 +833,15 @@
 
                 position: relative;
 
-                padding: 15px 25px;
+                padding: 10px 25px;
+
+                min-height: 75px;
             }
 
 
             nav {
 
-                top: 85px;
+                top: 75px;
 
                 right: 25px;
             }
@@ -860,7 +877,7 @@
 
                 padding: 12px 15px;
 
-                min-height: 75px;
+                min-height: 72px;
             }
 
 
@@ -886,25 +903,44 @@
             }
 
 
+            /* =====================================
+               MOBILE HAMBURGER
+               SAME REFERENCE STYLE
+            ===================================== */
+
             .menu-button {
 
                 width: 44px;
 
                 height: 44px;
+
+                background: transparent;
             }
 
 
             .menu-button span {
 
-                width: 23px;
+                width: 27px;
 
-                height: 3px;
+                height: 4px;
+
+                background: #111111;
+
+                border-radius: 4px;
+            }
+
+
+            .menu-button:hover {
+
+                background: transparent;
+
+                transform: none;
             }
 
 
             nav {
 
-                top: 75px;
+                top: 72px;
 
                 right: 15px;
 
@@ -1085,7 +1121,7 @@
 
 
         <!-- =========================================
-             HAMBURGER BUTTON
+             THREE-LINE HAMBURGER BUTTON
         ========================================= -->
 
         <button
@@ -1093,6 +1129,7 @@
             id="menuButton"
             aria-label="Open Navigation Menu"
             aria-expanded="false"
+            type="button"
         >
 
             <span></span>
@@ -1111,10 +1148,18 @@
             <ul>
 
                 <li>
+                    <a href="index.html">
+                        HOME
+                    </a>
+                </li>
+
+
+                <li>
                     <a href="about.html">
                         ABOUT US
                     </a>
                 </li>
+
 
                 <li>
                     <a href="faculty.html">
@@ -1122,11 +1167,13 @@
                     </a>
                 </li>
 
+
                 <li>
                     <a href="members.html">
                         MEMBERS
                     </a>
                 </li>
+
 
                 <li>
                     <a href="why-iws.html">
@@ -1134,11 +1181,13 @@
                     </a>
                 </li>
 
+
                 <li>
                     <a href="events.html">
                         EVENTS
                     </a>
                 </li>
+
 
                 <li>
                     <a
@@ -1370,7 +1419,11 @@
 
                     <a
                         href="tel:+919578367576"
-                        style="color:#ff6b00; text-decoration:none; font-weight:700;"
+                        style="
+                            color:#ff6b00;
+                            text-decoration:none;
+                            font-weight:700;
+                        "
                     >
                         +91 9578367576
                     </a>
@@ -1404,7 +1457,11 @@
 
                     <a
                         href="tel:+919894711713"
-                        style="color:#ff6b00; text-decoration:none; font-weight:700;"
+                        style="
+                            color:#ff6b00;
+                            text-decoration:none;
+                            font-weight:700;
+                        "
                     >
                         +91 9894711713
                     </a>
@@ -1462,15 +1519,27 @@
 
     <script>
 
-        const menuButton = document.getElementById("menuButton");
-        const mainNav = document.getElementById("mainNav");
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        /* =========================================
+           OPEN / CLOSE MENU
+        ========================================= */
 
         menuButton.addEventListener("click", function () {
 
             menuButton.classList.toggle("active");
+
             mainNav.classList.toggle("active");
 
-            const isOpen = mainNav.classList.contains("active");
+
+            const isOpen =
+                mainNav.classList.contains("active");
+
 
             menuButton.setAttribute(
                 "aria-expanded",
@@ -1480,9 +1549,13 @@
         });
 
 
-        /* CLOSE MENU AFTER CLICKING A NAVIGATION LINK */
+        /* =========================================
+           CLOSE MENU AFTER CLICKING NAVIGATION LINK
+        ========================================= */
 
-        const navLinks = document.querySelectorAll("#mainNav a");
+        const navLinks =
+            document.querySelectorAll("#mainNav a");
+
 
         navLinks.forEach(function(link) {
 
@@ -1502,7 +1575,9 @@
         });
 
 
-        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+        /* =========================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ========================================= */
 
         document.addEventListener("click", function(event) {
 
@@ -1512,7 +1587,33 @@
             const clickedButton =
                 menuButton.contains(event.target);
 
-            if (!clickedInsideMenu && !clickedButton) {
+
+            if (
+                !clickedInsideMenu &&
+                !clickedButton
+            ) {
+
+                menuButton.classList.remove("active");
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+
+        /* =========================================
+           ESC KEY CLOSES MENU
+        ========================================= */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
 
                 menuButton.classList.remove("active");
 
